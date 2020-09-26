@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +13,15 @@
     <div class="authCont">
       <div class="signupBox">
         <span id="authTitle">Sign Up</span>
-        <form method="POST" action="signup.php" class="authform">
+        <form method="POST" action="signup_action.php" class="authform">
+          <div>
+            <label for="ID">ID</label>
+            <input id="id" name="id" type="text" />
+          </div>
+          <div>
+            <label for="Password">Password</label>
+            <input id="pw" name="pw" type="password" />
+          </div>
           <div>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" />
@@ -30,7 +36,7 @@
           </div>
           <div class="monthForRow">
             <label for="birth_month">Date of Birth</label>
-            <select name="Month">
+            <select name="month">
               <option value="jan">January</option>
               <option value="feb">Febuary</option>
               <option value="mar">March</option>
@@ -67,7 +73,7 @@
             </label>
           </div>
           <div>
-            <button>Sign up</button>
+            <button type="submit" name="OK">Sign up</button>
           </div>
         </form>
       </div>
