@@ -59,14 +59,6 @@
             </select>
           </div>
           <div>
-            <fieldset class="legacyFormRow">
-              <input id="gender" name="gender" type="radio" value="Male" />
-              <label for="gender" class="radioLabel">Male</label>
-              <input id="gender" name="gender" type="radio" value="female" />
-              <label for="gender" class="radioLabel">Female</label>
-            </fieldset>
-          </div>
-          <div>
             <label class="checkBox" for="available">
               <input id="available" name="available" type="checkbox" value="is-available" />
               <span>I'm actually not an Robot</span>

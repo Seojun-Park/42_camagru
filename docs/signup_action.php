@@ -8,7 +8,7 @@ function loginCheck($login, $asset)
 }
 
 if (
-    isset($_POST['name']) && isset($_POST['id']) && isset($_POST['pw']) && isset($_POST['familyname']) && isset($_POST['email']) && isset($_POST['month']) && isset($_POST['date']) && isset($_POST['gender']) && isset($_POST['availabe']) && $_POST['submit'] === "OK"
+    isset($_POST['name']) && isset($_POST['id']) && isset($_POST['pw']) && isset($_POST['familyname']) && isset($_POST['email']) && isset($_POST['month']) && isset($_POST['date']) && isset($_POST['availabe']) && $_POST['submit'] === "OK"
 ) {
     $data = array(
         'name' => $_POST['name'],
@@ -18,7 +18,6 @@ if (
         'email' => $_POST['email'],
         'month' => $_POST['month'],
         'date' => $_POST['date'],
-        'gender' => $_POST['gender'],
         'available' => $_POST['available']
     );
     # Create a connection
