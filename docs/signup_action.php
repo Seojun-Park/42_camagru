@@ -21,7 +21,7 @@ if (
         'available' => $_POST['available']
     );
     # Create a connection
-    $url = 'localhost:8080/api/product/read.php';
+    // $url = 'localhost:8080/api/product/read.php';
     $ch = curl_init($url);
     # Form data string
     $postString = http_build_query($data, '', '&');
@@ -34,7 +34,9 @@ if (
     echo ($response);
     curl_close($ch);
     // Routing to Login page
-    echo "<meta http-equiv='refresh' content='0;url=login.html'>";
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 } else {
-    echo ($response);
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+
+    // echo ($response);
 }
