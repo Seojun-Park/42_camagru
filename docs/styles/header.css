@@ -1,0 +1,14 @@
+/** @format */
+
+header {
+  height: 8vh;
+  max-height: 10vh;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.header_row {
+  border: 1px solid green;
+  padding: 5px;
+  height: 100%;
+}
