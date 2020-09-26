@@ -11,29 +11,55 @@ header {
   flex-direction: row;
 }
 
+/* header */
+
 .header_row {
   padding: 5px;
   height: 90%;
 }
 
-.header_row.first_row {
-  margin: 0 8px;
+/* first col */
+.header_row.first_col {
   border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   width: 10%;
-}
-
-.header_row.second_row {
-  margin: 0 8px;
-  border: 1px solid green;
-  width: 50%;
-}
-
-.header_row.third_row {
-  margin: 0 8px;
-  border: 1px solid blue;
 }
 
 #logo {
   height: 50px;
   width: 50px;
+}
+
+/* second col */
+.header_row.second_col {
+  margin: 0 8px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+}
+
+#searchbar {
+  padding: 8px;
+  border: none;
+  background: lightgray;
+  border-radius: 4px;
+  width: 70%;
+}
+
+.header_row.third_col {
+  margin: 0 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid blue;
+}
+
+#profile {
+  height: 30px;
+  width: 30px;
 }
