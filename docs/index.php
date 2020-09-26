@@ -17,7 +17,13 @@ include 'inc_head.php';
 <body>
     <!-- header -->
     <header>
-        <div class="header_row">
+        <div class="header_row first_row">
+            <a href="#"><img alt="logo" id="logo" src="../asset/logo.png" /></a>
+        </div>
+        <div class="header_row second_row">
+            row
+        </div>
+        <div class="header_row third_row">
             row
         </div>
     </header>
