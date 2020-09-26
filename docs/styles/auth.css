@@ -3,4 +3,74 @@
 .container {
   min-height: 100vh;
   border: 1px solid black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+}
+
+.authCont {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.loginBox {
+  background-color: beige;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.authform {
+  margin: 20px 10px;
+}
+
+#inputBox {
+  padding: 8px;
+  width: 200px;
+  border: none;
+  background-color: lightgrey;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+#loginButton {
+  padding: 8px 12px;
+  background-color: gray;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+#loginButton:hover {
+  background-color: lightgrey;
+  transition: 0.2s linear;
+}
+
+.subBox {
+  margin: 10px 0px;
+  padding: 20px 0;
+  background-color: beige;
+  border-radius: 4px;
+}
+
+.subBox p {
+  font-size: 16px;
+  color: gray;
+}
+
+label {
+  font-size: 25px;
+  border: 1px solid black;
 }

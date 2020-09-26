@@ -17,7 +17,7 @@ include 'func_view.php';
 <body>
     <?php
     if ($login == FALSE) {
-        echo view('auth.php');
+        echo view('auth.html');
     } else {
         echo view('header.php');
     }

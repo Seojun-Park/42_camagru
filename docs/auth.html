@@ -1,24 +1,19 @@
-<?php
-include 'inc_head.php';
-?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
-    <title>Rush</title>
-
-    <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/auth.css" />
+    <link rel="stylesheet" href="styles/text.css" />
 
 </head>
 
 <body>
     <div class="container">
+        <img src="../asset/logo.png" id="logo" />
         <div class="authCont">
+            <span id="authTitle">Log in</span>
             <div class="loginBox">
-                <span id="authTitle">Log in</span>
                 <!-- Login box / Form Post method -->
                 <form method="POST" action="login.php" class="authform">
                     <input id="inputBox" type="text" placeholder="login" name="login" /><br /><br />
@@ -27,13 +22,9 @@ include 'inc_head.php';
                 </form>
             </div>
             <div class="subBox">
-                <p>You don't have account?&emsp;<a href="signup.html">Join us</a></p>
+                <p>You don't have account?&emsp;<a href="signup.php">Join us</a></p>
             </div>
         </div>
-        <footer class="footer">
-            <p class="copyright">&copy; 2020 <span id="green">Anthony</span>, <span id="pink">Saro</span>, <span id="blue">Jin</span>
-                <p>
-        </footer>
     </div>
 </body>
 
