@@ -8,6 +8,7 @@ include 'inc_head.php';
 <head>
     <meta charset="utf-8" />
     <title>Camagru</title>
+    <link rel="stylesheet" href="styles/reset.css" />
 </head>
 
 <body>
