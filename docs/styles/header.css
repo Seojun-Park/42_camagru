@@ -43,7 +43,8 @@ header {
 }
 
 #searchbar {
-  padding: 8px;
+  padding: 5px;
+  height: 25px;
   border: none;
   background: lightgray;
   border-radius: 4px;
