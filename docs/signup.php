@@ -11,32 +11,32 @@
 <body>
   <div class="container">
     <div class="authCont">
+      <span id="authTitle">Sign Up</span>
       <div class="signupBox">
-        <span id="authTitle">Sign Up</span>
-        <form method="POST" action="signup_action.php" class="authform">
-          <div>
-            <label for="ID">ID</label>
-            <input id="id" name="id" type="text" />
+        <form method="POST" action="signup_action.php" class="signupform">
+          <div class="boxRow">
+            <label for="ID" id="inputLabel">ID</label>
+            <input id="inputBox" name="id" type="text" />
           </div>
-          <div>
-            <label for="Password">Password</label>
-            <input id="pw" name="pw" type="password" />
+          <div class="boxRow">
+            <label for="Password" id="inputLabel">Password</label>
+            <input id="inputBox" name="pw" type="password" />
           </div>
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" />
+          <div class="boxRow">
+            <label for="name" id="inputLabel">Name</label>
+            <input id="inputBox" name="name" type="text" />
           </div>
-          <div>
-            <label for="familyname">Family Name</label>
-            <input id="name" name="familyname" type="text" />
+          <div class="boxRow">
+            <label for="familyname" id="inputLabel">Family Name</label>
+            <input id="inputBox" name="familyname" type="text" />
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="example@example.com" />
+          <div class="boxRow">
+            <label for="email" id="inputLabel">Email</label>
+            <input id="inputBox" name="email" type="email" placeholder="example@example.com" />
           </div>
           <div class="monthForRow">
-            <label for="birth_month">Date of Birth</label>
-            <select name="month">
+            <label for="birth_month" id="inputLabel">Date of Birth</label>
+            <select name="month" id="monthSelect">
               <option value="jan">January</option>
               <option value="feb">Febuary</option>
               <option value="mar">March</option>
@@ -50,7 +50,7 @@
               <option value="nov">November</option>
               <option value="dec">December</option>
             </select>
-            <select name="date">
+            <select name="date" id="dateSelect">
               <?php
               for ($i = 1; $i < 32; $i++) {
                 echo "<option value=" . $i . ">" . $i . "</option>";

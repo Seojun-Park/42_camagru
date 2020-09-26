@@ -8,18 +8,18 @@ function loginCheck($login, $asset)
 }
 
 if (
-    isset($_POST['name']) && isset($_POST['login']) && isset($_POST['pw']) && isset($_POST['familyname']) && isset($_POST['email']) && isset($_POST['month']) && isset($_POST['date']) && isset($_POST['gender']) && isset($_POST['availabe']) && $_POST['submit'] === "OK"
+    isset($_POST['name']) && isset($_POST['id']) && isset($_POST['pw']) && isset($_POST['familyname']) && isset($_POST['email']) && isset($_POST['month']) && isset($_POST['date']) && isset($_POST['gender']) && isset($_POST['availabe']) && $_POST['submit'] === "OK"
 ) {
     $data = array(
         'name' => $_POST['name'],
-        'login' => $_POST['login'],
+        'familyname' => $_POST['familyname'],
+        'id' => $_POST['id'],
         'pw' => $_POST['pw'],
-        'pw_re' => $_POST['pw_re'],
         'email' => $_POST['email'],
-        'addr_h' => $_POST['addr_h'],
-        'zip_h' => $_POST['zip_h'],
-        'city_h' => $_POST['city_h'],
-        'tel' => $_POST['tel']
+        'month' => $_POST['month'],
+        'date' => $_POST['date'],
+        'gender' => $_POST['gender'],
+        'available' => $_POST['available']
     );
     # Create a connection
     $url = 'localhost:8080/api/product/read.php';

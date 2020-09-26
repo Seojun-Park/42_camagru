@@ -70,7 +70,43 @@
   color: gray;
 }
 
-label {
-  font-size: 25px;
+/* sign up */
+
+.signupBox {
   border: 1px solid black;
+}
+
+.signupform {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 500px;
+}
+
+.boxRow {
+  display: flex;
+  align-items: center;
+}
+
+#inputLabel {
+  float: left;
+  font-size: 16px;
+  width: 140px;
+}
+
+.signupform input {
+  float: left;
+}
+
+#monthSelect {
+  float: left;
+  border: none;
+  margin-right: 15px;
+  border-bottom: 1px solid black;
+}
+
+#dateSelect {
+  float: left;
+  border: none;
+  border-bottom: 1px solid black;
 }
