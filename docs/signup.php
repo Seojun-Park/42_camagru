@@ -16,7 +16,7 @@
         <form method="POST" action="signup_action.php" class="signupform">
           <div class="boxRow">
             <label for="ID" id="inputLabel">ID</label>
-            <input id="inputBox" name="id" type="text" />
+            <input id="inputBox" name="login" type="text" />
           </div>
           <div class="boxRow">
             <label for="Password" id="inputLabel">Password</label>

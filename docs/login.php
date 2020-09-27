@@ -5,18 +5,18 @@ function auth($id, $passwd)
 {
     $db = unserialize(file_get_contents("../db/account"));
     foreach ($db as $val) {
-        if (($val['id'] == $id) && ($val['pw'] == $passwd))
+        if (($val['login'] == $id) && ($val['pw'] == $passwd))
             return true;
     }
     return false;
 }
 
-if (isset($_POST['id']) && isset($_POST['pw']) && $_POST['submit'] == "OK") {
+if (isset($_POST['login']) && isset($_POST['pw']) && $_POST['submit'] == "OK") {
     $data = array(
-        'login' => $_POST['id'],
+        'login' => $_POST['login'],
         'pw' => $_POST['pw']
     );
-    if (auth($_POST['id'], $_POST['pw']) == true) {
+    if (auth($_POST['login'], $_POST['pw']) == true) {
         $res = "OK";
     } else {
         echo "Your ID / password is not matched, Please check it again";

@@ -8,7 +8,7 @@ function loginCheck($login, $asset)
 }
 
 if (
-    isset($_POST['id'])
+    isset($_POST['login'])
     && isset($_POST['pw'])
     && isset($_POST['name'])
     && isset($_POST['familyname'])
@@ -26,7 +26,7 @@ if (
     $data = array(
         'name' => $_POST['name'],
         'familyname' => $_POST['familyname'],
-        'id' => $_POST['id'],
+        'login' => $_POST['login'],
         'pw' => $_POST['pw'],
         'email' => $_POST['email'],
         'month' => $_POST['month'],
