@@ -62,7 +62,7 @@
             </label>
           </div>
           <div>
-            <button type="submit" name="OK">Sign up</button>
+            <button type="submit" name="submit" value="OK">Sign up</button>
           </div>
         </form>
       </div>
