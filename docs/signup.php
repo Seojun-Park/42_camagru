@@ -24,11 +24,8 @@
           </div>
           <div class="boxRow">
             <label for="name" id="inputLabel">Name</label>
-            <input id="inputBox" name="name" type="text" />
-          </div>
-          <div class="boxRow">
-            <label for="familyname" id="inputLabel">Family Name</label>
-            <input id="inputBox" name="familyname" type="text" />
+            <input id="nameBox" name="name" type="text" />
+            <input id="nameBox" name="familyname" type="text" />
           </div>
           <div class="boxRow">
             <label for="email" id="inputLabel">Email</label>

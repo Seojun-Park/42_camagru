@@ -8,8 +8,22 @@ function loginCheck($login, $asset)
 }
 
 if (
-    isset($_POST['name']) && isset($_POST['id']) && isset($_POST['pw']) && isset($_POST['familyname']) && isset($_POST['email']) && isset($_POST['month']) && isset($_POST['date']) && isset($_POST['availabe']) && $_POST['submit'] === "OK"
+    isset($_POST['name'])
+    && isset($_POST['id'])
+    && isset($_POST['pw'])
+    && isset($_POST['name'])
+    && isset($_POST['familyname'])
+    && isset($_POST['email'])
+    && isset($_POST['month'])
+    && isset($_POST['date'])
+    && isset($_POST['available'])
+    && $_POST['submit'] === "OK"
 ) {
+    if (file_exists("db") === false)
+        mkdir("db", 0777, true);
+    $cont = [];
+    if (file_exists("../db/account"))
+        $cont = file_get_contents("../db/account");
     $data = array(
         'name' => $_POST['name'],
         'familyname' => $_POST['familyname'],
@@ -20,23 +34,19 @@ if (
         'date' => $_POST['date'],
         'available' => $_POST['available']
     );
-    # Create a connection
-    // $url = 'localhost:8080/api/product/read.php';
-    $ch = curl_init($url);
-    # Form data string
-    $postString = http_build_query($data, '', '&');
-    # Setting our options
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    # Get the response
-    $response = curl_exec($ch);
-    echo ($response);
-    curl_close($ch);
-    // Routing to Login page
-    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+    $newCont[] = $data;
+    file_put_contents('../db/account', serialize($newCont));
 } else {
-    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+    echo $_POST['name']."\n";
+    echo $_POST['id']."\n";
+    echo $_POST['pw']."\n";
+    echo $_POST['email']."\n";
+    echo $_POST['familyname']."\n";
+    echo $_POST['month']."\n";
+    echo $_POST['date']."\n";
+    echo $_POST['available']."\n";
 
-    // echo ($response);
+    echo "ERROR, pls try again\n";
+    sleep(2);
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 }
