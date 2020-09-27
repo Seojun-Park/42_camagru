@@ -35,17 +35,11 @@ if (
     );
     $newCont[] = $data;
     file_put_contents('../db/account', serialize($newCont));
+    echo "<p>Done!</p>";
+    sleep(2);
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 } else {
-    echo $_POST['name'] . "\n";
-    echo $_POST['id'] . "\n";
-    echo $_POST['pw'] . "\n";
-    echo $_POST['email'] . "\n";
-    echo $_POST['familyname'] . "\n";
-    echo $_POST['month'] . "\n";
-    echo $_POST['date'] . "\n";
-    echo $_POST['available'] . "\n";
-
     echo "ERROR, pls try again\n";
     sleep(2);
-    // echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 }

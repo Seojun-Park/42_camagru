@@ -1,41 +1,33 @@
 <?php
 include 'inc_head.php';
-if (isset($_POST['login']) && isset($_POST['pw']) && $_POST['submit'] == "OK") {
+
+function auth($id, $passwd)
+{
+    $db = unserialize(file_get_contents("../db/account"));
+    foreach ($db as $val) {
+        if (($val['id'] == $id) && ($val['pw'] == $passwd))
+            return true;
+    }
+    return false;
+}
+
+if (isset($_POST['id']) && isset($_POST['pw']) && $_POST['submit'] == "OK") {
     $data = array(
-        'login' => $_POST['login'],
+        'login' => $_POST['id'],
         'pw' => $_POST['pw']
     );
-
-    // // create connection
-    // $url = 'localhost:8080/api/product/login.php';
-    // $ch = curl_init($url);
-    // // Form data string
-    // $postString = http_build_query($data, '', '&');
-    // // Setting out options
-    // curl_setopt($ch, CURLOPT_POST, 1);
-    // curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    // // Get the response
-    // $res = curl_exec($ch);
-
-
-    // testing 
-    if ($data['login'] == "qwe" && $data['pw'] == "123") {
+    if (auth($_POST['id'], $_POST['pw']) == true) {
         $res = "OK";
     } else {
         echo "Your ID / password is not matched, Please check it again";
         sleep(2);
-        echo "<meta http-equiv='refresh' content='0;url=signup.php'>";
+        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
     }
-
     // session login example / routing to main page
-
     if ($res == "OK") {
         $_SESSION['logged_in'] = $data['login'];
         echo "<meta http-equiv='refresh' content='0;url=index.php'>";
     }
-
-    // curl_close($ch);
 } else {
     echo "err check needed";
 }
