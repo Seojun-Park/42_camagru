@@ -5,9 +5,24 @@ include 'func_view.php';
 
 <?php
 $list = array(
-    array("jin", "qwerty", "123"),
-    array("dog", "immadog", "1234"),
-    array("cat", "immacat", "12345")
+    'jin' => array(
+        'name' => 'jin',
+        'familyname' => 'park',
+        'email' => 'email@gmail.com',
+        'login' => 'jinpark'
+    ),
+    'dog' => array(
+        'name' => 'dog',
+        'familyname' => 'park',
+        'email' => 'email1@gmail.com',
+        'login' => 'doggo'
+    ),
+    'cat' => array(
+        'name' => 'cat',
+        'familyname' => 'park',
+        'email' => 'email1@gmail.com',
+        'login' => 'catty'
+    )
 );
 ?>
 
@@ -25,7 +40,7 @@ $list = array(
 <body>
     <?php
     echo view('header.php');
-    echo $list[0][1];
+    echo var_dump($list);
     ?>
     <div class="wrapper">
         <div class="page_frame">
