@@ -3,6 +3,13 @@ include 'inc_head.php';
 include 'func_view.php';
 ?>
 
+<?php
+$list = array(
+    array("jin", "qwerty", "123"),
+    array("dog", "immadog", "1234"),
+    array("cat", "immacat", "12345")
+);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -18,6 +25,7 @@ include 'func_view.php';
 <body>
     <?php
     echo view('header.php');
+    echo $list[0][1];
     ?>
     <div class="wrapper">
         <div class="page_frame">
