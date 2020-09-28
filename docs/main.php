@@ -15,16 +15,21 @@ include 'func_view.php';
 </head>
 
 <body>
-    <?php
-    echo view('header.php');
-    ?>
+    <div class="header">
+        <?php
+        echo view('header.php');
+        ?>
+    </div>
     <div class="wrapper">
         <div class="page_frame">
             <ul>
                 <?php
-                    echo view('feedbox.php');
+                echo view('feedbox.php');
                 ?>
             </ul>
+        </div>
+        <div class="page_side">
+            what to be here?
         </div>
     </div>
 </body>

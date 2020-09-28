@@ -13,6 +13,7 @@ if (array_key_exists('logout', $_POST)) {
     </div>
     <div class="header_row second_col">
         <input type="text" id="searchbar" placeholder="Search user" />
+        <button type="submit" id="searchbutton" name="search"><img src="../asset/magnifier.png" alt="search" id="searchicon" /></button>
     </div>
     <div class="header_row third_col">
         <div class="col_block">

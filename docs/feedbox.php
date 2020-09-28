@@ -5,6 +5,8 @@ $list = array(
         'familyname' => 'park',
         'email' => 'email@gmail.com',
         'image' => '../asset/logo.png',
+        'avatar' => '../asset/logo.png',
+        'feed' => 'Hello there',
         'login' => 'jinpark'
     ),
     'dog' => array(
@@ -12,6 +14,8 @@ $list = array(
         'familyname' => 'park',
         'email' => 'email1@gmail.com',
         'image' => '../asset/dog.jpeg',
+        'avatar' => '../asset/dog.jpeg',
+        'feed' => 'lalala',
         'login' => 'doggo'
     ),
     'cat' => array(
@@ -19,6 +23,8 @@ $list = array(
         'familyname' => 'park',
         'email' => 'email1@gmail.com',
         'image' => '../asset/cat.jpeg',
+        'avatar' => '../asset/cat.jpeg',
+        'feed' => 'lalala',
         'login' => 'catty'
     )
 );
@@ -35,9 +41,9 @@ $list = array(
     <?php
     foreach ($list as $val) {
         echo "<div class='container'>";
-        echo  "<div class='feed_head'><a href='#'><span class='feed_login'>" . $val['login'] . "</span></a></div>";
+        echo  "<div class='feed_head'><a href='#'><img src='" . $val['avatar'] . "' alt='avatar' id='avatar'></img><span class='feed_login'>" . $val['login'] . "</span></a></div>";
         echo  "<div class='feed_body'><div class='body_back'></div><img src='" . $val['image'] . "' alt='feedimg' id='feed_img'/></div>";
-        echo  "<div class='feed_footer'>lala</div>";
+        echo  "<div class='feed_footer'><p class='feed_text'>" . $val['feed'] . "</p><div class='feed_repl'>lalal</div></div>";
         echo "</div>";
     }
     ?>
