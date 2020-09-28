@@ -6,7 +6,7 @@ function getProfile($query, $obj)
 {
     foreach ($obj as $val) {
         if (strcmp($val['login'], $query) == 0) {
-            echo var_dump($val);
+            return $val;
         } else {
             echo "rrr";
         }
@@ -34,7 +34,7 @@ $profile = getProfile($query, $obj);
     <div class="wrapper">
         <div class="page_frame">
             <?php
-            echo $profile;
+            echo var_dump($profile);
             ?>
         </div>
     </div>
