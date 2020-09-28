@@ -5,6 +5,9 @@ if (array_key_exists('logout', $_POST)) {
     session_destroy();
     echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 }
+
+$uri = $_SERVER['REQUEST_URI']; //uri를 구함 
+$query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
 ?>
 
 <header>
@@ -17,9 +20,11 @@ if (array_key_exists('logout', $_POST)) {
     </div>
     <div class="header_row third_col">
         <div class="col_block">
-            <a href="profile.php">
-                <img src="../asset/profile.png" alt="profile" id="profile" />
-            </a>
+            <?php
+            echo "<a href='profile.php?" . $query . "'>";
+            echo "<img src='../asset/profile.png' alt='profile' id='profile' />";
+            echo "</a>";
+            ?>
         </div>
         <div class="col_block">
             <form method="post">

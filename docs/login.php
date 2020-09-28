@@ -26,7 +26,7 @@ if (isset($_POST['login']) && isset($_POST['pw']) && $_POST['submit'] == "OK") {
     // session login example / routing to main page
     if ($res == "OK") {
         $_SESSION['logged_in'] = $data['login'];
-        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+        echo "<meta http-equiv='refresh' content='0;url=index.php?" . $data['login'] . "'>";
     }
 } else {
     echo "err check needed";

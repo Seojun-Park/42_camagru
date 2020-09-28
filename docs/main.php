@@ -1,6 +1,7 @@
 <?php
 include 'inc_head.php';
 include 'func_view.php';
+
 ?>
 
 <!DOCTYPE html>

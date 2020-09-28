@@ -2,7 +2,8 @@
 include 'inc_head.php';
 include 'func_view.php';
 
-
+$uri = $_SERVER['REQUEST_URI']; //uri를 구함 
+$query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +19,9 @@ include 'func_view.php';
     ?>
     <div class="wrapper">
         <div class="page_frame">
+            <?php
+            echo $query;
+            ?>
         </div>
     </div>
 </body>
