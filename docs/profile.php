@@ -1,8 +1,10 @@
 <?php
 include 'inc_head.php';
 include 'func_view.php';
-?>
 
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +18,6 @@ include 'func_view.php';
     ?>
     <div class="wrapper">
         <div class="page_frame">
-            feed
         </div>
     </div>
 </body>

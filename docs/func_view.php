@@ -8,4 +8,3 @@ function view($template)
     }
     return new Exception("Template not found");
 }
-?>

@@ -3,29 +3,6 @@ include 'inc_head.php';
 include 'func_view.php';
 ?>
 
-<?php
-$list = array(
-    'jin' => array(
-        'name' => 'jin',
-        'familyname' => 'park',
-        'email' => 'email@gmail.com',
-        'login' => 'jinpark'
-    ),
-    'dog' => array(
-        'name' => 'dog',
-        'familyname' => 'park',
-        'email' => 'email1@gmail.com',
-        'login' => 'doggo'
-    ),
-    'cat' => array(
-        'name' => 'cat',
-        'familyname' => 'park',
-        'email' => 'email1@gmail.com',
-        'login' => 'catty'
-    )
-);
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -43,7 +20,11 @@ $list = array(
     ?>
     <div class="wrapper">
         <div class="page_frame">
-            feed
+            <ul>
+                <?php
+                    echo view('feedbox.php');
+                ?>
+            </ul>
         </div>
     </div>
 </body>

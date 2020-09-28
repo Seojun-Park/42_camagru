@@ -1,0 +1,22 @@
+/** @format */
+
+.container {
+  border: 1px solid green;
+  width: 600px;
+  height: 600px;
+}
+
+.feed_head {
+  height: 8%;
+  border: 1px solid red;
+}
+
+.feed_body {
+  height: 72%;
+  border: 1px solid blue;
+}
+
+.feed_footer {
+  height: 20%;
+  border: 1px solid green;
+}
