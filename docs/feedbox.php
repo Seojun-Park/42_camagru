@@ -35,7 +35,7 @@ $list = array(
     <?php
     foreach ($list as $val) {
         echo "<div class='container'>";
-        echo  "<div class='feed_head'>" . $val['login'] . "</div>";
+        echo  "<div class='feed_head'><a href='#'><span class='feed_login'>" . $val['login'] . "</span></a></div>";
         echo  "<div class='feed_body'><div class='body_back'></div><img src='" . $val['image'] . "' alt='feedimg' id='feed_img'/></div>";
         echo  "<div class='feed_footer'>lala</div>";
         echo "</div>";
