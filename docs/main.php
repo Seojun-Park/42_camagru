@@ -40,11 +40,10 @@ $list = array(
 <body>
     <?php
     echo view('header.php');
-    echo var_dump($list);
     ?>
     <div class="wrapper">
         <div class="page_frame">
-            lala
+            feed
         </div>
     </div>
 </body>

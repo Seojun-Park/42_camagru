@@ -17,7 +17,7 @@ if (array_key_exists('logout', $_POST)) {
     </div>
     <div class="header_row third_col">
         <div class="col_block">
-            <a href="#">
+            <a href="profile.php">
                 <img src="../asset/profile.png" alt="profile" id="profile" />
             </a>
         </div>
