@@ -4,6 +4,7 @@
   border: 1px solid green;
   width: 600px;
   height: 600px;
+  margin: 15px 0;
 }
 
 .feed_head {
@@ -14,9 +15,27 @@
 .feed_body {
   height: 72%;
   border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .feed_footer {
   height: 20%;
   border: 1px solid green;
+}
+
+.body_back {
+  background-color: lightgray;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 0;
+  height: 430px;
+  width: 600px;
+}
+
+#feed_img {
+  max-width: 600px;
+  position: absolute;
+  z-index: 1;
 }
