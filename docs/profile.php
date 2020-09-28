@@ -2,8 +2,22 @@
 include 'inc_head.php';
 include 'func_view.php';
 
+function getProfile($query, $obj)
+{
+    foreach ($obj as $val) {
+        if (strcmp($val['login'], $query) == 0) {
+            echo var_dump($val);
+        } else {
+            echo "rrr";
+        }
+    }
+}
+
 $uri = $_SERVER['REQUEST_URI']; //uri를 구함 
 $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
+$obj = unserialize(file_get_contents("../db/account"));
+$profile = getProfile($query, $obj);
+
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +34,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
     <div class="wrapper">
         <div class="page_frame">
             <?php
-            echo $query;
+            echo $profile;
             ?>
         </div>
     </div>
