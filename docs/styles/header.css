@@ -1,105 +1,190 @@
 /** @format */
 
-header {
-  height: 8vh;
-  max-height: 80px;
-  width: 90%;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: row;
+@media screen and (max-width: 768px) {
+  header {
+    height: 8vh;
+    max-height: 80px;
+    width: 90%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  button {
+    height: 24px;
+  }
+
+  /* header */
+  .header_row {
+    padding: 5px;
+    height: 90%;
+  }
+
+  /* first col */
+  .header_row.first_col {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 10%;
+  }
+
+  #logo {
+    height: 60px;
+    width: 60px;
+    object-fit: scale-down;
+  }
+
+  /* second col */
+  .header_row.second_col {
+    margin: 0 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    border-left: 1px solid lightskyblue;
+    border-right: 1px solid lightblue;
+  }
+
+  #searchbar {
+    padding: 5px;
+    height: 25px;
+    border: none;
+    background: lightgray;
+    border-radius: 4px;
+    width: 50%;
+  }
+
+  #searchbutton {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  #searchicon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .header_row.third_col {
+    display: none;
+  }
+  .burger {
+    width: 50px;
+    height: 50px;
+    background: green;
+    box-shadow: 0 1px 15px;
+    position: absolute;
+  }
 }
 
-/* header */
-.header_row {
-  padding: 5px;
-  height: 90%;
-}
+@media screen and (min-width: 769px) {
+  header {
+    height: 8vh;
+    max-height: 80px;
+    width: 90%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+  }
 
-/* first col */
-.header_row.first_col {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 10%;
-}
+  /* header */
+  .header_row {
+    padding: 5px;
+    height: 90%;
+  }
 
-#logo {
-  height: 60px;
-  width: 60px;
-  object-fit: scale-down;
-}
+  /* first col */
+  .header_row.first_col {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 10%;
+  }
 
-/* second col */
-.header_row.second_col {
-  margin: 0 8px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  height: 100%;
-  border-left: 1px solid lightskyblue;
-  border-right: 1px solid lightblue;
-}
+  #logo {
+    height: 60px;
+    width: 60px;
+    object-fit: scale-down;
+  }
 
-#searchbar {
-  padding: 5px;
-  height: 25px;
-  border: none;
-  background: lightgray;
-  border-radius: 4px;
-  width: 50%;
-}
+  /* second col */
+  .header_row.second_col {
+    margin: 0 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid lightskyblue;
+    border-right: 1px solid lightblue;
+  }
 
-#searchbutton {
-  background-color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-}
+  #searchbar {
+    padding: 5px;
+    height: 25px;
+    border: none;
+    background: lightgray;
+    border-radius: 4px;
+    width: 50%;
+  }
 
-#searchicon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
+  #searchbutton {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
 
-.header_row.third_col {
-  margin: 0 8px;
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
+  #searchicon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
 
-.col_block {
-  width: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .header_row.third_col {
+    margin: 0 8px;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
 
-#profile {
-  width: 24px;
-  height: 24px;
-}
+  .col_block {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#profile {
-  height: 30px;
-  width: 30px;
-}
+  #profile {
+    width: 24px;
+    height: 24px;
+  }
 
-#logout {
-  border: none;
-  background-color: lightgray;
-  border-radius: 4px;
-  padding: 4px 8px;
-}
+  #profile {
+    height: 30px;
+    width: 30px;
+  }
 
-#logout:hover {
-  transition: 0.2s linear;
-  background-color: gray;
+  #logout {
+    border: none;
+    background-color: lightgray;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  #logout:hover {
+    transition: 0.2s linear;
+    background-color: gray;
+  }
+
+  .burger {
+    display: none;
+  }
 }

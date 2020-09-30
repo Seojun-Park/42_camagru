@@ -1,5 +1,11 @@
 /** @format */
 
+@media screen and (max-width: 768px) {
+  .page_side {
+    display: none;
+  }
+}
+
 .header {
   display: flex;
   justify-content: center;
