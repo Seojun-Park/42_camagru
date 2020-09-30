@@ -33,9 +33,7 @@ $profile = getProfile($query, $obj);
     ?>
     <div class="wrapper">
         <div class="page_frame">
-            <?php
-            echo var_dump($profile);
-            ?>
+            
         </div>
     </div>
 </body>
