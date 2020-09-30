@@ -33,8 +33,12 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
         </div>
     </div>
     <div class="header_row">
-        <div class="burger">
-            bugger
+        <div id="burger">
+            <div id="line-wrapper">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
     </div>
 </header>
