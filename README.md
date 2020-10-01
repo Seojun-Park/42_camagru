@@ -5,5 +5,5 @@
 - [ ] : sign up(by email)
 - [ ] : login(with username)
 - [ ] : enable to reset password
-- [ ] : logout in any page
-
+- [ ] : logout in any pages
+- [ ] : profile
