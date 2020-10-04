@@ -7,4 +7,3 @@
 - [ ] : enable to reset password
 - [ ] : logout in any pages
 - [ ] : profile
-- [ ] : auth page
