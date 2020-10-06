@@ -17,7 +17,6 @@
   flex-direction: row;
   justify-content: space-around;
   margin: 15px 40px;
-  border-top: 2px solid black;
 }
 
 .page_frame {

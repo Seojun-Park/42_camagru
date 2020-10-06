@@ -24,12 +24,15 @@ $profile = getProfile($query, $obj);
 
 <head>
     <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/profile.css" />
 </head>
 
 <body>
-    <?php
-    echo view('header.php');
-    ?>
+    <div class="header">
+        <?php
+        echo view('header.php');
+        ?>
+    </div>
     <div class="wrapper">
         <div class="page_frame">
             <?php

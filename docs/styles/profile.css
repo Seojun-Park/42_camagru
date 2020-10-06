@@ -1,0 +1,26 @@
+/** @format */
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin: 15px 40px;
+    border: 1px solid black;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .page_frame {
+      padding: 15px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .wrapper {
+    border: 1px solid black;
+  }
+}
