@@ -209,35 +209,29 @@
   }
 
   .col_block {
-    width: 80px;
+    /* width: 80px; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  #profile {
-    width: 24px;
-    height: 24px;
-  }
-
-  #profile {
+  #icons {
     height: 30px;
     width: 30px;
+    padding: 0 8px;
   }
 
   #logout {
     border: none;
-    background-color: lightgray;
-    border-radius: 4px;
-    padding: 4px 8px;
+    background-color: white;
+    cursor: pointer;
   }
 
-  #logout:hover {
-    transition: 0.2s linear;
-    background-color: gray;
+  #logout_icon:hover {
+    color: gray;
   }
 
-  #dropdown {
+  .dropdown {
     display: none;
   }
 

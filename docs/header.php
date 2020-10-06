@@ -24,13 +24,13 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
         <div class="col_block">
             <?php
             echo "<a href='profile.php?" . $query . "'>";
-            echo "<img src='../asset/profile.png' alt='profile' id='profile' />";
+            echo "<img src='../asset/profile.png' alt='profile' id='icons' />";
             echo "</a>";
             ?>
         </div>
         <div class="col_block">
             <form method="post">
-                <input type="submit" name="logout" id="logout" value="LOGOUT" />
+                <button type="submit" name="logout" id="logout"><img src="../asset/logout.png" alt="logout" id="icons" /></button>
             </form>
         </div>
     </div>
