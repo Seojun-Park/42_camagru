@@ -35,9 +35,11 @@ $profile = getProfile($query, $obj);
     </div>
     <div class="wrapper">
         <div class="page_frame">
-            <?php
-            echo $profile['login'] . "'s profile";
-            ?>
+            <div class="table_title">
+                <?php
+                echo $profile['login'] . "'s profile";
+                ?>
+            </div>
             <table class="profile_table">
                 <tr>
                     <td id="title">Name</td>
@@ -64,9 +66,9 @@ $profile = getProfile($query, $obj);
                     ?>
                 </tr>
             </table>
-            <?php
-            echo var_dump($profile);
-            ?>
+            <div class="btns">
+                <a href="#">수정하기</a>
+            </div>
         </div>
     </div>
 </body>
