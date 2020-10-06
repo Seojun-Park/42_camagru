@@ -1,123 +1,248 @@
 /** @format */
 
-.container {
-  min-height: 100vh;
-  border: 1px solid black;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #logo {
+    height: 80px;
+    width: 80px;
+  }
+
+  .authCont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .loginBox {
+    background-color: beige;
+    border-radius: 4px;
+    padding: 20px;
+  }
+
+  .authform {
+    margin: 20px 15px;
+  }
+
+  #inputBox {
+    padding: 8px;
+    width: 225px;
+    border: none;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0;
+  }
+
+  #nameBox {
+    padding: 8px;
+    width: 100px;
+    border: none;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0;
+    margin-right: 10px;
+  }
+
+  #loginButton {
+    padding: 8px 12px;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  #loginButton:hover {
+    background-color: lightgrey;
+    transition: 0.2s linear;
+  }
+
+  .subBox {
+    margin: 10px 0px;
+    padding: 20px 0;
+    background-color: beige;
+    border-radius: 4px;
+  }
+
+  .subBox p {
+    font-size: 16px;
+    color: gray;
+  }
+
+  /* sign up */
+
+  .signupBox {
+    border: 1px solid black;
+  }
+
+  .signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+  }
+
+  .boxRow {
+    display: flex;
+    align-items: center;
+  }
+
+  #inputLabel {
+    float: left;
+    font-size: 16px;
+    width: 140px;
+  }
+
+  .signupform input {
+    float: left;
+  }
+
+  #monthSelect {
+    float: left;
+    border: none;
+    margin-right: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  #dateSelect {
+    float: left;
+    border: none;
+    border-bottom: 1px solid black;
+  }
 }
 
-#logo {
-  height: 80px;
-  width: 80px;
-}
+@media screen and (min-width: 769px) {
+  .container {
+    min-height: 100vh;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
 
-.authCont {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  width: 50%;
-}
+  #logo {
+    height: 80px;
+    width: 80px;
+  }
 
-.loginBox {
-  background-color: beige;
-  border-radius: 4px;
-  padding: 20px;
-}
+  .authCont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+  }
 
-.authform {
-  margin: 20px 10px;
-}
+  .loginBox {
+    background-color: beige;
+    border-radius: 4px;
+    padding: 20px;
+  }
 
-#inputBox {
-  padding: 8px;
-  width: 225px;
-  border: none;
-  background-color: lightgrey;
-  border-radius: 4px;
-  font-size: 12px;
-  margin: 8px 0;
-}
+  .authform {
+    margin: 20px 10px;
+  }
 
-#nameBox {
-  padding: 8px;
-  width: 100px;
-  border: none;
-  background-color: lightgrey;
-  border-radius: 4px;
-  font-size: 12px;
-  margin: 8px 0;
-  margin-right: 10px;
-}
+  #inputBox {
+    padding: 8px;
+    width: 225px;
+    border: none;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0;
+  }
 
-#loginButton {
-  padding: 8px 12px;
-  background-color: gray;
-  color: white;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-}
+  #nameBox {
+    padding: 8px;
+    width: 100px;
+    border: none;
+    background-color: lightgrey;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0;
+    margin-right: 10px;
+  }
 
-#loginButton:hover {
-  background-color: lightgrey;
-  transition: 0.2s linear;
-}
+  #loginButton {
+    padding: 8px 12px;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
 
-.subBox {
-  margin: 10px 0px;
-  padding: 20px 0;
-  background-color: beige;
-  border-radius: 4px;
-}
+  #loginButton:hover {
+    background-color: lightgrey;
+    transition: 0.2s linear;
+  }
 
-.subBox p {
-  font-size: 16px;
-  color: gray;
-}
+  .subBox {
+    margin: 10px 0px;
+    padding: 20px 0;
+    background-color: beige;
+    border-radius: 4px;
+  }
 
-/* sign up */
+  .subBox p {
+    font-size: 16px;
+    color: gray;
+  }
 
-.signupBox {
-  border: 1px solid black;
-}
+  /* sign up */
 
-.signupform {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 500px;
-}
+  .signupBox {
+    border: 1px solid black;
+  }
 
-.boxRow {
-  display: flex;
-  align-items: center;
-}
+  .signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+  }
 
-#inputLabel {
-  float: left;
-  font-size: 16px;
-  width: 140px;
-}
+  .boxRow {
+    display: flex;
+    align-items: center;
+  }
 
-.signupform input {
-  float: left;
-}
+  #inputLabel {
+    float: left;
+    font-size: 16px;
+    width: 140px;
+  }
 
-#monthSelect {
-  float: left;
-  border: none;
-  margin-right: 15px;
-  border-bottom: 1px solid black;
-}
+  .signupform input {
+    float: left;
+  }
 
-#dateSelect {
-  float: left;
-  border: none;
-  border-bottom: 1px solid black;
+  #monthSelect {
+    float: left;
+    border: none;
+    margin-right: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  #dateSelect {
+    float: left;
+    border: none;
+    border-bottom: 1px solid black;
+  }
 }

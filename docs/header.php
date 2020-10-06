@@ -13,7 +13,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
 <header>
     <div class="header_row first_col">
         <?php
-        echo "<a href='main.php?" . $query . "'>";
+        echo "<a href='main.php?" . $_SESSION['login'] . "'>";
         echo "<img alt='logo' id='logo' src='../asset/logo.png' />";
         echo "</a>";
         ?>

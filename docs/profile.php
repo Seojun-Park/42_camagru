@@ -6,7 +6,6 @@ function getProfile($query, $obj)
 {
     foreach ($obj as $val) {
         if (strcmp($val['login'], $query) == 0) {
-            echo $val['login'];
             return $val;
         } else {
             return FALSE;

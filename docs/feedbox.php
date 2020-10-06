@@ -41,7 +41,7 @@ $list = array(
     <?php
     foreach ($list as $val) {
         echo "<div class='container'>";
-        echo  "<div class='feed_head'><a href='profile.php' class='feed_headbox'><img src='" . $val['avatar'] . "' alt='avatar' id='avatar'></img><span class='feed_login'>" . $val['login'] . "</span></a></div>";
+        echo  "<div class='feed_head'><a href='profile.php?" . $val['login'] . "' class='feed_headbox'><img src='" . $val['avatar'] . "' alt='avatar' id='avatar'></img><span class='feed_login'>" . $val['login'] . "</span></a></div>";
         echo  "<div class='feed_body'><div class='body_back'></div><img src='" . $val['image'] . "' alt='feedimg' id='feed_img'/></div>";
         echo  "<div class='feed_footer'><p class='feed_text'>" . $val['feed'] . "</p><div class='feed_repl'>lalal</div></div>";
         echo "</div>";
