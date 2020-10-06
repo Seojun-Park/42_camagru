@@ -35,14 +35,33 @@ $profile = getProfile($query, $obj);
     </div>
     <div class="wrapper">
         <div class="page_frame">
+            <?php
+            echo $profile['login'] . "'s profile";
+            ?>
             <table class="profile_table">
                 <tr>
-                    <td id="title">lala</td>
-                    <td id="content">lala</td>
+                    <td id="title">Name</td>
+                    <?php
+                    echo "<td id='content'>" . $profile['name'] . "</td>";
+                    ?>
                 </tr>
                 <tr>
-                    <td id="title">lalala</td>
-                    <td id="content">lalala</td>
+                    <td id="title">Last Name</td>
+                    <?php
+                    echo "<td id='content'>" . $profile['familyname'] . "</td>";
+                    ?>
+                </tr>
+                <tr>
+                    <td id="title">Email</td>
+                    <?php
+                    echo "<td id='content'>" . $profile['email'] . "</td>";
+                    ?>
+                </tr>
+                <tr>
+                    <td id="title">Date of Birth</td>
+                    <?php
+                    echo "<td id='content'>" . $profile['date'] . " / " . $profile['month'] . "</td>";
+                    ?>
                 </tr>
             </table>
             <?php
