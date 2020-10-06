@@ -15,7 +15,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
         <a href="index.php"><img alt="logo" id="logo" src="../asset/logo.png" /></a>
     </div>
     <div class="header_row second_col">
-        <form method="post">
+        <form method="post" class="search_form">
             <input type="text" id="searchbar" placeholder="Search user" />
             <button type="submit" id="searchbutton" name="search"><img src="../asset/magnifier.png" alt="search" id="searchicon" /></button>
         </form>
