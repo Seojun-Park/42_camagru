@@ -177,6 +177,15 @@
     height: 100%;
   }
 
+  .search_form {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 1rem;
+  }
+
   #searchbar {
     padding: 5px;
     height: 25px;
@@ -184,6 +193,7 @@
     background: lightgray;
     border-radius: 4px;
     width: 50%;
+    margin-right: 15px;
   }
 
   #searchbutton {
