@@ -79,10 +79,14 @@
     padding-top: 1rem;
   }
 
-  .dropbtn {
+  .dropdown button {
     border: none;
-    color: white;
-    background-color: navy;
+    background-color: white;
+  }
+
+  #burgerbtn {
+    height: 30px;
+    widows: 30px;
   }
 
   .dropdown-content {

@@ -36,7 +36,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
     </div>
     <div class="header_row">
         <div class="dropdown">
-            <button class="dropbtn">버거</button>
+            <button><img src="../asset/burger.png" alt="burger" id="burgerbtn" /></button>
             <div class="dropdown-content">
                 <form method="post">
                     <a href="#">profile</a>
