@@ -21,6 +21,13 @@ a {
   border-bottom: 1.5px solid black;
 }
 
+.feed_headbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 #avatar {
   margin-left: 15px;
   width: 40px;
