@@ -27,7 +27,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
     <div class="header_row third_col">
         <div class="col_block">
             <?php
-            echo "<a href='profile.php?" . $query . "'>";
+            echo "<a href='profile.php?" . $_SESSION['login'] . "'>";
             echo "<img src='../asset/profile.png' alt='profile' id='icons' />";
             echo "</a>";
             ?>
@@ -44,7 +44,7 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
             <div class="dropdown-content">
                 <form method="post">
                     <?php
-                    echo "<a href='profile.php?" . $query . "'>";
+                    echo "<a href='profile.php?" . $_SESSION['login'] . "'>";
                     echo "profile</a>";
                     ?>
                     <input type="submit" name="logout" id="drop_button" value="logout" />

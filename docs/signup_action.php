@@ -22,7 +22,7 @@ if (
         mkdir("../db", 0777, true);
     $cont = [];
     if (file_exists("../db/account"))
-        $cont = file_get_contents("../db/account");
+        $cont = unserialize(file_get_contents("../db/account"));
     $data = array(
         'name' => $_POST['name'],
         'familyname' => $_POST['familyname'],
@@ -33,8 +33,10 @@ if (
         'date' => $_POST['date'],
         'available' => $_POST['available']
     );
-    $newCont[] = $data;
-    file_put_contents('../db/account', serialize($newCont));
+    if (loginCheck($_POST['login'], $cont) === false){
+        $cont[] = $data;
+        file_put_contents('../db/account', serialize($cont));
+    }
     echo "<p>Done!</p>";
     sleep(2);
     echo "<meta http-equiv='refresh' content='0;url=index.php'>";
