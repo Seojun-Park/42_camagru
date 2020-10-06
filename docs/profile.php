@@ -35,6 +35,16 @@ $profile = getProfile($query, $obj);
     </div>
     <div class="wrapper">
         <div class="page_frame">
+            <table class="profile_table">
+                <tr>
+                    <td id="title">lala</td>
+                    <td id="content">lala</td>
+                </tr>
+                <tr>
+                    <td id="title">lalala</td>
+                    <td id="content">lalala</td>
+                </tr>
+            </table>
             <?php
             echo var_dump($profile);
             ?>
