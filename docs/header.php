@@ -8,11 +8,16 @@ if (array_key_exists('logout', $_POST)) {
 
 $uri = $_SERVER['REQUEST_URI']; //uri를 구함 
 $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
+echo $query;
 ?>
 
 <header>
     <div class="header_row first_col">
-        <a href="index.php"><img alt="logo" id="logo" src="../asset/logo.png" /></a>
+        <?php
+        echo "<a href='main.php?" . $query . "'>";
+        echo "<img alt='logo' id='logo' src='../asset/logo.png' />";
+        echo "</a>";
+        ?>
     </div>
     <div class="header_row second_col">
         <form method="post" class="search_form">
@@ -39,7 +44,10 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
             <button><img src="../asset/burger.png" alt="burger" id="burgerbtn" /></button>
             <div class="dropdown-content">
                 <form method="post">
-                    <a href="#">profile</a>
+                    <?php
+                    echo "<a href='profile.php?" . $query . "'>";
+                    echo "profile</a>";
+                    ?>
                     <input type="submit" name="logout" id="drop_button" value="logout" />
                 </form>
             </div>
