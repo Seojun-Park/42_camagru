@@ -15,8 +15,10 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
         <a href="index.php"><img alt="logo" id="logo" src="../asset/logo.png" /></a>
     </div>
     <div class="header_row second_col">
-        <input type="text" id="searchbar" placeholder="Search user" />
-        <button type="submit" id="searchbutton" name="search"><img src="../asset/magnifier.png" alt="search" id="searchicon" /></button>
+        <form method="post">
+            <input type="text" id="searchbar" placeholder="Search user" />
+            <button type="submit" id="searchbutton" name="search"><img src="../asset/magnifier.png" alt="search" id="searchicon" /></button>
+        </form>
     </div>
     <div class="header_row third_col">
         <div class="col_block">
@@ -36,9 +38,10 @@ $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
         <div class="dropdown">
             <button class="dropbtn">버거</button>
             <div class="dropdown-content">
-                <a href="#">dunno</a>
-                <a href="#">profile</a>
-                <a href="#">logout</a>
+                <form method="post">
+                    <a href="#">profile</a>
+                    <input type="submit" name="logout" id="drop_button" value="logout" />
+                </form>
             </div>
         </div>
     </div>
