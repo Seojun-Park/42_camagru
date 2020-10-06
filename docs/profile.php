@@ -7,10 +7,9 @@ function getProfile($query, $obj)
     foreach ($obj as $val) {
         if (strcmp($val['login'], $query) == 0) {
             return $val;
-        } else {
-            return FALSE;
         }
     }
+    return FALSE;
 }
 
 $uri = $_SERVER['REQUEST_URI']; //uri를 구함 
@@ -65,8 +64,8 @@ $profile = getProfile($query, $obj);
                     ?>
                 </tr>
             </table>
-            <div class="btns">
-                <a href="#">수정하기</a>
+            <div class="modif_btn_container">
+                <a href="#" id="modif_btn">수정하기</a>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 /** @format */
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -34,16 +34,34 @@ a {
 
   #title {
     border: 1px solid black;
-    padding: 8 15px;
+    padding: 8px 15px;
     font-size: 18px;
     width: 120px;
   }
 
   #content {
     font-size: 18px;
-    padding: 8 15px;
+    padding: 8px 15px;
     border: 1px solid black;
     width: 300px;
+  }
+
+  .modif_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  #modif_btn {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+  #modif_btn:hover {
+    background-color: gray;
+    color: white;
+    transition: 0.4s linear;
   }
 }
 
@@ -76,15 +94,33 @@ a {
 
   #title {
     border: 1px solid black;
-    padding: 8 15px;
+    padding: 8px 15px;
     font-size: 24px;
     width: 200px;
   }
 
   #content {
     font-size: 24px;
-    padding: 8 15px;
+    padding: 8px 15px;
     border: 1px solid black;
     width: 450px;
+  }
+
+  .modif_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  #modif_btn {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+  #modif_btn:hover {
+    background-color: gray;
+    color: white;
+    transition: 0.4s linear;
   }
 }
