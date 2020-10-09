@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Foo Bar <foo@bar.com>
+MAINTAINER Jin Park <jinchul112@gmail.com>
 
 RUN apt-get update 
 RUN apt-get install wget
