@@ -8,6 +8,8 @@ RUN apt-get install -y git && apt-get install -y vim
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN chown -R www-data:www-data /var/lib/nginx
 
+COPY sources/start.sh ./
+
 VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
 
 WORKDIR /etc/nginx
