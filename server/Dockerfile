@@ -7,6 +7,9 @@ RUN apt-get install -y nginx
 RUN apt-get install -y git && apt-get install -y vim
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN chown -R www-data:www-data /var/lib/nginx
+RUN apt-get install php
+
+# COPY ../front ~/var/nginx/www
 
 VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
 
