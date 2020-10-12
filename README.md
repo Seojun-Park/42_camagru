@@ -7,4 +7,5 @@
 - [ ] : enable to reset password
 
 
-make docker COPY
+docker volume study will be needed
+docker compose
