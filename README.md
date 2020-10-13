@@ -1,11 +1,10 @@
 ## Camagru
 
 
-### hum...
-- [ ] : sign up(by email)
-- [ ] : login(with username)
-- [ ] : enable to reset password
 
-
+docker build --tag name:tag
 docker volume study will be needed
 docker compose
+docker exec -it <name> bash
+
+docker logs[container]
