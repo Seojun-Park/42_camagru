@@ -10,9 +10,9 @@ include '../hooks/func_view.php';
 <head>
     <meta charset="utf-8" />
     <title>Camagru</title>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/frame.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/frame.css" />
 </head>
 
 <body>

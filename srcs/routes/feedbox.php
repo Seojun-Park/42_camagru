@@ -34,7 +34,7 @@ $list = array(
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles/feedbox.css" />
+    <link rel="stylesheet" href="../styles/feedbox.css" />
 </head>
 
 <body>
