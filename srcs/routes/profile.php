@@ -14,15 +14,15 @@ function getProfile($query, $obj)
 
 $uri = $_SERVER['REQUEST_URI']; //uri를 구함 
 $query = substr($uri, strpos($uri, "?") + 1, strlen($uri));
-$obj = unserialize(file_get_contents("../db/account"));
+$obj = unserialize(file_get_contents("../../db/account"));
 $profile = getProfile($query, $obj);
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/profile.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/profile.css" />
 </head>
 
 <body>

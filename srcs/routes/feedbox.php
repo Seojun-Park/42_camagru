@@ -4,8 +4,8 @@ $list = array(
         'name' => 'jin',
         'familyname' => 'park',
         'email' => 'email@gmail.com',
-        'image' => '../asset/logo.png',
-        'avatar' => '../asset/logo.png',
+        'image' => '../../asset/logo.png',
+        'avatar' => '../../asset/logo.png',
         'feed' => 'Hello there',
         'login' => 'jinpark'
     ),
@@ -13,8 +13,8 @@ $list = array(
         'name' => 'dog',
         'familyname' => 'park',
         'email' => 'email1@gmail.com',
-        'image' => '../asset/dog.jpeg',
-        'avatar' => '../asset/dog.jpeg',
+        'image' => '../../asset/dog.jpeg',
+        'avatar' => '../../asset/dog.jpeg',
         'feed' => 'lalala',
         'login' => 'doggo'
     ),
@@ -22,8 +22,8 @@ $list = array(
         'name' => 'cat',
         'familyname' => 'park',
         'email' => 'email1@gmail.com',
-        'image' => '../asset/cat.jpeg',
-        'avatar' => '../asset/cat.jpeg',
+        'image' => '../../asset/cat.jpeg',
+        'avatar' => '../../asset/cat.jpeg',
         'feed' => 'lalala',
         'login' => 'catty'
     )
