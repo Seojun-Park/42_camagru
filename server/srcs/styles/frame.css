@@ -1,0 +1,33 @@
+/** @format */
+
+@media screen and (max-width: 768px) {
+  .page_side {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15px 40px;
+}
+
+.page_frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_side {
+  border: 1px solid black;
+  margin-top: 15px;
+  width: 250px;
+}

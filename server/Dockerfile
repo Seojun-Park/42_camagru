@@ -7,10 +7,13 @@ RUN apt-get install -y nginx
 RUN apt-get install -y git && apt-get install -y vim
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 RUN chown -R www-data:www-data /var/lib/nginx
-RUN apt-get install -y php
+RUN apt-get install -y php-fpm
+RUN apt-get install -y php-cli php-curl php-gd php-mysql php-mbstring zip unzip
 RUN apt-get remove -y apache2
+RUN chgrp root /etc/nginx/sites-available/default
+RUN chmod 664 /etc/nginx/sites-available/default
 
-COPY /vol /var/www/html
+COPY /srcs /var/www/html
 
 # VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
 VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
