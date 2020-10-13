@@ -13,6 +13,7 @@ RUN apt-get remove -y apache2
 COPY /vol /var/www/html
 
 # VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
+VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
 
 WORKDIR /etc/nginx
 

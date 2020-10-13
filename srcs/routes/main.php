@@ -1,6 +1,6 @@
 <?php
-include 'inc_head.php';
-include 'func_view.php';
+include '../hooks/inc_head.php';
+include '../hooks/func_view.php';
 
 ?>
 
