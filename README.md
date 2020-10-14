@@ -2,7 +2,7 @@
 
 
 
-docker build --tag name:tag
+docker build --force-rm --tag name:tag
 docker volume study will be needed
 docker compose
 docker exec -it <name> bash
