@@ -19,3 +19,5 @@ test
  docker run -d --name host_vol -e MYSQL_DATABASE=cama -e MYSQL_ROOT_PASSWORD=admin -v /Desktop/42_project/42_camagru/db:/var/lib/mysql mysql
 
  COPY /srcs /var/www/html
+
+ grep -r [array] [path]

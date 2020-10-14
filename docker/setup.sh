@@ -1,3 +1,7 @@
+#CERTIFICAT SSL
+mkdir /etc/nginx/ssl
+openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl/localhost.pem -keyout /etc/nginx/ssl/localhost.key -subj "/C=FR/ST=Paris/L=Paris/O=42 School/OU=emma/CN=localhost"
+
 #NGINX
 mkdir var/www/localhost
 mv ./default etc/nginx/sites-available
@@ -22,12 +26,6 @@ service php7.4-fpm start
 echo "GRANT ALL ON *.* TO 'emma'@'localhost' IDENTIFIED BY '123'" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
-#WORDPRESS
-wget https://wordpress.org/latest.tar.gz
-tar xvf latest.tar.gz
-mkdir var/www/localhost/wordpress
-cp -a wordpress/. /var/www/localhost/wordpress
-mv ./wp-config.php /var/www/localhost/wordpress
 
 #LANCEMENT
 service nginx start

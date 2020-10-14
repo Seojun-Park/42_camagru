@@ -1,30 +1,21 @@
 FROM ubuntu:20.04
 MAINTAINER Jin Park <jinchul112@gmail.com>
 
-RUN apt-get update 
-RUN apt-get install -y wget && apt-get install -y curl && apt-get remove -y nginx
+RUN apt-get update
+RUN apt-get install -y wget
 RUN apt-get install -y nginx
-RUN apt-get install -y git && apt-get install -y vim && apt-get install -y ufw
-RUN ufw allow 'Nginx Full'
-RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-RUN chown -R www-data:www-data /var/lib/nginx
-RUN apt-get install -y composer && apt-get install -y mariadb-server && apt-get install -y mariadb-client
-RUN apt-get install -y php7.4-fpm
-RUN apt-get install -y php7.4-cli php7.4-curl php7.4-gd php7.4-mysql php7.4-mbstring zip unzip
-RUN chgrp root /etc/nginx/sites-available/default
-RUN chmod 664 /etc/nginx/sites-available/default
-# RUN chmod 755 setup.sh
-# RUN echo "Setting up" && ./setup
+RUN apt-get remove -y apache2
+RUN apt-get install openssl
+RUN apt-get install -y mariadb-server mariadb-client
+RUN apt-get install -y php7.4 php7.4-fpm php7.4-mysql php-common php7.4-cli php7.4-common php7.4-json php7.4-opcache php7.4-readline
+RUN apt-get install -y php-mbstring php-zip php-gd
+RUN apt-get install -y php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
 
-COPY srcs/ /var/www/html
-# COPY docker/setup.sh ./
+COPY docker/start.sh ./
+COPY docker/config.inc.php ./
+COPY docker/default ./
 
-# VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
-# WORKDIR /etc/nginx
-
-CMD ["nginx"]
-# CMD bash /start.sh
-
+CMD bash /start.sh
 
 EXPOSE 80
 EXPOSE 443
