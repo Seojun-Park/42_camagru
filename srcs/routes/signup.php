@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <title>Rush</title>
-  <link rel="stylesheet" href="styles/auth.css" />
-  <link rel="stylesheet" href="styles/text.css" />
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <link rel="stylesheet" href="../styles/text.css" />
 </head>
 
 <body>
