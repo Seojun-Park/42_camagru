@@ -13,38 +13,44 @@ docker / php / html / mysql
 
     docker build --tag name:tag
 
-docker build --force-rm --tag name:tag
-docker volume study will be needed
-docker compose
-docker exec -it <name> bash
+    docker build --force-rm --tag name:tag
 
-docker logs[container]
+    docker volume study will be needed
 
-grep -r [array][path]
+    docker compose
 
-docker network create cama-network
-docker run --name db -d --network cama-network mysql
-docker run --name cama -d -p 80:80 --network cama-network cama:0.2
+    docker exec -it <name> bash
+
+    docker logs[container]
+
+    grep -r [array][path]
+
+    docker network create cama-network
+
+    docker run --name db -d --network cama-network mysql
+
+    docker run --name cama -d -p 80:80 --network cama-network cama:0.2
+
 
 
 ###phpmyadmin authentification
-Method 1 : create a new super user for phpadmin login with
+    Method 1 : create a new super user for phpadmin login with
 
-mysql -u root -p
+    mysql -u root -p
 
-then
-CREATE USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password_here';
+    then
+    CREATE USER 'user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password_here';
 
-give permission
-GRANT ALL PRIVILEGES ON _._ TO 'pmauser'@'localhost';
+    give permission
+    GRANT ALL PRIVILEGES ON _._ TO 'pmauser'@'localhost';
 
-method 2 : change root Authentication Method
+    method 2 : change root Authentication Method
 
-mysql
+    mysql
 
-SELECT user,plugin,host FROM mysql.user WHERE user = 'root';
+    SELECT user,plugin,host FROM mysql.user WHERE user = 'root';
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'enter_password_here';
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'enter_password_here';
 
-flush it
-FLUSH PRIVILEGES;
+    flush it
+    FLUSH PRIVILEGES;
