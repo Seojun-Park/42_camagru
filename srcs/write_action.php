@@ -10,7 +10,7 @@ $date = date('Y-m-d H:i:s');            //Date
 $URL = './index.php';                   //return URL
 
 
-$query = "insert into board (number,title, content, date, hit, id, password) 
+$query = "insert into feed (number,title, content, date, hit, id, password) 
                         values(null,'$title', '$content', '$date',0, '$id', '$pw')";
 
 
