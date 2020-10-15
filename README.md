@@ -1,11 +1,16 @@
 # Camagru
 
+##Summary
+Camagru is a first 42 web project that allow the students to create a small social media web(such as facebook or instagram) application. A user can post their images, photos, statements...etc.
+
 ### In Progress
 
 
 ## Server
->##Dokcer
 
+
+## Database
+    
 
 
 docker build --force-rm --tag name:tag
@@ -15,14 +20,6 @@ docker exec -it <name> bash
 
 docker logs[container]
 
-service php7.4-fpm start
-chgrp ubuntu /etc/nginx/sites-available/default
-chmod 664 /etc/nginx/sites-available/default
-
-
-test 
-
- COPY /srcs /var/www/html
 
  grep -r [array] [path]
 
