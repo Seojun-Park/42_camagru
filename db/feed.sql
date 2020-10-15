@@ -5,6 +5,6 @@ CREATE TABLE feed
     content TEXT not null,
     id VARCHAR(20) not null,
     password VARCHAR(20) not null,
-    date DATETIME not null,
+    date DATETIME not null
 );
 
