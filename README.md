@@ -7,9 +7,13 @@
 > Camagru is a first 42 web project that allow the students to create a small social media web(such as facebook or instagram) application. A user can post their images, photos, statements...etc.
 
 ## Stacks
-<img src="https://www.aldakur.net/wp-content/uploads/2017/03docker-logo-1024x914.png" alt="docker" width="30px" height="30px">
+docker php html mysql
 
 ## Server
+
+### Docker
+#### Build an image
+    docker build --tag name:tag
 
 ## Database
 
