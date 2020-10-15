@@ -11,8 +11,8 @@ docker php html mysql
 
 ## Server
 
-### Docker
-#### Build an image
+> **Docker**
+>> Build an image
     docker build --tag name:tag
 
 ## Database
