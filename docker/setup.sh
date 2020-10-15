@@ -18,6 +18,7 @@ echo "FLUSH PRIVILEGES;" | mysql -u root
 #PHPMYADMIN
 wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
 tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
+rm -rf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 mv phpMyAdmin-4.9.0.1-all-languages var/www/localhost/phpmyadmin
 mv ./config.inc.php var/www/localhost/phpmyadmin
 chmod 660 /var/www/localhost/phpmyadmin/config.inc.php

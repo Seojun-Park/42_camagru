@@ -12,7 +12,7 @@ RUN apt-get install -y php-mbstring php-zip php-gd
 RUN apt-get install -y php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
 RUN apt-get install -y vim && apt-get install -y git
 
-COPY srcs/ /var/www/html
+COPY srcs/ /var/www/localhost
 COPY docker/setup.sh ./
 COPY docker/config.inc.php ./
 COPY docker/default ./
