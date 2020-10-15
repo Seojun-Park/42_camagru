@@ -16,8 +16,10 @@ chmod 664 /etc/nginx/sites-available/default
 
 test 
 
- docker run -d --name host_vol -e MYSQL_DATABASE=cama -e MYSQL_ROOT_PASSWORD=admin -v /Desktop/42_project/42_camagru/db:/var/lib/mysql mysql
-
  COPY /srcs /var/www/html
 
  grep -r [array] [path]
+
+ docker network create cama-network
+ docker run --name db -d --network cama-network mysql
+ docker run --name cama -d -p 80:80 --network cama-network cama:0.2
