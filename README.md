@@ -12,7 +12,7 @@ docker php html mysql
 ## Server
 
 > **Docker**
->> Build an image
+- [ ] : Studying of docker volume & composer are needed
     docker build --tag name:tag
 
 ## Database
