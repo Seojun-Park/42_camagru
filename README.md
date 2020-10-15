@@ -32,7 +32,7 @@ docker / php / html / mysql
 
     docker run --name cama -d -p 80:80 --network cama-network cama:0.2
 
-###phpmyadmin
+### phpmyadmin
 
     Method 1 : create a new super user for phpadmin login with
 
