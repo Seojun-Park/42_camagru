@@ -11,9 +11,13 @@ docker php html mysql
 
 ## Server
 
-> **Docker**
-- [ ] : Studying of docker volume & composer are needed
     docker build --tag name:tag
+- [ ] : Studying of docker volume & composer & network are needed<br>
+example of creating docker network:
+    docker network create <name of Network>
+    docker run --name db -d --network netname mysql
+    docker run --name container-name -d -p 80:80 --network net-name image
+
 
 ## Database
 
