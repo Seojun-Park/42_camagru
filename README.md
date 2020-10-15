@@ -7,6 +7,7 @@
 > Camagru is a first 42 web project that allow the students to create a small social media web(such as facebook or instagram) application. A user can post their images, photos, statements...etc.
 
 ## Stacks
+
 docker / php / html / mysql
 
 ## memo
@@ -31,9 +32,8 @@ docker / php / html / mysql
 
     docker run --name cama -d -p 80:80 --network cama-network cama:0.2
 
+###phpmyadmin
 
-
-###phpmyadmin authentification
     Method 1 : create a new super user for phpadmin login with
 
     mysql -u root -p
