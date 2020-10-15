@@ -8,9 +8,7 @@
 
 ## Stacks
 
-   *docker*
-   *php/html*
-   *mysql*
+<li>_docker_<li>/<br/><li>_php/html_</li><br/><li>_mysql_</li>
 
 ## Server
 
