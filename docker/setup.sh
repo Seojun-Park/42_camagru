@@ -15,6 +15,7 @@ echo "CREATE DATABASE db_cama DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci
 echo "GRANT ALL ON .* TO 'admin'@'localhost' IDENTIFIED BY 'admin';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
+
 #PHPMYADMIN
 wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
 tar xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
