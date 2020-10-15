@@ -1,0 +1,27 @@
+<?php
+$connect = mysqli_connect("localhost", "admin", "admin", "db_cama") or die("fail");
+
+$id = $_POST[name];                      //Writer
+$pw = $_POST[pw];                        //Password
+$title = $_POST[title];                  //Title
+$content = $_POST[content];              //Content
+$date = date('Y-m-d H:i:s');            //Date
+
+$URL = './index.php';                   //return URL
+
+
+$query = "insert into board (number,title, content, date, hit, id, password) 
+                        values(null,'$title', '$content', '$date',0, '$id', '$pw')";
+
+
+$result = $connect->query($query);
+if ($result) {
+    echo "done!";
+    sleep(3);
+    echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+} else {
+    echo "FAIL";
+}
+
+mysqli_close($connect);
+?>

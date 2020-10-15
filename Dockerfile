@@ -13,11 +13,14 @@ RUN apt-get install -y php-curl php-gd php-intl php-mbstring php-soap php-xml ph
 RUN apt-get install -y vim && apt-get install -y git
 
 COPY srcs/ /var/www/localhost
+COPY db/ /var/www/localhost/db
 COPY docker/setup.sh ./
 COPY docker/config.inc.php ./
 COPY docker/default ./
 
 CMD bash /setup.sh
+
+# WORKDIR /var/www/localhost
 
 EXPOSE 80
 EXPOSE 443
