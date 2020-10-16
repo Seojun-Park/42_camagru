@@ -1,9 +1,1 @@
-create table board (
-     number int unsigned not null primary key auto_increment,
-     title varchar(150) not null,
-     content text not null,
-     id varchar(20) not null,
-     password varchar(20) not null,
-     date datetime not null,
-     hit int unsigned not null default 0
-     );
+CREATE TABLE `db_cama`.`board` ( `idx` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , `pw` VARCHAR(100) NOT NULL , `title` VARCHAR(100) NOT NULL , `content` TEXT NOT NULL , `date` DATE NOT NULL , `hit` INT NOT NULL , PRIMARY KEY (`idx`)) ENGINE = InnoDB;

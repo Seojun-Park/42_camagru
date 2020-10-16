@@ -1,73 +1,34 @@
-<!DOCTYPE>
-
-<html>
-
+<!doctype html>
 <head>
-    <meta charset='utf-8'>
+<meta charset="UTF-8">
+<title>게시판</title>
+<link rel="stylesheet" type="text/css" href="/styles/test.css" />
 </head>
-<style>
-    table.table2 {
-        border-collapse: separate;
-        border-spacing: 1px;
-        text-align: left;
-        line-height: 1.5;
-        border-top: 1px solid #ccc;
-        margin: 20px 10px;
-    }
-
-    table.table2 tr {
-        width: 50px;
-        padding: 10px;
-        font-weight: bold;
-        vertical-align: top;
-        border-bottom: 1px solid #ccc;
-    }
-
-    table.table2 td {
-        width: 100px;
-        padding: 10px;
-        vertical-align: top;
-        border-bottom: 1px solid #ccc;
-    }
-</style>
-
 <body>
-    <form method="post" action="write_action.php">
-        <table style="padding-top:50px" align=center width=700 border=0 cellpadding=2>
-            <tr>
-                <td height=20 align=center bgcolor=#ccc>
-                    <font color=white> 글쓰기</font>
-                </td>
-            </tr>
-            <tr>
-                <td bgcolor=white>
-                    <table class="table2">
-                        <tr>
-                            <td>작성자</td>
-                            <td><input type=text name=name size=20> </td>
-                        </tr>
-
-                        <tr>
-                            <td>제목</td>
-                            <td><input type=text name=title size=60></td>
-                        </tr>
-
-                        <tr>
-                            <td>내용</td>
-                            <td><textarea name=content cols=85 rows=15></textarea></td>
-                        </tr>
-
-                        <tr>
-                            <td>비밀번호</td>
-                            <td><input type=password name=pw size=10 maxlength=10></td>
-                        </tr>
-                    </table>
-
-                    <center>
-                        <input type="submit" value="작성">
-                    </center>
-                </td>
-            </tr>
-        </table>
-    </form>
-</body>
+    <div id="board_write">
+        <h1><a href="/">자유게시판</a></h1>
+        <h4>글을 작성하는 공간입니다.</h4>
+            <div id="write_area">
+                <form action="write_ok.php" method="post">
+                    <div id="in_title">
+                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                    </div>
+                    <div class="wi_line"></div>
+                    <div id="in_name">
+                        <textarea name="name" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
+                    </div>
+                    <div class="wi_line"></div>
+                    <div id="in_content">
+                        <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+                    </div>
+                    <div id="in_pw">
+                        <input type="password" name="pw" id="upw"  placeholder="비밀번호" required />  
+                    </div>
+                    <div class="bt_se">
+                        <button type="submit">글 작성</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
