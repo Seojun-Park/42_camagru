@@ -54,3 +54,6 @@ docker / php / html / mysql
 
     flush it
     FLUSH PRIVILEGES;
+
+
+sql
