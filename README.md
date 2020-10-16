@@ -55,5 +55,4 @@ docker / php / html / mysql
     flush it
     FLUSH PRIVILEGES;
 
-
-sql
+mysql -u root -p pwd < /path/query.sql

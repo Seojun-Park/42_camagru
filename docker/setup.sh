@@ -12,7 +12,7 @@ chmod -R 755 /var/www/*
 #MYSQL
 service mysql start
 echo "CREATE DATABASE db_cama DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -u root
-echo "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD '*4ACFE3202A5FF5CF467898FC58AAB1D615029441';" | mysql -u root
+echo "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD 'admin';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
 
