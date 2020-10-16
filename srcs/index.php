@@ -49,7 +49,7 @@
     <?php
     $connect = mysqli_connect('localhost', 'admin', 'admin', 'db_cama') or die("connect fail");
     $query = "select * from feed order by number desc";
-    $result = $connect->query($query);
+    $result = mysqli_query($connect, $query);
     $total = mysqli_num_rows($result);
 
     ?>

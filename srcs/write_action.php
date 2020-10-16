@@ -1,8 +1,8 @@
 <?php
-$connect = mysqli_connect("localhost", "admin", "admin", "db_cama") or die("fail");
+$connect = mysqli_connect("localhost", "admin", "admin", "db_cama") or die("connect fail");
 
 $id = $_POST[name];                      //Writer
-$pw = $_POST[pw];                        //Password
+$pw = $_POST[pw];
 $title = $_POST[title];                  //Title
 $content = $_POST[content];              //Content
 $date = date('Y-m-d H:i:s');            //Date
@@ -14,7 +14,8 @@ $query = "insert into feed (number,title, content, date, hit, id, password)
                         values(null,'$title', '$content', '$date',0, '$id', '$pw')";
 
 
-$result = $connect->query($query);
+$result = mysqli_query($connect, $query);
+
 if ($result) {
     echo "done!";
     sleep(3);
