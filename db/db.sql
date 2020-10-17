@@ -36,20 +36,19 @@ CREATE TABLE `board` (
   `pw` varchar(10000) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `date` date NOT NULL,
-  `hit` int(11)
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `board`
 --
 
-INSERT INTO `board` (`idx`, `name`, `pw`, `title`, `content`, `date`, `hit`) VALUES
-(1, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02', 0),
-(2, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02', 0),
-(3, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02', 0),
-(4, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02', 0),
-(5, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02', 0);
+INSERT INTO `board` (`idx`, `name`, `pw`, `title`, `content`, `date`) VALUES
+(1, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(2, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(3, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(4, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(5, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02');
 
 --
 -- Indexes for dumped tables

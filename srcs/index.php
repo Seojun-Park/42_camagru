@@ -18,12 +18,11 @@
                     <th width="500">제목</th>
                     <th width="120">글쓴이</th>
                     <th width="100">작성일</th>
-                    <th width="100">조회수</th>
                 </tr>
             </thead>
             <?php
             // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-            $sql = mq("select * from board order by idx desc limit 0,5");
+            $sql = mq("select * from board order by idx desc limit 0,10");
             while ($board = $sql->fetch_array()) {
                 //title변수에 DB에서 가져온 title을 선택
                 $title = $board["title"];
@@ -38,13 +37,12 @@
                         <td width="500"><a href="/page/board/read.php?idx=<?php echo $board["idx"]; ?>"><?php echo $title; ?></a></td>
                         <td width="120"><?php echo $board['name'] ?></td>
                         <td width="100"><?php echo $board['date'] ?></td>
-                        <td width="100"><?php echo $board['hit']; ?></td>
                     </tr>
                 </tbody>
             <?php } ?>
         </table>
         <div id="write_btn">
-            <a href="/page/board/write.php"><button>글쓰기</button></a>
+            <a href="page/board/write.php"><button>글쓰기</button></a>
         </div>
     </div>
 </body>

@@ -5,13 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<link rel="stylesheet" type="text/css" href="../../style.css" />
+<link rel="stylesheet" type="text/css" href="../../style/test.css" />
 </head>
 <body>
 	<?php
 		$bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
 		$hit = mysqli_fetch_array(mq("select * from board where idx ='".$bno."'"));
-		$hit = $hit['hit'] + 1;
 		$fet = mq("update board set hit = '".$hit."' where idx = '".$bno."'");
 		$sql = mq("select * from board where idx='".$bno."'"); /* 받아온 idx값을 선택 */
 		$board = $sql->fetch_array();
