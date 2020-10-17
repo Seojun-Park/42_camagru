@@ -1,20 +1,15 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
-
-//각 변수에 write.php에서 input name값들을 저장한다
-$username = $_POST['name'];
-$title = $_POST['title'];
-$content = $_POST['content'];
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 $date = date('Y-m-d');
-if($username && $title && $content){
-    $sql = mq("insert into board(name,title,content,date) values('".$username."','".$title."','".$content."','".$date."')"); 
-    echo "<script>
-    alert('글쓰기 완료되었습니다.');
-    location.href='/';</script>";
-}else{
-    echo "<script>
-    alert('글쓰기에 실패했습니다.');
-    history.back();</script>";
-}
-?>
+$tmpfile =  $_FILES['b_file']['tmp_name'];
+$o_name = $_FILES['b_file']['name'];
+$filename = iconv("UTF-8", "EUC-KR", $_FILES['b_file']['name']);
+$folder = "../../upload/" . $filename;
+move_uploaded_file($tmpfile, $folder);
+
+$sql = mq("insert into board(name,title,content,date,file) values('" . $_POST['name'] . "','" . $_POST['title'] . "','" . $_POST['content'] . "','" . $date . "','" . $o_name . "')"); ?>
+<script type="text/javascript">
+    alert("글쓰기 완료되었습니다.");
+</script>
+<meta http-equiv="refresh" content="0 url=/" />

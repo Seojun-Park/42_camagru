@@ -35,8 +35,22 @@ CREATE TABLE `board` (
   `name` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `file` VARCHAR(1000)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for tabl `reply`
+--
+
+CREATE TABLE `reply` (
+  `idx` int(11) NOT NULL,
+  `con_num` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Dumping data for table `board`
@@ -49,17 +63,6 @@ INSERT INTO `board` (`idx`, `name`, `title`, `content`, `date`) VALUES
 (4, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
 (5, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02');
 
---
--- Indexes for dumped tables
---
-
-CREATE TABLE `reply` (
-  `idx` int(11) NOT NULL,
-  `con_num` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `content` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- reply's dummy data
