@@ -86,6 +86,8 @@ INSERT INTO `reply` (`idx`, `con_num`, `name`, `content`, `date`) VALUES
 (1, 7, 'admin', '1234', '2018-04-02 19:47:19'),
 (2, 7, 'admin', '댓글 테스트', '2018-04-02 19:47:26');
 
+INSERT INTO `member` (`idx`, `id`, `pw`, `firstname`, `lastname`, `email`, `avatar`, `username`) VALUES
+(1, 'jinpark', '1234', 'jin', 'park', 'jinchul112@gmail.com', 'no', 'jinPark');
 --
 -- Indexes for table `board`
 --
@@ -108,8 +110,12 @@ ALTER TABLE `board`
 -- AUTO_INCREMENT for table `board`
 --
 
-  ALTER TABLE `reply`
+ALTER TABLE `reply`
   MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `member`
+  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
