@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "../../db.php";
 $date = date('Y-m-d');
 $tmpfile =  $_FILES['b_file']['tmp_name'];
 $o_name = $_FILES['b_file']['name'];
@@ -12,4 +12,4 @@ $sql = mq("insert into board(name,title,content,date,file) values('" . $_POST['n
 <script type="text/javascript">
     alert("글쓰기 완료되었습니다.");
 </script>
-<meta http-equiv="refresh" content="0 url=/" />
+<meta http-equiv="refresh" content="0 url=board_home.php" />

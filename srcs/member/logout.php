@@ -1,5 +1,5 @@
 <?php
-	include "../db.php";
+	include $_SERVER['DOCUMENT_ROOT'] ."../db.php";
 	session_destroy();
 ?>
 <meta charset="utf-8">

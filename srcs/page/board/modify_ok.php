@@ -1,5 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "../../db.php";
+
 
 $bno = $_GET['idx'];
 $username = $_POST['name'];
