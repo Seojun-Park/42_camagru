@@ -1,5 +1,5 @@
 <?php
-include "../db.php";
+include "../../db.php";
 
 $userid = $_POST['userid'];
 $userpw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
@@ -9,7 +9,7 @@ $lastname = $_POST['lastname'];
 $email = $_POST['email'] . '@' . $_POST['emaddress'];
 $avatar = 'TBU';
 
-$sql = mq("insert into member (id,pw,firstname,lastname,email,username) values('" . $userid . "','" . $userpw . "','"  . $firstname . "','" . $lastname . "','" . $email . "','" . $avatar . "','" . $username .  "')");
+$sql = mq("insert into member (id,pw,firstname,lastname,email,avatar,username) values('" . $userid . "','" . $userpw . "','"  . $firstname . "','" . $lastname . "','" . $email . "','" . $avatar . "','" . $username .  "')");
 
 ?>
 <meta charset="utf-8" />
