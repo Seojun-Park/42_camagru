@@ -24,6 +24,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php"; /* db load */
 			<?php echo $board['name']; ?> <?php echo $board['date']; ?>
 			<div id="bo_line"></div>
 		</div>
+		<div>
+			파일 : <a href="../../upload/<?php echo $board['file']; ?>" download><?php echo $board['file']; ?></a>
+		</div>
 		<div id="bo_content">
 			<?php echo nl2br("$board[content]"); ?>
 		</div>
