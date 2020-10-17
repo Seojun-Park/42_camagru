@@ -12,7 +12,7 @@ include "/db.php";
 <body>
     <div id="login_box">
         <h1>로그인</h1>
-        <form method="post" action="page/member/login_ok.php">
+        <form method="post" action="member/login_ok.php">
             <table align="center" border="0" cellspacing="0" width="300">
                 <tr>
                     <td width="130" colspan="1">
@@ -29,7 +29,7 @@ include "/db.php";
                 </tr>
                 <tr>
                     <td colspan="3" align="center" class="mem">
-                        <a href="page/member/member.php">회원가입 하시겠습니까?</a>
+                        <a href="member/member.php">회원가입 하시겠습니까?</a>
                     </td>
                 </tr>
             </table>
