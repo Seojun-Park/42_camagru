@@ -25,7 +25,7 @@ include "/db.php";
                 </tr>
                 <tr>
                     <td>Nickname</td>
-                    <td><input type="password" size="35" name="username" placeholder="Nickname"></td>
+                    <td><input type="test" size="35" name="username" placeholder="Nickname"></td>
                 </tr>
                 <tr>
                     <td>First name</td>
@@ -37,7 +37,13 @@ include "/db.php";
                 </tr>
                 <tr>
                     <td>E-mail</td>
-                    <td><input type="email" name="email" pattern=".+@globex.com" required></td>
+                    <td><input type="text" name="email">@<select name="emaddress">
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="yahoo.com">yahoo.com</option>
+                            <option value="hotmail.com">hatmail.com</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="daum.net">daum.net</option>
+                        </select></td>
                 </tr>
             </table>
 
