@@ -37,7 +37,7 @@ CREATE TABLE `board` (
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `date` date NOT NULL,
-  `hit` int(11) NOT NULL
+  `hit` int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
