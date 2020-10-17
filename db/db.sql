@@ -86,7 +86,7 @@ INSERT INTO `reply` (`idx`, `con_num`, `name`, `content`, `date`) VALUES
 (2, 7, 'admin', '댓글 테스트', '2018-04-02 19:47:26');
 
 INSERT INTO `member` (`idx`, `id`, `pw`, `firstname`, `lastname`, `email`, `avatar`, `username`) VALUES
-(1, 'jinpark', '1234', 'jin', 'park', 'jinchul112@gmail.com', 'no', 'jinPark');
+(1, 'admin', 'admin', 'a', 'dmin', 'jinchul112@gmail.com', 'no', 'admin');
 --
 -- Indexes for table `board`
 --
