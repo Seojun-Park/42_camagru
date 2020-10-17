@@ -14,6 +14,7 @@ service mysql start
 echo "CREATE DATABASE db_cama DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -u root
 echo "GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' IDENTIFIED BY PASSWORD 'admin';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
+mysql -u root -p db_cama < var/www/localhost/db/feed.sql
 
 
 #PHPMYADMIN
