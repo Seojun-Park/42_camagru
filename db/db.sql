@@ -65,7 +65,6 @@ CREATE TABLE `member` (
     ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 
-
 --
 -- Dumping data for table `board`
 --
