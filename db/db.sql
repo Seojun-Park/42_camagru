@@ -55,7 +55,7 @@ CREATE TABLE `reply` (
 CREATE TABLE `member` (
     `idx` INT NOT NULL ,
     `id` VARCHAR(100) NOT NULL ,
-    `pw` VARCHAR(100) NOT NULL ,
+    `pw` VARCHAR(1000) NOT NULL ,
     `firstname` VARCHAR(100) NOT NULL ,
     `lastname` VARCHAR(100) NOT NULL ,
     `email` VARCHAR(100) NOT NULL ,
@@ -85,9 +85,6 @@ INSERT INTO `board` (`idx`, `name`, `title`, `content`, `date`) VALUES
 INSERT INTO `reply` (`idx`, `con_num`, `name`, `content`, `date`) VALUES
 (1, 7, 'admin', '1234', '2018-04-02 19:47:19'),
 (2, 7, 'admin', '댓글 테스트', '2018-04-02 19:47:26');
-
-INSERT INTO `member` (`id`, `pw`, `firstname`, `lastname`, `email`, `username`, `avatar`) VALUES
-('jinpark', 1234, 'Jin', 'park', 'jinchul112@gmail.com', 'Jinpark', 'no');
 
 --
 -- Indexes for table `board`

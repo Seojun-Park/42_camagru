@@ -27,4 +27,14 @@ echo -e "\033[1;33mBuilding new docker image...\033[0m"
 docker build --tag $tname .
 echo -e "\033[1;33mRunning docker container...\033[0m"
 docker run -d -p 80:80 $tname
-docker ps -a
+
+echo -e "\033[1;33mDo you want to get in? [y/n]\033[0m"
+read cans
+
+if [ ${yes} = $cans ]; then
+    docker ps -a
+    echo -e "\033[1;33mPut the Container ID\033[0m"
+    read cid
+    docker exec -it $cid bash
+
+fi
