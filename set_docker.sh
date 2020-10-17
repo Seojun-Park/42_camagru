@@ -1,5 +1,7 @@
 #! /bin/ksh
 
+docker ps -a
+
 echo -e "\033[1;32mType Container ID\033[0m"
 read  word
 
@@ -10,9 +12,7 @@ echo -e "\033[1;33mStopping the docker container...\033[0m"
 docker stop $word
 echo -e "\033[1;33mDeleting the docker container...\033[0m"
 docker rm $word
-echo -e "\n"
 docker image ls
-echo -e "\n"
 
 echo -e "\033[1;32mDo you want to clean non tag images? [y/n]\033[0m"
 read ans
@@ -27,6 +27,4 @@ echo -e "\033[1;33mBuilding new docker image...\033[0m"
 docker build --tag $tname .
 echo -e "\033[1;33mRunning docker container...\033[0m"
 docker run -d -p 80:80 $tname
-echo -e "\n"
 docker ps -a
-echo -e "\n"

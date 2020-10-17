@@ -33,7 +33,6 @@ USE `db_cama`;
 CREATE TABLE `board` (
   `idx` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `pw` varchar(10000) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `date` date NOT NULL
@@ -43,16 +42,33 @@ CREATE TABLE `board` (
 -- Dumping data for table `board`
 --
 
-INSERT INTO `board` (`idx`, `name`, `pw`, `title`, `content`, `date`) VALUES
-(1, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
-(2, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
-(3, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
-(4, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
-(5, 'S Writer', '', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02');
+INSERT INTO `board` (`idx`, `name`, `title`, `content`, `date`) VALUES
+(1, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(2, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(3, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(4, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02'),
+(5, 'S Writer', '자유게시판입니다.', '자유게시판입니다.', '2016-07-02');
 
 --
 -- Indexes for dumped tables
 --
+
+CREATE TABLE `reply` (
+  `idx` int(11) NOT NULL,
+  `con_num` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `content` text NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- reply's dummy data
+--
+
+INSERT INTO `reply` (`idx`, `con_num`, `name`, `content`, `date`) VALUES
+(1, 7, 'admin', '1234', '2018-04-02 19:47:19'),
+(2, 7, 'admin', '댓글 테스트', '2018-04-02 19:47:26');
+
 
 --
 -- Indexes for table `board`
@@ -63,12 +79,21 @@ ALTER TABLE `board`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+ALTER TABLE `reply`
+  ADD PRIMARY KEY (`idx`);
 
 --
 -- AUTO_INCREMENT for table `board`
 --
 ALTER TABLE `board`
   MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `board`
+--
+
+  ALTER TABLE `reply`
+  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
