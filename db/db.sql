@@ -33,7 +33,7 @@ USE `db_cama`;
 CREATE TABLE `board` (
   `idx` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `pw` varchar(100) NOT NULL,
+  `pw` varchar(10000) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
   `date` date NOT NULL,
