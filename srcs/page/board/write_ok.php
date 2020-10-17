@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . "../../db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 $date = date('Y-m-d');
 $tmpfile =  $_FILES['b_file']['tmp_name'];
 $o_name = $_FILES['b_file']['name'];

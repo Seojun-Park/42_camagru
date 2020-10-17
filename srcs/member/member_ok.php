@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "../db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 $userid = $_POST['userid'];
 $userpw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
@@ -16,4 +16,4 @@ $sql = mq("insert into member (id,pw,firstname,lastname,email,avatar,username)va
 <script type="text/javascript">
     alert('Done!');
 </script>
-<meta http-equiv="refresh" content="0 url=member/member.php">
+<meta http-equiv="refresh" content="0 url=/index.php">

@@ -1,5 +1,4 @@
-<?php
-include $_SERVER['DOCUMENT_ROOT'] . "../../db.php";
+<?php include  $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 $bno = $_GET['idx'];
 $sql = mq("delete from board where idx='$bno';");

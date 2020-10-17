@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "../db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 //POST로 받아온 아이다와 비밀번호가 비었다면 알림창을 띄우고 전 페이지로 돌아갑니다.
 if ($_POST["userid"] == "" || $_POST["userpw"] == "") {

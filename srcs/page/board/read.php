@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "../../db.php"; /* db load */
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php"; /* db load */
 ?>
 <!doctype html>
 

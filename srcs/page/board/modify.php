@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "../../db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 $bno = $_GET['idx'];
 $sql = mq("select * from board where idx='$bno';");
