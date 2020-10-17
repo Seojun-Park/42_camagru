@@ -53,7 +53,7 @@ CREATE TABLE `reply` (
 
 
 CREATE TABLE `member` (
-    `idx` INT NOT NULL AUTO_INCREMENT,
+    `idx` INT NOT NULL ,
     `id` VARCHAR(100) NOT NULL ,
     `pw` VARCHAR(1000) NOT NULL ,
     `firstname` VARCHAR(100) NOT NULL ,
