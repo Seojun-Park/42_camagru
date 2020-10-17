@@ -53,16 +53,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php"; /* db load */
 					<div class="dat_edit">
 						<form method="post" action="rep_modify_ok.php">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
-							<input type="password" name="pw" class="dap_sm" placeholder="비밀번호" />
 							<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
 							<input type="submit" value="수정하기" class="re_mo_bt">
-						</form>
-					</div>
-					<!-- 댓글 삭제 비밀번호 확인 -->
-					<div class='dat_delete'>
-						<form action="reply_delete.php" method="post">
-							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
-							<p>비밀번호<input type="password" name="pw" /> <input type="submit" value="확인"></p>
 						</form>
 					</div>
 				</div>
@@ -72,7 +64,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php"; /* db load */
 			<div class="dap_ins">
 				<form action="reply_ok.php?idx=<?php echo $bno; ?>" method="post">
 					<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디">
-					<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
 					<div style="margin-top:10px; ">
 						<textarea name="content" class="reply_content" id="re_content"></textarea>
 						<button id="rep_bt" class="re_bt">댓글</button>

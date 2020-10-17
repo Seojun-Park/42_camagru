@@ -8,7 +8,7 @@ $title = $_POST['title'];
 $content = $_POST['content'];
 $date = date('Y-m-d');
 if($username && $title && $content){
-    $sql = mq("insert into board(name,pw,title,content,date) values('".$username."','".$userpw."','".$title."','".$content."','".$date."')"); 
+    $sql = mq("insert into board(name,title,content,date) values('".$username."','".$title."','".$content."','".$date."')"); 
     echo "<script>
     alert('글쓰기 완료되었습니다.');
     location.href='/';</script>";
