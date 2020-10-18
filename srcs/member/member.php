@@ -20,11 +20,8 @@ include "check.php";
             <table>
                 <tr>
                     <td>User ID</td>
-                    <td>
                     <td><input type="text" size="35" name="userid" id="userid" class="check" placeholder="아이디" required />
-                    <td>
-                        <div id="id_check">아이디가 실시간으로 검사됩니다</div>
-                    </td>
+                    <td><div id="id_check">아이디가 실시간으로 검사됩니다</div></td>
                     </td>
                 </tr>
                 <tr>
