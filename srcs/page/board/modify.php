@@ -10,7 +10,7 @@ $board = $sql->fetch_array();
 <head>
     <meta charset="UTF-8">
     <title>게시판</title>
-    <link rel="stylesheet" href="../../style/test.css" />
+    <link rel="stylesheet" href="../../css/board.css" />
 </head>
 
 <body>

@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php"; /* db load */
 <head>
 	<meta charset="UTF-8">
 	<title>게시판</title>
-	<link rel="stylesheet" type="text/css" href="../../styles/test.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/board.css" />
 </head>
 
 <body>
