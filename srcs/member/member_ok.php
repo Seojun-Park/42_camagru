@@ -9,7 +9,15 @@ $lastname = $_POST['lastname'];
 $email = $_POST['email'] . '@' . $_POST['emaddress'];
 $avatar = 'TBU';
 
-$sql = mq("insert into member(id,pw,firstname,lastname,email,avatar,username) values('" . $userid . "','" . $userpw . "','" . $firstname . "','" . $lastname . "','" . $email . "','" . $avatar . "','" . $username .  "')"); ?>
+$sql = mq("insert into member(id,pw,firstname,lastname,email,avatar,username) 
+values('" . $userid . "','" 
+. $userpw . "','" 
+. $firstname . "','" 
+. $lastname . "','" 
+. $email . "','" 
+. $avatar . "','" 
+. $username .  "')"
+); ?>
 <meta charset="utf-8" />
 <script type="text/javascript">
     alert('Done!');
