@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+include "check.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,6 +8,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 <head>
     <meta charset="utf-8" />
     <title>회원가입 폼</title>
+
 </head>
 
 <body>
@@ -19,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
                     <td>User ID</td>
                     <td>
                         <input type="text" size="35" name="userid" id="uid" placeholder="User ID">
-                        <input type="button" value="DupliCheck" onclick="checkid();"/>
+                        <input type="button" value="dup_check" onclick="checkid();" />
                     </td>
                 </tr>
                 <tr>
@@ -56,4 +58,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
     </form>
 </body>
 
+
 </html>
+<script>
+    function checkid() {
+        var userid = document.getElementById("uid").value;
+        if (userid) {
+            url = "check.php?userid=" + userid;
+            window.open(url, "chkid", "width=300,height=100");
+        } else {
+            alert("please type your id");
+        }
+    }
+</script>

@@ -14,6 +14,7 @@ docker / php / html / mysql
 
 - [ ] : ID duplication check
 - [ ] : Link to storage
+- [ ] : ha....
 
 ## memo
 
