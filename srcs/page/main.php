@@ -9,9 +9,10 @@
 <body>
     <?php
     $sql = mq("select * from member where id='{$_SESSION['userid']}'");
-    echo var_dump($sql[$_SESSION['userid']]);
-    $uid = $_SESSION['userid'];
-    echo $sql[$uid];
+    $member = $sql->fetch_array();
+    echo $_SESSION['userid'];
+    echo $_SESSION['userpw'];
+    echo $_SESSION['email'];
     if (isset($_SESSION['userid'])) {
         echo "<h2>{$_SESSION['userid']} 님 환영합니다.</h2>";
         ?>

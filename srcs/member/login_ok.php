@@ -17,6 +17,7 @@ if ($_POST["userid"] == "" || $_POST["userpw"] == "") {
 	{
 		$_SESSION['userid'] = $member["id"];
 		$_SESSION['userpw'] = $member["pw"];
+		$_SESSION['email'] = $member["email"];
 
 		echo "<script>alert('로그인되었습니다.'); location.href='/page/main.php';</script>";
 	} else { // 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
