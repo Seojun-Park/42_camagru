@@ -1,4 +1,4 @@
-<?php include "../db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/db.php";?>
 <!DOCTYPE html>
 
 <head>
@@ -8,6 +8,10 @@
 
 <body>
     <?php
+    $sql = mq("select * from member where id='{$_SESSION['userid']}'");
+    echo var_dump($sql[$_SESSION['userid']]);
+    $uid = $_SESSION['userid'];
+    echo $sql[$uid];
     if (isset($_SESSION['userid'])) {
         echo "<h2>{$_SESSION['userid']} 님 환영합니다.</h2>";
         ?>
