@@ -17,7 +17,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
             <table>
                 <tr>
                     <td>User ID</td>
-                    <td><input type="text" size="35" name="userid" placeholder="User ID"></td>
+                    <td>
+                        <input type="text" size="35" name="userid" id="uid" placeholder="User ID">
+                        <input type="button" value="DupliCheck" onclick="checkid();"/>
+                    </td>
                 </tr>
                 <tr>
                     <td>Password</td>

@@ -10,6 +10,11 @@
 
 docker / php / html / mysql
 
+## Todos
+
+- [ ] : ID duplication check
+- [ ] : Link to storage
+
 ## memo
 
     docker build --tag name:tag
@@ -56,3 +61,6 @@ docker / php / html / mysql
     FLUSH PRIVILEGES;
 
 mysql -u root -p [name of db]> < /path/query.sql
+
+
+IDX 같은 항상 증가되는 data 컬럼들은 테이블 생성시 auto_increment 빼먹지말기

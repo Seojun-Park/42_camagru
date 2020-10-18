@@ -53,7 +53,7 @@ CREATE TABLE `reply` (
 
 
 CREATE TABLE `member` (
-    `idx` INT NOT NULL ,
+    `idx` INT NOT NULL AUTO_INCREMENT,
     `id` VARCHAR(100) NOT NULL ,
     `pw` VARCHAR(1000) NOT NULL ,
     `firstname` VARCHAR(100) NOT NULL ,
@@ -85,8 +85,6 @@ INSERT INTO `reply` (`idx`, `con_num`, `name`, `content`, `date`) VALUES
 (1, 7, 'admin', '1234', '2018-04-02 19:47:19'),
 (2, 7, 'admin', '댓글 테스트', '2018-04-02 19:47:26');
 
-INSERT INTO `member` (`idx`, `id`, `pw`, `firstname`, `lastname`, `email`, `avatar`, `username`) VALUES
-(1, 'admin', 'admin', 'a', 'dmin', 'jinchul112@gmail.com', 'no', 'admin');
 --
 -- Indexes for table `board`
 --
@@ -111,9 +109,6 @@ ALTER TABLE `board`
 
 ALTER TABLE `reply`
   MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
-ALTER TABLE `member`
-  MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 COMMIT;
 
