@@ -14,16 +14,15 @@ docker / php / html / mysql
 
 ### Pages
 
-    #### Auth
-    - [x] : sign up with basic information
-    - [x] : duplicated User ID check
-    - [x] : login with User ID and pw
+>**Auth**
+>   > - [x] : sign up with basic information
+>   > - [x] : duplicated User ID check
+>   > - [x] : login with User ID and pw
 - - - 
-    #### Main
-
-        ##### Header
-        - [x] : responsive layout
-        - [x] : logout
+>**Main**
+>>**Header**
+>   >   > - [x] : responsive layout
+>   >   > - [x] : logout
 
 ## memo
 
