@@ -1,0 +1,46 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>게시판</title>
+    <link rel="stylesheet" type="text/css" href="../css/feed.css" />
+  </head>
+  <body>
+    <div class="feed_body">
+      <div class="write_feed">
+        <form action="write_ok.php" method="post">
+          <div class="wi_line"></div>
+          <div id="in_content">
+            <textarea
+              name="content"
+              id="ucontent"
+              placeholder="What!?"
+              required
+            ></textarea>
+          </div>
+          <div class="bottom_row">
+            <div id="in_file">
+              <!-- <label for="f_file">Upload</label>
+              <input type="file" value="1" name="b_file" id="f_file" /> -->
+              <div class="file_box">
+                <input
+                  class="upload_name"
+                  value="이미지를 업로드 해 주세요."
+                  disabled="disabled"
+                />
+                <label for="input_file"><span class="glyphicon glyphicon-picture"></label>
+                <input type="file" id="input_file" class="file_hidden" />
+              </div>
+            </div>
+            <div class="bt_se">
+              <button type="submit">write</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

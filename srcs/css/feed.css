@@ -1,0 +1,95 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+.feed_body {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+.write_feed {
+  border: 1px solid black;
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+#ucontent {
+  width: 350px;
+  height: 80px;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  resize: none;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.file_box{
+	position:relative;
+	margin-top:30px;
+	font-size:0;
+}
+
+.file_box input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip:rect(0,0,0,0);
+	border: 0;
+}
+
+.file_box label {
+	display: inline-block;
+	line-height: 0;
+	margin-left: 5px;
+	margin-top: -3px;
+	color: #999;
+	vertical-align: middle;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+	color: #0fb5bf;
+	text-align:center;
+	box-sizing:border-box;
+	background:#fff;
+}
+
+/* 파일 이름 */
+.file_box .upload_name {
+	display: inline-block;
+	padding: 0 20px 0 50px;
+	width: calc(100% - 80px);
+	height:40px;
+	line-height:40px;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 14px;
+	font-weight: 500;
+	color: #a8a8a8;
+	box-sizing:border-box;
+}
+
+/* 이미지 미리보기 */
+.file_box .upload-display {
+    position: absolute;
+    left: 12px;
+    top: 9px;
+    width: 24px;
+    height: 24px;
+}
+
+.file_box .upload-display img {
+	display: block;
+	max-width: 100%;
+	width: 100% \9;
+	max-height:100%;;
+}
+}
