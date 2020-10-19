@@ -19,7 +19,7 @@ docker / php / html / mysql
 >   > - [x] : duplicated User ID check
 >   > - [x] : login with User ID and pw
 >**Main**
->>_Header_
+>   > Header
 >   >   > - [x] : responsive layout
 >   >   > - [x] : logout
 
