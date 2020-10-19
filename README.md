@@ -20,7 +20,6 @@ docker / php / html / mysql
 >   > - [x] : login with User ID and pw
 
 >**Main**
-
 >   > Header
 >   >   > - [x] : responsive layout
 >   >   > - [x] : logout
