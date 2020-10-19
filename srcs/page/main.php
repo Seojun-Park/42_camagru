@@ -19,9 +19,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
         <div class='header'>
             test
         </div>
-        <a href="../member/logout.php">
-            <input type="button" value="로그아웃" />
-        </a>
     <?php
     } else {
         echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";

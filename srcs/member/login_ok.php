@@ -6,6 +6,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 if ($_POST["userid"] == "" || $_POST["userpw"] == "") {
 	echo '<script> alert("아이디나 패스워드 입력하세요"); history.back(); </script>';
 } else {
+	session_start();
 
 	//password변수에 POST로 받아온 값을 저장하고 sql문으로 POST로 받아온 아이디값을 찾습니다.
 	$password = $_POST['userpw'];
