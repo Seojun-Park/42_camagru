@@ -18,9 +18,8 @@ docker / php / html / mysql
 >   > - [x] : sign up with basic information
 >   > - [x] : duplicated User ID check
 >   > - [x] : login with User ID and pw
-- - - 
 >**Main**
->>**Header**
+>>_Header_
 >   >   > - [x] : responsive layout
 >   >   > - [x] : logout
 
