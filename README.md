@@ -23,6 +23,7 @@ docker / php / html / mysql
 >   > Header
 >   >   > - [x] : responsive layout
 >   >   > - [x] : logout
+>	>	> - [ ] : search bar
 
 ## memo
 
