@@ -7,6 +7,7 @@ $o_name = $_FILES['b_file']['name'];
 $filename = iconv("UTF-8", "EUC-KR", $_FILES['b_file']['name']);
 $folder = "../../upload/" . $filename;
 $username = $_SESSION['userid'];
+var_dump($_SESSION);
 move_uploaded_file($tmpfile, $folder);
 
 $sql = mq("insert into feed(name,content,date,file) values('" . $username . "','" . $_POST['content'] . "','" . $date . "','" . $o_name . "')"); ?>

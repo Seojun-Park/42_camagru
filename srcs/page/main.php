@@ -43,6 +43,49 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                     </div>
                 </form>
             </div>
+            <div class="read_feed">
+                <?php
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+                    $sql = mq("select * from feed");
+                    $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+                    $list = 5; //한 페이지에 보여줄 개수
+                    $block_ct = 5; //블록당 보여줄 페이지 개수
+
+                    $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+                    $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+                    $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+
+                    $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+                    if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+                    $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+                    $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+                    // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
+                    $sql = mq("select * from feed order by idx desc limit 0,10");
+                    while ($feed = $sql->fetch_array()) {
+                        $sql2 = mq("select * from reply where con_num'" . $feed['idx'] . "'");
+                        $usersql = mq("select * from member where id='" . $feed['name'] . "'");
+                        $userdata = $usersql->fetch_array();
+                        $rep_count = mysqli_num_rows($sql2);
+                        ?>
+                    <ul class="timeline">
+                        <li>
+                            <div class='feed_box'>
+                                <div class='feed_box_top'>
+                                    <?php echo $feed['name'];
+                                            echo $userdata['username'] . "   ";
+                                            echo $rep_count;
+                                            ?>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                <?php } ?>
+
+            </div>
         </div>
     <?php
     } else {

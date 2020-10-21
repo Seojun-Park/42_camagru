@@ -11,6 +11,7 @@
   min-width: 400px;
   display: flex;
   justify-content: center;
+  margin: 15px 0;
 }
 
 #ucontent {
@@ -58,7 +59,7 @@
   background: #fff;
 }
 
-/* 파일 이름 */
+/* file name */
 .file_box .upload_name {
   display: inline-block;
   padding: 0 20px 0 50px;
@@ -77,7 +78,7 @@
   box-sizing: border-box;
 }
 
-/* 이미지 미리보기 */
+/* preview Image */
 .file_box .upload-display {
   position: absolute;
   left: 12px;
@@ -91,4 +92,28 @@
   max-width: 100%;
   width: 100% \9;
   max-height: 100%;
+}
+
+/* feed box */
+
+.timeline {
+  display: flex;
+  padding-right: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+}
+
+.feed_box {
+  width: 600px;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+
+.feed_box_top {
+  padding: 8px;
+  height: 24px;
+  font-size: 18px;
+  font-weight: 700;
 }
