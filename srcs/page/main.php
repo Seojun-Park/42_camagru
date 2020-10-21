@@ -94,7 +94,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                             <div>
                                                 <b><?php echo $reply['name']; ?></b>
                                                 <div class="re_cont">
-                                                    <?php echo nl2br($reply['content']) ?>
+                                                    <?php echo $reply['content'] ?>
                                                 </div>
                                                 <?php echo $reply['date'] ?>
                                                 <a class="dat_delete_bt" href="#">delete</a>
@@ -103,7 +103,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                     <?php } ?>
                                     <div class="dap_ins">
                                         <form action="reply_ok.php?idx=<?php echo $feed['idx'] ?>" method="post">
-                                            <div style="margin-top:10px; ">
+                                            <div style="margin-top:15px; ">
                                                 <input type="text" name="content" class="reply_content" id="re_content" placeholder="reply here " />
                                                 <button id="rep_bt" class="re_bt">reply</button>
                                             </div>

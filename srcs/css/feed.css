@@ -134,6 +134,7 @@
 
 .u_name {
   font-weight: 700;
+  padding-bottom: 15px;
 }
 
 .f_cont {
@@ -179,7 +180,8 @@
 }
 
 .re_cont {
-  width: 250px;
+  display: inline-block;
+  width: 300px;
 }
 
 .re_bt {
