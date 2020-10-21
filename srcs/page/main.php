@@ -66,7 +66,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                 $sql = mq("select * from feed order by idx desc limit 0,10");
                 while ($feed = $sql->fetch_array()) {
                     $sql2 = mq("select * from reply where feed_num'" . $feed['idx'] . "'");
-                    $usersql = mq("select * from member where id='" . $feed['name'] . "'");
+                    $usersql = mq("select * from member where username='" . $feed['name'] . "'");
                     $userdata = $usersql->fetch_array();
                     $rep_count = mysqli_num_rows($sql2);
                     ?>
@@ -79,28 +79,32 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                 </div>
                                 <div class="feed_box_body">photo</div>
                                 <div class="feed_box_bot">
+                                    <div class="feed_content">
+                                        <span class="u_name">
+                                            <?php echo $userdata['username'] . " " ?>
+                                        </span>
+                                        <span class="f_cont">
+                                            <?php echo  $feed['content']; ?>
+                                        </span>
+                                    </div>
                                     <?php
                                             $sql3 = ("select * from reply where cont_num'" . $feed['idx'] . "' order by idx desc");
                                             while ($reply = $sql->fetch_array()) { ?>
                                         <div class="dap_lo">
                                             <div>
                                                 <b><?php echo $reply['name']; ?></b>
-                                                <?php echo nl2br($reply['content']) . "   " . $reply['date']; ?>
-                                                <a class="dat_delete_bt" href="#">삭제</a>
-                                            </div>
-                                            <div class="dat_edit">
-                                                <form method="post">
-                                                    <input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo "1"; ?>">
-                                                    <span><?php echo $reply['content']; ?></span>
-                                                    <input type="submit" value="수정하기" class="re_mo_bt">
-                                                </form>
+                                                <div class="re_cont">
+                                                    <?php echo nl2br($reply['content']) ?>
+                                                </div>
+                                                <?php echo $reply['date'] ?>
+                                                <a class="dat_delete_bt" href="#">delete</a>
                                             </div>
                                         </div>
                                     <?php } ?>
                                     <div class="dap_ins">
                                         <form action="reply_ok.php?idx=<?php echo $feed['idx'] ?>" method="post">
                                             <div style="margin-top:10px; ">
-                                                <textarea name="content" class="reply_content" id="re_content"></textarea>
+                                                <input type="text" name="content" class="reply_content" id="re_content" placeholder="reply here " />
                                                 <button id="rep_bt" class="re_bt">reply</button>
                                             </div>
                                         </form>

@@ -128,10 +128,23 @@
   padding: 8px;
 }
 
+.feed_content {
+  font-size: 18px;
+}
+
+.u_name {
+  font-weight: 700;
+}
+
+.f_cont {
+  color: gray;
+}
+
 /* 댓글 */
 .dap_lo {
   font-size: 14px;
-  padding: 10px 0 15px 0;
+  padding: 8px 0;
+  padding-left: 10px;
 }
 
 .dap_to {
@@ -139,10 +152,6 @@
 }
 
 .dat_delete {
-  display: none;
-}
-
-.dat_edit {
   display: none;
 }
 
@@ -155,23 +164,22 @@
   height: 20px;
   position: absolute;
 }
-.re_mo_bt {
-  position: absolute;
-  right: 5px;
-  width: 90px;
-  height: 72px;
-}
 
 #re_content {
   width: 400px;
   height: 20px;
   resize: none;
   border: none;
+  padding: 8px;
   border-bottom: 1px solid gray;
 }
 
 .dap_ins {
   margin-top: 10px;
+}
+
+.re_cont {
+  width: 250px;
 }
 
 .re_bt {
