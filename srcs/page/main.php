@@ -7,6 +7,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/feed.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Camagru</title>
 </head>
 
@@ -22,17 +24,23 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
         </div>
         <div class='feed_body'>
             <div class='write_feed'>
-                <form action="write_ok.php" method="post">
-                <div class="wi_line"></div>
-                <div id="in_content">
-                    <textarea name="content" id="ucontent" placeholder="What!?" required></textarea>
-                </div>
-                <div id="in_file">
-                    <input type="file" value="1" name="b_file" />
-                </div>
-                <div class="bt_se">
-                    <button type="submit">write</button>
-                </div>
+                <form action="feed/write_ok.php" method="post">
+                    <div class="wi_line"></div>
+                    <div id="in_content">
+                        <textarea name="content" id="ucontent" placeholder="What!?" required></textarea>
+                    </div>
+                    <div class="bottom_row">
+                        <div class="file_box">
+                            <input class="upload_name" value="Upload your photo" disabled="disabled" />
+                            <label for="b_file">
+                                <span>upload</span>
+                            </label>
+                            <input type="file" id="b_file" class="file_hidden" />
+                        </div>
+                        <div class="bt_se">
+                            <button type="submit">write</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -42,5 +50,69 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
     }
     ?>
 </body>
+<script>
+    var fileTarget = $(".file_box .file_hidden");
+
+    fileTarget.on("change", function() {
+        if (window.FileReader) {
+            // 파일명 추출
+            var filename = $(this)[0].files[0].name;
+        } else {
+            // Old IE 파일명 추출
+            var filename = $(this)
+                .val()
+                .split("/")
+                .pop()
+                .split("\\")
+                .pop();
+        }
+
+        $(this)
+            .siblings(".upload_name")
+            .val(filename);
+    });
+    /* 파일명 가져오기 end */
+
+    /* 파일 이미지 가져오기 start */
+    var imgTarget = $(".file_box .file_hidden");
+
+    imgTarget.on("change", function() {
+        var parent = $(this).parent();
+        parent.children(".upload-display").remove();
+
+        if (window.FileReader) {
+            //image 파일인지 검사
+            if (!$(this)[0].files[0].type.match(/image\//)) return;
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var src = e.target.result;
+                console.log(e);
+                console.log(e.target);
+                parent.prepend(
+                    '<div class="upload-display"><img src="' +
+                    src +
+                    '" class="upload-thumb"></div>'
+                );
+            };
+            reader.readAsDataURL($(this)[0].files[0]);
+        } else {
+            $(this)[0].select();
+            $(this)[0].blur();
+            var imgSrc = document.selection.createRange().text;
+            parent.prepend(
+                '<div class="upload-display"><img class="upload-thumb"></div>'
+            );
+
+            var img = $(this)
+                .siblings(".upload-display")
+                .find("img");
+            img[0].style.filter =
+                "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\"" +
+                imgSrc +
+                '")';
+        }
+    });
+</script>
 
 </html>

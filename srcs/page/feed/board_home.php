@@ -40,7 +40,7 @@
             $total_block = ceil($total_page / $block_ct); //블럭 총 개수
             $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
             // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-            $sql = mq("select * from board order by idx desc limit 0,10");
+            $sql = mq("select * from feed order by idx desc limit 0,10");
             while ($board = $sql->fetch_array()) {
                 //title변수에 DB에서 가져온 title을 선택
                 $title = $board["title"];
@@ -55,7 +55,7 @@
                     <tr>
                         <td width="70"><?php echo $board['idx']; ?></td>
                         <td width="500">
-                            <a href="/page/board/read.php?idx=<?php echo $board["idx"]; ?>">
+                            <a href="/feed/read.php?idx=<?php echo $board["idx"]; ?>">
                                 <?php echo $title . "  [" . $rep_count . "]" ?>
                             </a>
                         </td>
