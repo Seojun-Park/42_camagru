@@ -1,3 +1,4 @@
+
 /** @format */
 
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
@@ -184,12 +185,13 @@
 }
 
 b {
-  width: 80px;
+  display: inline-block;  
+  width: 70px;
 }
 
 .re_cont {
   display: inline-block;
-  width: 300px;
+  width: 350px;
 }
 
 .re_bt {
