@@ -105,6 +105,10 @@
   list-style: none;
 }
 
+.timeline li {
+  border: 1px solid black;
+}
+
 .feed_box {
   width: 600px;
   margin: 20px 0;

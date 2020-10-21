@@ -63,14 +63,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                 $total_block = ceil($total_page / $block_ct); //블럭 총 개수
                 $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
                 // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-                $sql = mq("select * from feed order by idx desc limit 0,10");
-                while ($feed = $sql->fetch_array()) {
-                    $sql2 = mq("select * from reply where feed_num'" . $feed['idx'] . "'");
-                    $usersql = mq("select * from member where username='" . $feed['name'] . "'");
-                    $userdata = $usersql->fetch_array();
-                    $rep_count = mysqli_num_rows($sql2);
-                    ?>
-                <ul class="timeline">
+                ?>
+            <ul class="timeline">
+                <?php
+                    $sql = mq("select * from feed order by idx desc limit 0,10");
+                    while ($feed = $sql->fetch_array()) {
+                        $sql2 = mq("select * from reply where feed_num'" . $feed['idx'] . "'");
+                        $usersql = mq("select * from member where username='" . $feed['name'] . "'");
+                        $userdata = $usersql->fetch_array();
+                        $rep_count = mysqli_num_rows($sql2);
+                        ?>
                     <li>
                         <div class='feed_box'>
                             <div class="feed_box">
@@ -95,6 +97,11 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                                 <b><?php echo $reply['name']; ?></b>
                                                 <div class="re_cont">
                                                     <?php echo $reply['content'] ?>
+                                                    <?php if (strlen($reply['content']) > 25) {
+                                                                    $cont = str_replace($reply['content'], mb_substr($reply['content'], 0, 25, "utf-8") . "...", $reply['content']);
+                                                                }
+                                                                echo $cont;
+                                                                ?>
                                                 </div>
                                                 <?php echo $reply['date'] ?>
                                                 <a class="dat_delete_bt" href="#">delete</a>
@@ -111,15 +118,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </li>
-                </ul>
-        </div>
-    <?php } ?>
-<?php
-} else {
-    echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
-}
-?>
+                <?php } ?>
+            </ul>
+        <?php
+        } else {
+            echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+        }
+        ?>
 </body>
 <script>
     var fileTarget = $(".file_box .file_hidden");
