@@ -84,6 +84,7 @@
       </div>
       <ul class="timeline">
         <li>
+
           <div class="feed_box">
             <div class="feed_box_head">
               name1
@@ -92,33 +93,115 @@
               photo
             </div>
             <div class="feed_box_bot">
-              cont / repl
+              <div class="dap_lo">
+                <div>
+                  name / cont / date
+                  <a class="dat_edit_bt" href="#">수정</a>
+                  <a class="dat_delete_bt" href="#">삭제</a>
+                </div>
+              </div>
+              <!-- 댓글 수정 폼 dialog -->
+              <div class="dat_edit">
+                <form method="post" action="rep_modify_ok.php">
+                  <input type="hidden" name="rno" value="1" />
+                  <input type="hidden" name="b_no" value="1" />
+                  <textarea name="content" class="dap_edit_t"></textarea>
+                  <input type="submit" value="수정하기" class="re_mo_bt" />
+                </form>
+              </div>
+              <div class="dap_ins">
+                <form action="reply_ok.php?idx?>" method="post">
+                  <div style="margin-top:10px; ">
+                    <textarea
+                      name="content"
+                      class="reply_content"
+                      id="re_content"
+                    ></textarea>
+                    <button id="rep_bt" class="re_bt">reply</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li>
+          <div class="feed_box">
+            <div class="feed_box_head">
+              name1
+            </div>
+            <div class="feed_box_body">
+              photo
+            </div>
+            <div class="feed_box_bot">
+              <div class="dap_lo">
+                <div>
+                  name / cont / date
+                  <a class="dat_edit_bt" href="#">수정</a>
+                  <a class="dat_delete_bt" href="#">삭제</a>
+                </div>
+              </div>
+              <!-- 댓글 수정 폼 dialog -->
+              <div class="dat_edit">
+                <form method="post" action="rep_modify_ok.php">
+                  <input type="hidden" name="rno" value="1" />
+                  <input type="hidden" name="b_no" value="1" />
+                  <textarea name="content" class="dap_edit_t"></textarea>
+                  <input type="submit" value="수정하기" class="re_mo_bt" />
+                </form>
+              </div>
+              <div class="dap_ins">
+                <form action="reply_ok.php?idx?>" method="post">
+                  <div style="margin-top:10px; ">
+                    <textarea
+                      name="content"
+                      class="reply_content"
+                      id="re_content"
+                    ></textarea>
+                    <button id="rep_bt" class="re_bt">reply</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </li>
         <li>
           <div class="feed_box">
             <div class="feed_box_head">
-              name2
+              name1
             </div>
             <div class="feed_box_body">
               photo
             </div>
             <div class="feed_box_bot">
-              cont / repl
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="feed_box">
-            <div class="feed_box_head">
-              name3
-            </div>
-            <div class="feed_box_body">
-              photo
-            </div>
-            <div class="feed_box_bot">
-              cont / repl
+              <div class="dap_lo">
+                <div>
+                  name / cont / date
+                  <a class="dat_edit_bt" href="#">수정</a>
+                  <a class="dat_delete_bt" href="#">삭제</a>
+                </div>
+              </div>
+              <!-- 댓글 수정 폼 dialog -->
+              <div class="dat_edit">
+                <form method="post" action="rep_modify_ok.php">
+                  <input type="hidden" name="rno" value="1" />
+                  <input type="hidden" name="b_no" value="1" />
+                  <textarea name="content" class="dap_edit_t"></textarea>
+                  <input type="submit" value="수정하기" class="re_mo_bt" />
+                </form>
+              </div>
+              <div class="dap_ins">
+                <form action="reply_ok.php?idx?>" method="post">
+                  <div style="margin-top:10px; ">
+                    <textarea
+                      name="content"
+                      class="reply_content"
+                      id="re_content"
+                    ></textarea>
+                    <button id="rep_bt" class="re_bt">reply</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </li>

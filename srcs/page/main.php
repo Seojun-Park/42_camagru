@@ -43,55 +43,79 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                     </div>
                 </form>
             </div>
-            <div class="read_feed">
-                <?php
-                    if (isset($_GET['page'])) {
-                        $page = $_GET['page'];
-                    } else {
-                        $page = 1;
-                    }
-                    $sql = mq("select * from feed");
-                    $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
-                    $list = 5; //한 페이지에 보여줄 개수
-                    $block_ct = 5; //블록당 보여줄 페이지 개수
+            <?php
+                if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+                $sql = mq("select * from feed");
+                $row_num = mysqli_num_rows($sql); //게시판 총 레코드 수
+                $list = 5; //한 페이지에 보여줄 개수
+                $block_ct = 5; //블록당 보여줄 페이지 개수
 
-                    $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
-                    $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
-                    $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
+                $block_num = ceil($page / $block_ct); // 현재 페이지 블록 구하기
+                $block_start = (($block_num - 1) * $block_ct) + 1; // 블록의 시작번호
+                $block_end = $block_start + $block_ct - 1; //블록 마지막 번호
 
-                    $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
-                    if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
-                    $total_block = ceil($total_page / $block_ct); //블럭 총 개수
-                    $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
-                    // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
-                    $sql = mq("select * from feed order by idx desc limit 0,10");
-                    while ($feed = $sql->fetch_array()) {
-                        $sql2 = mq("select * from reply where con_num'" . $feed['idx'] . "'");
-                        $usersql = mq("select * from member where id='" . $feed['name'] . "'");
-                        $userdata = $usersql->fetch_array();
-                        $rep_count = mysqli_num_rows($sql2);
-                        ?>
-                    <ul class="timeline">
-                        <li>
-                            <div class='feed_box'>
-                                <div class='feed_box_top'>
-                                    <?php echo $feed['name'];
-                                            echo $userdata['username'] . "   ";
-                                            echo $rep_count;
-                                            ?>
+                $total_page = ceil($row_num / $list); // 페이징한 페이지 수 구하기
+                if ($block_end > $total_page) $block_end = $total_page; //만약 블록의 마지박 번호가 페이지수보다 많다면 마지박번호는 페이지 수
+                $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+                $start_num = ($page - 1) * $list; //시작번호 (page-1)에서 $list를 곱한다.
+                // board테이블에서 idx를 기준으로 내림차순해서 5개까지 표시
+                $sql = mq("select * from feed order by idx desc limit 0,10");
+                while ($feed = $sql->fetch_array()) {
+                    $sql2 = mq("select * from reply where feed_num'" . $feed['idx'] . "'");
+                    $usersql = mq("select * from member where id='" . $feed['name'] . "'");
+                    $userdata = $usersql->fetch_array();
+                    $rep_count = mysqli_num_rows($sql2);
+                    ?>
+                <ul class="timeline">
+                    <li>
+                        <div class='feed_box'>
+                            <div class="feed_box">
+                                <div class="feed_box_head">
+                                    <?php echo $userdata['username']; ?>
+                                </div>
+                                <div class="feed_box_body">photo</div>
+                                <div class="feed_box_bot">
+                                    <?php
+                                            $sql3 = ("select * from reply where cont_num'" . $feed['idx'] . "' order by idx desc");
+                                            while ($reply = $sql->fetch_array()) { ?>
+                                        <div class="dap_lo">
+                                            <div>
+                                                <b><?php echo $reply['name']; ?></b>
+                                                <?php echo nl2br($reply['content']) . "   " . $reply['date']; ?>
+                                                <a class="dat_delete_bt" href="#">삭제</a>
+                                            </div>
+                                            <div class="dat_edit">
+                                                <form method="post">
+                                                    <input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo "1"; ?>">
+                                                    <span><?php echo $reply['content']; ?></span>
+                                                    <input type="submit" value="수정하기" class="re_mo_bt">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                    <div class="dap_ins">
+                                        <form action="reply_ok.php?idx=<?php echo $feed['idx'] ?>" method="post">
+                                            <div style="margin-top:10px; ">
+                                                <textarea name="content" class="reply_content" id="re_content"></textarea>
+                                                <button id="rep_bt" class="re_bt">reply</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
-                <?php } ?>
-
-            </div>
+                    </li>
+                </ul>
         </div>
-    <?php
-    } else {
-        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
-    }
-    ?>
+    <?php } ?>
+<?php
+} else {
+    echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+}
+?>
 </body>
 <script>
     var fileTarget = $(".file_box .file_hidden");
