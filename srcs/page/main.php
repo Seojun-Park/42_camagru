@@ -99,8 +99,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                                     <?php echo $reply['content'] ?>
                                                     <?php if (strlen($reply['content']) > 25) {
                                                                     $cont = str_replace($reply['content'], mb_substr($reply['content'], 0, 25, "utf-8") . "...", $reply['content']);
-                                                                }
-                                                                echo $cont;
+                                                                    echo $cont;
+                                                                } else
+                                                                    echo $reply['content'];
                                                                 ?>
                                                 </div>
                                                 <?php echo $reply['date'] ?>
