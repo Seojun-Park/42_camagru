@@ -6,8 +6,8 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/feed.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/feed.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Camagru</title>
 </head>
