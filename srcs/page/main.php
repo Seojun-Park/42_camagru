@@ -56,6 +56,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                             <div class="feed_box">
                                 <div class="feed_box_head">
                                     <a href="/page/profile/profile.php?id=<?php echo $userdata['id'] ?>"><?php echo $userdata['username']; ?></a>
+                                    <?php if(strcmp($feed['name'], $me['username']) == 0) { ?>
+                                        <a href="/page/feed/fe_delete.php?idx=<?php echo $feed['idx']  ?>" id="feed_del">[del]</a>
+                                    <?php } ?>
                                 </div>
                                 <div class="feed_box_body">photo</div>
                                 <div class="feed_box_bot">

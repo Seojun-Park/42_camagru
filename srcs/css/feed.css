@@ -122,6 +122,17 @@
   border-bottom: 1px solid gray;
 }
 
+a#feed_del {
+  font-weight: 400;
+  font-size: 14px;
+  color: darkgray;
+}
+
+a#feed_del:hover {
+  transition: 0.2s linear;
+  color: black;
+}
+
 .feed_box_body {
   padding: 8px;
   height: 350px;
