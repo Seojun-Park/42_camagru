@@ -10,32 +10,30 @@
 
 docker / php / html / mysql
 
-## Todos
+## Todo List
 
-### Pages
+**Auth**
+> - [x] : sign up with basic information
+> - [x] : duplicated User ID check
+> - [x] : login with User ID and pw
 
->**Auth**
->   > - [x] : sign up with basic information
->   > - [x] : duplicated User ID check
->   > - [x] : login with User ID and pw
+**Page**
+> Header
+>   > - [x] : responsive layout
+>   > - [x] : logout
+>	> - [ ] : searching user by username or user id
 
->**Main**
->   > Header
->   >   > - [x] : responsive layout
->   >   > - [x] : logout
->	>	> - [ ] : searching user by username or user id
+> Feed
+>   > - [x] : display writer and link to profile page of writer
+>   > - [x] : display feed content
+>   > - [ ] : display image / photo
+>   > - [ ] : delete feed
+>   > - [x] : add reply
+>   > - [x] : delete reply
 
->   > Feed
->   >   > - [x] : display writer and link to profile page of writer
->   >   > - [x] : display feed content
->   >   > - [ ] : display image / photo
->   >   > - [ ] : delete feed
->   >   > - [x] : add reply
->   >   > - [x] : delete reply
-
->   >  Profile
->   >   > - [x] : display the information of user
->   >   > - [ ] : following?? (not sure)
+>  Profile
+>   > - [x] : display the information of user
+>   > - [ ] : following?? (not sure)
 
 
 ## memo
