@@ -68,7 +68,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                 <?php
                     $sql = mq("select * from feed order by idx desc limit 0,10");
                     while ($feed = $sql->fetch_array()) {
-                        $sql2 = mq("select * from reply where feed_num'" . $feed['idx'] . "'");
+                        $sql2 = mq("select * from reply where feed_num='" . $feed['idx'] . "'");
                         $usersql = mq("select * from member where username='" . $feed['name'] . "'");
                         $userdata = $usersql->fetch_array();
                         $rep_count = mysqli_num_rows($sql2);
@@ -86,17 +86,16 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                             <?php echo $userdata['username'] . " " ?>
                                         </span>
                                         <span class="f_cont">
-                                            <?php echo  $feed['content']; ?>
+                                            <?php echo $feed['content']; ?>
                                         </span>
                                     </div>
                                     <?php
-                                            $sql3 = ("select * from reply where cont_num'" . $feed['idx'] . "' order by idx desc");
-                                            while ($reply = $sql->fetch_array()) { ?>
+                                            $sql3 = mq("select * from reply where feed_num='" . $feed['idx'] . "' order by idx desc");
+                                            while ($reply = $sql3->fetch_array()) { ?>
                                         <div class="dap_lo">
                                             <div>
                                                 <b><?php echo $reply['name']; ?></b>
                                                 <div class="re_cont">
-                                                    <?php echo $reply['content'] ?>
                                                     <?php if (strlen($reply['content']) > 25) {
                                                                     $cont = str_replace($reply['content'], mb_substr($reply['content'], 0, 25, "utf-8") . "...", $reply['content']);
                                                                     echo $cont;
@@ -110,7 +109,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                         </div>
                                     <?php } ?>
                                     <div class="dap_ins">
-                                        <form action="reply_ok.php?idx=<?php echo $feed['idx'] ?>" method="post">
+                                        <form action="feed/reply_ok.php?idx=<?php echo $feed['idx'] ?>&userid=<?php echo $_SESSION['userid'] ?>" method="post">
                                             <div style="margin-top:15px; ">
                                                 <input type="text" name="content" class="reply_content" id="re_content" placeholder="reply here " />
                                                 <button id="rep_bt" class="re_bt">reply</button>
