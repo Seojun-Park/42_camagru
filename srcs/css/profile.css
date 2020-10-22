@@ -1,0 +1,68 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 400px;
+    margin: 10px auto;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 1px solid black;
+  }
+  .avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+  }
+
+  .info {
+    font-size: 16px;
+    margin: 15px 0;
+  }
+
+  .info.username {
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 600px;
+    margin: 10px auto;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 1px solid black;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+  }
+
+  .user_card td {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
+  #name {
+    font-weight: 700;
+  }
+}
