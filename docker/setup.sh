@@ -33,5 +33,6 @@ echo "FLUSH PRIVILEGES;" | mysql -u root
 #LANCEMENT
 service nginx start
 service mysql restart
-service php7.4-fpm restart
+service php7.4-fpm restart 
+git clone https://github.com/Seojun-Park/42_camagru.git /var/www/localhost
 sleep infinity

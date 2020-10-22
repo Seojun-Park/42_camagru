@@ -14,10 +14,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 <body>
     <?php
-    // $sql = mq("select * from member where id='{$_SESSION['userid']}'");
-    // $member = $sql->fetch_array();
-    // $sql = mq("select * from board order by idx");
-    // $list = 5;
     if (isset($_SESSION['userid'])) {
         $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
         $me = $mesql->fetch_array();
