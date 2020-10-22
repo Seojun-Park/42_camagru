@@ -18,7 +18,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
     // $member = $sql->fetch_array();
     // $sql = mq("select * from board order by idx");
     // $list = 5;
-    if (isset($_SESSION['userid'])) { ?>
+    if (isset($_SESSION['userid'])) {
+        $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
+        $me = $mesql->fetch_array();
+        ?>
         <div class='header'>
             <?php echo view('header.php'); ?>
         </div>
@@ -56,13 +59,13 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                         <div class='feed_box'>
                             <div class="feed_box">
                                 <div class="feed_box_head">
-                                    <?php echo $userdata['username']; ?>
+                                    <a href="/page/profile/profile.php?id=<?php echo $userdata['id'] ?>"><?php echo $userdata['username']; ?></a>
                                 </div>
                                 <div class="feed_box_body">photo</div>
                                 <div class="feed_box_bot">
                                     <div class="feed_content">
                                         <span class="u_name">
-                                            <?php echo $userdata['username'] . " " ?>
+                                            <a href="/page/profile/profile.php?id=<?php echo $userdata['id'] ?>"><?php echo $userdata['username'] . " " ?></a>
                                         </span>
                                         <span class="f_cont">
                                             <?php echo $feed['content']; ?>
@@ -82,8 +85,12 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                                                     echo $reply['content'];
                                                                 ?>
                                                 </div>
-                                                <?php echo $reply['date'] ?>
-                                                <a class="dat_delete_bt" href="#">delete</a>
+                                                <span class="re_date">
+                                                    <?php echo $reply['date'] ?>
+                                                            </span>
+                                                <?php if (strcmp($reply['name'], $me['username']) == 0) { ?>
+                                                                <a class='dat_delete_bt' href='/page/feed/re_delete.php?idx=<?php echo $reply['idx'] ?>'> delete</a>
+                                                            <?php } ?>
                                             </div>
                                         </div>
                                     <?php } ?>
