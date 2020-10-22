@@ -23,7 +23,20 @@ docker / php / html / mysql
 >   > Header
 >   >   > - [x] : responsive layout
 >   >   > - [x] : logout
->	>	> - [ ] : search bar
+>	>	> - [ ] : searching user by username or user id
+
+>   > Feed
+>   >   > - [x] : display writer and link to profile page of writer
+>   >   > - [x] : display feed content
+>   >   > - [ ] : display image / photo
+>   >   > - [ ] : delete feed
+>   >   > - [x] : add reply
+>   >   > - [x] : delete reply
+
+>   >  Profile
+>   >   > - [x] : display the information of user
+>   >   > - [ ] : following?? (not sure)
+
 
 ## memo
 
