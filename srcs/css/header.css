@@ -16,6 +16,7 @@ a {
 
 a:hover {
   color: gray;
+  text-decoration: none;
   transition: 0.2s linear;
 }
 
