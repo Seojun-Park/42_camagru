@@ -56,7 +56,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                             <div class="feed_box">
                                 <div class="feed_box_head">
                                     <a href="/page/profile/profile.php?id=<?php echo $userdata['id'] ?>"><?php echo $userdata['username']; ?></a>
-                                    <?php if(strcmp($feed['name'], $me['username']) == 0) { ?>
+                                    <?php if (strcmp($feed['name'], $me['username']) == 0) { ?>
                                         <a href="/page/feed/fe_delete.php?idx=<?php echo $feed['idx']  ?>" id="feed_del">[del]</a>
                                     <?php } ?>
                                 </div>
@@ -86,10 +86,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                                                 </div>
                                                 <span class="re_date">
                                                     <?php echo $reply['date'] ?>
-                                                            </span>
+                                                </span>
                                                 <?php if (strcmp($reply['name'], $me['username']) == 0) { ?>
-                                                                <a class='dat_delete_bt' href='/page/feed/re_delete.php?idx=<?php echo $reply['idx'] ?>'> delete</a>
-                                                            <?php } ?>
+                                                    <a class='dat_delete_bt' href='/page/feed/re_delete.php?idx=<?php echo $reply['idx'] ?>'> delete</a>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     <?php } ?>
@@ -107,6 +107,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                     </li>
                 <?php } ?>
             </ul>
+            <div>
+                <?php echo view('footer.html') ?>
+            </div>
         <?php
         } else {
             echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
