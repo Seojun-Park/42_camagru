@@ -34,7 +34,7 @@ docker / php / html / mysql
 >  Profile
 >   > - [x] : display the information of user
 >   > - [ ] : following?? (not sure)
-
+>	> - [ ] : display Avatar
 
 ## memo
 
