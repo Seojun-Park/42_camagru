@@ -95,10 +95,16 @@ dpkg --get-selections | grep sendmail
 service sendmail status
 cat /etc/cron.d/sendmail | grep -v ^#
 
-수정 전 원본 복사를 하고,
-cp /etc/mail/sendmail.mc /etc/mail/sendmail.mc.original 
+cd /etc/mail
 
-sendmail.cf 생성 / 보존
-m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
-cp /etc/mail/sendmail.cf /etc/mail/sendmail.cf.original
+mv ./sendmail.cf sendmail.cf_old
 
+cp ./sendmail.mc sendmail.mc_old
+
+<!-- sendmail.mc file -->
+52,53 line 수정 (앞부분 dnl 제거)
+
+
+TRUST_AUTH_MECH(`EXTERNAL DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+
+define(`confAUTH_MECHANISMS', `EXTERNAL GSSAPI DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
