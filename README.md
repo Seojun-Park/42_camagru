@@ -14,6 +14,7 @@ docker / php / html / mysql
 
 **Auth**
 > - [x] : sign up with basic information
+> - [ ] : requiring password with special character
 > - [x] : duplicated User ID check
 > - [x] : login with User ID and pw
 
