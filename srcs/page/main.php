@@ -107,7 +107,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                     </li>
                 <?php } ?>
             </ul>
-            <div>
+            <div class="header">
                 <?php echo view('footer.html') ?>
             </div>
         <?php

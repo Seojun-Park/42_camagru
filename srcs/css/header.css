@@ -9,6 +9,16 @@ header {
   margin-top: 15px;
 }
 
+footer {
+  border-top: 2px solid black;
+  font-family: "Nanum Gothic Coding", monospace;
+  margin: 15px auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
   color: black;
