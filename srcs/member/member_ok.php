@@ -8,7 +8,7 @@ function passwordCheck($_str){
     $spe = preg_match("/[\!\@\#\$\%\^\&\*]/u",$pw);
 
     if (strlen($pw) < 10 || strlen($pw) > 30){
-        echo '<script> alert("Password should be in 10 - 30 characters with alphabet, Number and special character contained ");</script>';
+        echo '<script> alert("Password should be in 10 - 30 characters with alphabet, Number and special character contained.");</script>';
         return array(false, "False");
         exit;
     }

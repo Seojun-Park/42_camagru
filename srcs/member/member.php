@@ -7,21 +7,23 @@ include "check.php";
 
 <head>
     <meta charset="utf-8" />
-    <title>회원가입 폼</title>
+    <title>Cama_Sign Up</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <form method="post" action="member_ok.php">
-        <h1>회원가입 폼</h1>
+    <form method="post">
+        <h1>Sign up</h1>
         <fieldset>
-            <legend>입력사항</legend>
+            <legend>Form</legend>
             <table>
                 <tr>
                     <td>User ID</td>
                     <td><input type="text" size="35" name="userid" id="userid" class="check" placeholder="아이디" required />
-                    <td><div id="id_check">아이디가 실시간으로 검사됩니다</div></td>
+                    <td>
+                        <div id="id_check">Your ID is checking automatically</div>
+                    </td>
                     </td>
                 </tr>
                 <tr>
@@ -49,10 +51,13 @@ include "check.php";
                             <option value="naver.com">naver.com</option>
                             <option value="daum.net">daum.net</option>
                         </select></td>
+                    <td>
+                        <input type="submit" value="verify" formaction="send_email.php" />
+                    <td>
                 </tr>
             </table>
 
-            <input type="submit" value="가입하기" /><input type="reset" value="다시쓰기" />
+            <input type="submit" value="가입하기" formaction="member_ok.php" /><input type="reset" value="다시쓰기" />
 
         </fieldset>
     </form>
