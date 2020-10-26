@@ -87,3 +87,18 @@ mysql -u root -p [name of db]> < /path/query.sql
 
 
 IDX 같은 항상 증가되는 data 컬럼들은 테이블 생성시 auto_increment 빼먹지말기
+
+초기 설정 때, send mail 스타트를 해주어야 함
+
+dpkg --get-selections | grep sendmail
+스타트 후,
+service sendmail status
+cat /etc/cron.d/sendmail | grep -v ^#
+
+수정 전 원본 복사를 하고,
+cp /etc/mail/sendmail.mc /etc/mail/sendmail.mc.original 
+
+sendmail.cf 생성 / 보존
+m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
+cp /etc/mail/sendmail.cf /etc/mail/sendmail.cf.original
+

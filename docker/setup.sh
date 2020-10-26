@@ -30,6 +30,7 @@ echo "GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin'" | mysql -u 
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
 
+
 #LANCEMENT
 service nginx start
 service mysql restart
