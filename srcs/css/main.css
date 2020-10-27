@@ -26,7 +26,7 @@
   }
 
   .camera_view {
-      display: flex;
+    display: flex;
   }
 
   #monitor {
@@ -43,6 +43,20 @@
     justify-content: space-around;
   }
 
+  .button_sec button {
+    border: none;
+    padding: 8px 12px;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .button_sec button:hover {
+    transition: 0.2s linear;
+    color: black;
+    background-color: lightgray;
+  }
+
   .camera_button {
     border: 1px solid blue;
   }
@@ -56,7 +70,7 @@
   }
 
   #photo {
-      width: 177px;
-      height: 100px;
+    width: 177px;
+    height: 100px;
   }
 }

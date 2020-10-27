@@ -61,9 +61,9 @@
                 <div class="camera_view">
                     <video id="monitor" autoplay></video>
                     <div class="button_sec">
-                        <button id="on">&#x1F4F7;</button>
-                        <button id="shutter">&#x1F4F7;</button>
-                        <button id="stop">&#128281;</button>
+                        <button id="on">Camera On</button>
+                        <button id="shutter">Capture</button>
+                        <button id="stop">Camera Off</button>
                     </div>
                 </div>
             </section>
