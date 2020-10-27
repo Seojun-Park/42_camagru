@@ -26,22 +26,21 @@
   }
 
   .camera_view {
-    display: flex;
+      display: flex;
   }
 
   #monitor {
-    width: 70%;
-    height: 80%;
+    width: 80%;
     background-color: #666;
     margin-right: 15px;
   }
 
   .button_sec {
     border: 1px solid black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .camera_button {

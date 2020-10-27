@@ -13,6 +13,7 @@
             const video = document.getElementById('monitor');
             const canvas = document.getElementById('photo');
             const shutter = document.getElementById('shutter');
+            const stop = document.getElementById('stop');
 
             try {
                 video.srcObject = await navigator.mediaDevices.getUserMedia({
@@ -25,6 +26,10 @@
                 document.getElementById('app').hidden = false;
 
                 shutter.onclick = () => canvas.getContext('2d').drawImage(video, 0, 0);
+                stop.onclick = async (e) => {
+                    console.log(video.srcObject);
+                    console.log(navigator.mediaDevices);
+                }
             } catch (err) {
                 console.error(err);
             }
@@ -38,7 +43,10 @@
             <section id="app" hidden>
                 <div class="camera_view">
                     <video id="monitor" autoplay></video>
-                    <button id="shutter">&#x1F4F7;</button>
+                    <div class="button_sec">
+                        <button id="shutter">&#x1F4F7;</button>
+                        <button id="stop">&#128281;</button>
+                    </div>
                 </div>
             </section>
         </div>
