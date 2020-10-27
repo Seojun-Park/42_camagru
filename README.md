@@ -88,23 +88,21 @@ mysql -u root -p [name of db]> < /path/query.sql
 
 IDX 같은 항상 증가되는 data 컬럼들은 테이블 생성시 auto_increment 빼먹지말기
 
-초기 설정 때, send mail 스타트를 해주어야 함
 
-dpkg --get-selections | grep sendmail
-스타트 후,
-service sendmail status
-cat /etc/cron.d/sendmail | grep -v ^#
+sendmail test
 
-cd /etc/mail
+<!-- ISP 에서 25번 포트를 block 해놔서 테스트 불가 -->
+telnet localhost 25
 
-mv ./sendmail.cf sendmail.cf_old
+ehlo 127.0.0.1 or ehlo localhost or helo localhost
 
-cp ./sendmail.mc sendmail.mc_old
+mail from: admin@localhost.com
 
-<!-- sendmail.mc file -->
-52,53 line 수정 (앞부분 dnl 제거)
+rcpt to: user@provider.com
 
+data
 
-TRUST_AUTH_MECH(`EXTERNAL DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+subject : subject
+content
 
-define(`confAUTH_MECHANISMS', `EXTERNAL GSSAPI DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+.
