@@ -21,9 +21,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
         <div class='header'>
             <?php echo view('header.php'); ?>
         </div>
-        <div >
+        <div>
             body
-    </div>
+        </div>
         <div class="header">
             <?php echo view('footer.html') ?>
         </div>
