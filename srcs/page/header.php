@@ -15,12 +15,7 @@
       <a href="/page/main.php">logo</a>
     </div>
     <div class="header_row second_col">
-      <form method="post" class="search_form">
-        <input type="text" id="searchbar" placeholder="Search user" />
-        <button type="submit" id="searchbutton" name="search">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </form>
+      empty for now
     </div>
     <div class="header_row third_col">
       <div class="col_block">

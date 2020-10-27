@@ -11,6 +11,8 @@
     border: 1px solid black;
     width: 80%;
     margin: 0 auto;
+    margin-top: 15px;
+    min-height: 70vh;
     padding: 15px;
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -79,6 +81,8 @@
     border: 1px solid black;
     width: 80%;
     margin: 0 auto;
+    margin-top: 20px;
+    min-height: 70vh;
     padding: 15px;
     display: grid;
     grid-template-columns: 3fr 1fr;
