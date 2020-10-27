@@ -7,9 +7,35 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/feed.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Camagru</title>
+    <script>
+        function stop(e) {
+            var stream = video.srcObject;
+            var tracks = stream.getTracks();
+
+            for (var i = 0; i < tracks.length; i++) {
+                var track = tracks[i];
+                track.stop();
+            }
+            video.srcObject = null;
+        }
+
+        function start(e) {
+            var video = document.querySelector("#videoElement");
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                        video: true
+                    })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                    })
+                    .catch(function(error) {
+                        console.log("Something went wrong!");
+                    });
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -22,7 +48,27 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
             <?php echo view('header.php'); ?>
         </div>
         <div>
-            body
+            <div class="wrapper">
+                <div class="main_sec">
+                    <div class="camera_view">
+                        <video autoplay="true" id="videoElement"></video>
+                    </div>
+                    <div class="button_sec">
+                        <div class="camera_button">
+                            take
+                        </div>
+                        <div class="camera_button">
+                            <button onclick="start();">start</button>
+                        </div>
+                        <div class="camera_button">
+                            <button onclick="stop();">stop</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="side_sec">
+                    second col
+                </div>
+            </div>
         </div>
         <div class="header">
             <?php echo view('footer.html') ?>
@@ -34,68 +80,18 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
     ?>
 </body>
 <script>
-    var fileTarget = $(".file_box .file_hidden");
-
-    fileTarget.on("change", function() {
-        if (window.FileReader) {
-            // 파일명 추출
-            var filename = $(this)[0].files[0].name;
-        } else {
-            // Old IE 파일명 추출
-            var filename = $(this)
-                .val()
-                .split("/")
-                .pop()
-                .split("\\")
-                .pop();
-        }
-
-        $(this)
-            .siblings(".upload_name")
-            .val(filename);
-    });
-    /* 파일명 가져오기 end */
-
-    /* 파일 이미지 가져오기 start */
-    var imgTarget = $(".file_box .file_hidden");
-
-    imgTarget.on("change", function() {
-        var parent = $(this).parent();
-        parent.children(".upload-display").remove();
-
-        if (window.FileReader) {
-            //image 파일인지 검사
-            if (!$(this)[0].files[0].type.match(/image\//)) return;
-
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                var src = e.target.result;
-                console.log(e);
-                console.log(e.target);
-                parent.prepend(
-                    '<div class="upload-display"><img src="' +
-                    src +
-                    '" class="upload-thumb"></div>'
-                );
-            };
-            reader.readAsDataURL($(this)[0].files[0]);
-        } else {
-            $(this)[0].select();
-            $(this)[0].blur();
-            var imgSrc = document.selection.createRange().text;
-            parent.prepend(
-                '<div class="upload-display"><img class="upload-thumb"></div>'
-            );
-
-            var img = $(this)
-                .siblings(".upload-display")
-                .find("img");
-            img[0].style.filter =
-                "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\"" +
-                imgSrc +
-                '")';
-        }
-    });
+    var video = document.querySelector("#videoElement");
+    if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+                video: true
+            })
+            .then(function(stream) {
+                video.srcObject = stream;
+            })
+            .catch(function(error) {
+                console.log("Something went wrong!");
+            });
+    }
 </script>
 
 </html>
