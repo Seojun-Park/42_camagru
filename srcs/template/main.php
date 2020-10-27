@@ -24,7 +24,7 @@
 <body>
     <div class="wrapper">
         <div class="main_sec">
-            <div>
+            <div class="camera_view">
                 <video autoplay="true" id="videoElement"></video>
             </div>
             <div class="button_sec">
@@ -32,7 +32,7 @@
                     take
                 </div>
                 <div class="camera_button">
-                    stop
+                    <button onclick="stop();">stop</button>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
             .then(function(stream) {
                 video.srcObject = stream;
             })
-            .catch(function(err0r) {
+            .catch(function(error) {
                 console.log("Something went wrong!");
             });
     }

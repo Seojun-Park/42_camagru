@@ -27,6 +27,11 @@
     flex-direction: row;
   }
 
+  .camera_view {
+    width: 90%;
+    height: 100%;
+  }
+
   #videoElement {
     width: 90%;
     height: 100%;
@@ -34,15 +39,15 @@
   }
 
   .button_sec {
-      border: 1px solid black;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .camera_button {
-      border: 1px solid blue;
+    border: 1px solid blue;
   }
 
   .side_sec {
