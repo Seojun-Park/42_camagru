@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 
 <head>
@@ -8,6 +5,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <title>Camagru</title>
+    <script src="../js/html2canvas.js"></script>
     <script>
         window.onload = async () => {
             var video = document.getElementById('monitor');
@@ -15,6 +13,7 @@
             const shutter = document.getElementById('shutter');
             const stop = document.getElementById('stop');
             const on = document.getElementById('on');
+            const save = document.getElementById('save');
 
             try {
                 video.srcObject = await navigator.mediaDevices.getUserMedia({
@@ -26,7 +25,13 @@
                 canvas.height = video.videoHeight;
                 document.getElementById('app').hidden = false;
 
-                shutter.onclick = () => canvas.getContext('2d').drawImage(video, 0, 0);
+                shutter.onclick = () => {
+                    canvas.getContext('2d').drawImage(video, 0, 0);
+                    html2canvas(document.querySelector("#photo")).then(canvas => {
+                        document.querySelector(".side").appendChild(canvas)
+                    })
+                }
+
                 on.onclick = () => {
                     if (navigator.mediaDevices.getUserMedia){
                         navigator.mediaDevices.getUserMedia({
@@ -36,7 +41,7 @@
                             video.srcObject = stream;
                         })
                     }                    
-                }
+                };
                 stop.onclick = () => {
                     const stream = video.srcObject;
                     var tracks = stream.getTracks();
@@ -46,7 +51,7 @@
                         track.stop();
                     }
                     video.srcObject = null;
-                }
+                };
             } catch (err) {
                 console.error(err);
             }
@@ -69,7 +74,7 @@
             </section>
         </div>
         <div class="side_sec">
-            <section id="app" hidden>
+            <section id="app" class="side" hidden>
                 <canvas id="photo"></canvas>
             </section>
         </div>
