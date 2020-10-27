@@ -29,10 +29,13 @@ service php7.4-fpm start
 echo "GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'admin'" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root
 
+# Mail setup
+m4 /etc/mail/sendmail.mc
 
 
 #LANCEMENT
 service nginx start
 service mysql restart
 service php7.4-fpm restart 
+service sendmail restart
 sleep infinity

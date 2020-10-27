@@ -1,38 +1,40 @@
 <?php
-header("Content-type: application/json; charset=utf-8");
+require 'libphp-phpmailer/PHPMailerAutoload.php';
 
-$email = $_POST['email'] . "@" . $_POST['emaddress'];
+function sendMail($to, $from, $from_name, $subject, $body)
+{
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 0;
+    $mail->CharSet = "utf-8";
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = "ssl";
+    $mail->host = "smtp.gmail.com";
+    $mail->port = 465;
+    $mail->Username = "jinchul112";
+    $mail->Password = "park1070!@";
+    $mail->SetFrom($from, $from_name);
+    $mail->AddReplyTo($from, $from_name);
+    $mail->Subject = $subject;
+    $mail->MsgHTML($body);
+    $address = $to;
+    $mail->AddAddress($address);
+
+    if (!$mail->Send()) {
+        echo "fail to send";
+        return false;
+    } else {
+        echo "sent";
+        return true;
+    }
+}
+
 $ran = str_pad(mt_rand(0, 999999), 6, '0');
 
-$subject = "Camagru login verifying";
-$content = "Your verify number is  $ran ";
-$headers = 'From: jinpark@42.fr' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+$authTo = $_POST['email'] . $_POST['emaddress'];
+$authfrom = "jinchul112@gmail.com";
+$autoname = "admin";
+$authsubject = "Verify with your secret code";
+$authbody = "Your secret code is $ran";
 
-
-$nameFrom = "jinpark";
-$mailFrom = "jinpark@42.fr";
-$nameTo = $_POST['userid'];
-$mailTo = $email;
-$subject = "Camagru Sign-Up Secret Code";
-$content = "Your verify number is" . $ran;
-$charset = "UTF-8";
-$nameFrom = "=?$charset?B?" . base64_encode($nameFrom) . "?=";
-$nameTo = "=?$charset?B?" . base64_encode($nameTo) . "?=";
-$subject = "=?$charset?B?" . base64_encode($subject) . "?=";
-$header = "Content-Type: text/html; charset=utf-8\r\n";
-$header .= "MIME-Version: 1.0\r\n";
-$header .= "Return-Path: <" . $mailFrom . ">\r\n";
-$header .= "From: " . $nameFrom . " <" . $mailFrom . ">\r\n";
-$header .= "Reply-To: <" . $mailFrom . ">\r\n";
-
-$result = mail($mailTo, $subject, $content, $header, $mailFrom);
-
-if (!$result) {
-    $result = array('rst_code'=>'false', 'rst_msg'=>'전송실패');
-    echo $result[1];
-} else {
-    $result = array('rst_code'=>'false', 'rst_msg'=>'전송성공');
-    echo $result[1];
-}
+echo sendMail($authTo, $authfrom, $autoname, $authsubject, $authbody);
