@@ -10,10 +10,11 @@
     <title>Camagru</title>
     <script>
         window.onload = async () => {
-            const video = document.getElementById('monitor');
+            var video = document.getElementById('monitor');
             const canvas = document.getElementById('photo');
             const shutter = document.getElementById('shutter');
             const stop = document.getElementById('stop');
+            const on = document.getElementById('on');
 
             try {
                 video.srcObject = await navigator.mediaDevices.getUserMedia({
@@ -26,9 +27,25 @@
                 document.getElementById('app').hidden = false;
 
                 shutter.onclick = () => canvas.getContext('2d').drawImage(video, 0, 0);
-                stop.onclick = async (e) => {
-                    console.log(video.srcObject);
-                    console.log(navigator.mediaDevices);
+                on.onclick = () => {
+                    if (navigator.mediaDevices.getUserMedia){
+                        navigator.mediaDevices.getUserMedia({
+                            video: true
+                        })
+                        .then(function(stream){
+                            video.srcObject = stream;
+                        })
+                    }                    
+                }
+                stop.onclick = () => {
+                    const stream = video.srcObject;
+                    var tracks = stream.getTracks();
+
+                    for (var i = 0; i < tracks.length; i++) {
+                        var track = tracks[i];
+                        track.stop();
+                    }
+                    video.srcObject = null;
                 }
             } catch (err) {
                 console.error(err);
@@ -44,6 +61,7 @@
                 <div class="camera_view">
                     <video id="monitor" autoplay></video>
                     <div class="button_sec">
+                        <button id="on">&#x1F4F7;</button>
                         <button id="shutter">&#x1F4F7;</button>
                         <button id="stop">&#128281;</button>
                     </div>
