@@ -56,9 +56,7 @@ include "check.php";
                     <td> -->
                 </tr>
             </table>
-
             <input type="submit" value="가입하기" formaction="member_ok.php" /><input type="reset" value="다시쓰기" />
-
         </fieldset>
     </form>
 </body>
