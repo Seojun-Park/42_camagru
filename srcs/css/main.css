@@ -141,12 +141,6 @@
     align-items: center;
   }
 
-  #photo.test{
-      width: 200px;
-      height: 123px;
-      background-color: bisque;
-  }
-
   .side_sec canvas {
     width: 177px;
     height: 100px;

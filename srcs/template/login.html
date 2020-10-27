@@ -1,0 +1,49 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="urf-8" />
+    <title>Camagru_Auth</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+  </head>
+  <body>
+    <div class="bg_image">
+      <div class="bg_cover"></div>
+    </div>
+    <div class="wrapper">
+      <div id="web_title">CAMAGRU</div>
+      <div id="web_subtitle">by jinpark🤙🏻</div>
+      <div class="login_box">
+        <form method="post" action="member/login_ok.php" class="login_form">
+          <div class="login_sec">
+            <label class="field field_v1">
+              <input
+                class="field__input"
+                placeholder="e.g. Jin"
+                name="userid"
+              />
+              <span class="field__label-wrap">
+                <span class="field__label">First name</span>
+              </span>
+            </label>
+            <label class="field field_v2">
+              <input
+                class="field__input"
+                placeholder="e.g. Park"
+                name="userpw"
+              />
+              <span class="field__label-wrap">
+                <span class="field__label">Last name</span>
+              </span>
+            </label>
+          </div>
+          <button type="submit" id="btn">LOGIN</button>
+        </form>
+      </div>
+      <div>
+        <a href="member/member.php">회원가입 하시겠습니까?</a>
+      </div>
+    </div>
+  </body>
+</html>

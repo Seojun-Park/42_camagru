@@ -6,7 +6,7 @@ include "/db.php";
 <head>
     <meta charset="utf-8" />
     <title>회원가입 및 로그인 사이트</title>
-    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles/login.css" />
 </head>
 
 <body>

@@ -29,7 +29,7 @@
         </a>
       </div>
       <div class="col_block">
-        <a href="../member/logout.php">
+        <a href="/member/logout.php">
           <button>log out</button>
         </a>
       </div>
@@ -42,7 +42,7 @@
         <div class="dropdown-content">
           <form method="post">
             <a href="profile/profile.php?id=<?php echo $_SESSION['userid'] ?>">profile</a>
-            <a href="../member/logout.php">logout</a>
+            <a href="/member/logout.php">logout</a>
           </form>
         </div>
       </div>
