@@ -53,7 +53,6 @@ CREATE TABLE `member` (
     `email` VARCHAR(100) NOT NULL ,
     `avatar` VARCHAR(2000) NOT NULL ,
     `username` VARCHAR(20) NOT NULL,
-    `secretcode` VARCHAR(20) NOT NULL,
     `verified` BOOLEAN DEFAULT false,
     PRIMARY KEY (`idx`)
     ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
