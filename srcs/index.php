@@ -1,39 +1,47 @@
 <?php
 include "/db.php";
+include "hooks/func_view.php"
 ?>
 <!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>회원가입 및 로그인 사이트</title>
-    <link rel="stylesheet" type="text/css" href="styles/login.css" />
+    <meta charset="urf-8" />
+    <title>Camagru_Auth</title>
+    <link rel="stylesheet" type="text/css" href="../css/auth.css" />
 </head>
 
 <body>
-    <div id="login_box">
-        <h1>로그인</h1>
-        <form method="post" action="member/login_ok.php">
-            <table align="center" border="0" cellspacing="0" width="300">
-                <tr>
-                    <td width="130" colspan="1">
-                        <input type="text" name="userid" class="inph">
-                    </td>
-                    <td rowspan="2" align="center" width="100">
-                        <button type="submit" id="btn">로그인</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="130" colspan="1">
-                        <input type="password" name="userpw" class="inph">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="center" class="mem">
-                        <a href="member/member.php">회원가입 하시겠습니까?</a>
-                    </td>
-                </tr>
-            </table>
-        </form>
+    <div class="bg_image">
+        <div class="bg_cover"></div>
+    </div>
+    <div class="wrapper">
+        <div id="web_title">CAMAGRU</div>
+        <div id="web_subtitle">by jinpark🤙🏻</div>
+        <div class="login_box">
+            <form method="post" action="member/login_ok.php" class="login_form">
+                <div class="login_sec">
+                    <label class="field field_v1">
+                        <input type="text" class="field__input" placeholder="e.g. Jin" name="userid" />
+                        <span class="field__label-wrap">
+                            <span class="field__label">User ID</span>
+                        </span>
+                    </label>
+                    <label class="field field_v2">
+                        <input type="password" class="field__input" name="userpw" placeholder="Password" />
+                        <span class="field__label-wrap">
+                            <span class="field__label">Password</span>
+                        </span>
+                    </label>
+                </div>
+                <button type="submit">LOGIN</button>
+            </form>
+        </div>
+        <div class="signup_sec">
+            <div class="a_box">
+                <a href="member/member.php">Sign up</a>
+            </div>
+        </div>
     </div>
 </body>
 

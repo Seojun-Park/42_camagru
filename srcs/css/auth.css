@@ -111,7 +111,7 @@ a {
   padding: 1rem;
   display: grid;
   grid-gap: 30px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .text_box {
@@ -426,7 +426,7 @@ button:hover:after {
 }
 
 #btn:hover {
-  background: #673ab7;
+  background: none;
   color: #fff;
 }
 
