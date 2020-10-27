@@ -51,9 +51,9 @@ include "check.php";
                             <option value="naver.com">naver.com</option>
                             <option value="daum.net">daum.net</option>
                         </select></td>
-                    <td>
+                    <!-- <td>
                         <input type="submit" value="verify" formaction="send_email.php" />
-                    <td>
+                    <td> -->
                 </tr>
             </table>
 
