@@ -64,6 +64,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
 }
 
 .login_form {
@@ -80,9 +83,9 @@
   max-width: 480px;
   margin: auto;
   padding: 1rem;
-
   display: grid;
   grid-gap: 30px;
+  margin-bottom: 35px;
 }
 
 .text_box {
@@ -275,12 +278,15 @@ button {
   color: #fff;
   border: none;
   position: relative;
-  height: 60px;
-  font-size: 1.6em;
+  height: 50px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  font-family: baron;
   padding: 0 2em;
   cursor: pointer;
   transition: 800ms ease all;
   outline: none;
+  border-radius: 5px;
 }
 button:hover {
   background: none;
@@ -305,6 +311,52 @@ button:after {
 }
 button:hover:before,
 button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.signup_sec {
+  padding-top: 20px;
+}
+
+.signup_sec a {
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1em;
+  letter-spacing: 2px;
+  font-family: baron;
+  padding: 10px 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.signup_sec a:hover {
+  background: none;
+  color: #fff;
+}
+.signup_sec a:before,
+.signup_sec a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1px;
+  width: 0;
+  background: #fff;
+  transition: 400ms ease all;
+}
+.signup_sec a:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.signup_sec a:hover:before,
+.signup_sec a:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
