@@ -7,6 +7,12 @@
   src: url(font/Baron-Neue.ttf) format("truetype");
 }
 
+a {
+  text-decoration: none;
+  font-family: baron;
+  color: white;
+}
+
 * {
   margin: 0;
   font-family: "Nanum Gothic Coding", monospace;
@@ -426,7 +432,7 @@ button:hover:after {
 
 #btn.res:hover {
   background: #e74c3c;
-  color: #fff; 
+  color: #fff;
 }
 #btn:before,
 #btn:after {

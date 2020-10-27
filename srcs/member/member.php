@@ -8,57 +8,62 @@ include "check.php";
 <head>
     <meta charset="utf-8" />
     <title>Cama_Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="/css/auth.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <form method="post">
-        <h1>Sign up</h1>
-        <fieldset>
-            <legend>Form</legend>
-            <table>
-                <tr>
-                    <td>User ID</td>
-                    <td><input type="text" size="35" name="userid" id="userid" class="check" placeholder="아이디" required />
-                    <td>
-                        <div id="id_check">Your ID is checking automatically</div>
-                    </td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" size="35" name="userpw" placeholder="Password"></td>
-                </tr>
-                <tr>
-                    <td>Nickname</td>
-                    <td><input type="test" size="35" name="username" placeholder="Nickname"></td>
-                </tr>
-                <tr>
-                    <td>First name</td>
-                    <td><input type="text" size="35" name="firstname" placeholder="First name"></td>
-                </tr>
-                <tr>
-                    <td>Last name</td>
-                    <td><input type="text" size="35" name="lastname" placeholder="Last name"></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td><input type="text" name="email">@<select name="emaddress">
-                            <option value="gmail.com">gmail.com</option>
-                            <option value="yahoo.com">yahoo.com</option>
-                            <option value="hotmail.com">hatmail.com</option>
-                            <option value="naver.com">naver.com</option>
-                            <option value="daum.net">daum.net</option>
-                        </select></td>
-                    <!-- <td>
-                        <input type="submit" value="verify" formaction="send_email.php" />
-                    <td> -->
-                </tr>
-            </table>
-            <input type="submit" value="가입하기" formaction="member_ok.php" /><input type="reset" value="다시쓰기" />
-        </fieldset>
-    </form>
+    <div class="bg_signup">
+        <div class="bg_cover"></div>
+    </div>
+    <div class="wrapper">
+        <div id="web_title"><a href="/">CAMAGRU</a></div>
+        <div id="web_subtitle_signup">Sign up</div>
+        <form method="post">
+            <div class="signup_box">
+                <label class="field field_v1">
+                    <input type="text" size="40" name="userid" class="field__input" placeholder="User ID" required />
+                    <span class="field__label-wrap">
+                        <span class="field__label">User ID</span>
+                    </span>
+                </label>
+                <label class="field field_v1">
+                    <input type="password" class="field__input" name="userpw" placeholder="Password" />
+                    <span class="field__label-wrap">
+                        <span class="field__label">Password</span>
+                    </span>
+                </label>
+                <label class="field field_v1">
+                    <input type="text" class="field__input" name="username" placeholder="Username" />
+                    <span class="field__label-wrap">
+                        <span class="field__label">Username</span>
+                    </span>
+                </label>
+                <label class="field field_v1">
+                    <input type="text" class="field__input" name="firstname" placeholder="First name" />
+                    <span class="field__label-wrap">
+                        <span class="field__label">First Name</span>
+                    </span>
+                </label>
+                <label class="field field_v1">
+                    <input type="text" class="field__input" name="lastname" placeholder="Last name" />
+                    <span class="field__label-wrap">
+                        <span class="field__label">Last Name</span>
+                    </span>
+                </label>
+                <label class="field field_v1">
+                    <input type="text" \ class="field__input" name="email" placeholder="Email" />
+                    <span class="field__label-wrap">
+                        <span class="field__label">Email</span>
+                    </span>
+                </label>
+            </div>
+            <div class="signup_btn">
+                <input type="submit" value="Sign up" id="btn" formaction="member_ok.php" /><input type="reset" id="btn" class="res" value="Reset" />
+            </div>
+        </form>
+    </div>
 </body>
 
 
