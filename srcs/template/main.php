@@ -1,5 +1,27 @@
 <!-- @format -->
 
+<?php
+$dir = "../asset/stickers";
+$handle = opendir($dir);
+$files = array();
+while (false !== (!$filename = readdir($handle))) {
+    if ($filename == "." || $filename == "..") {
+        continue;
+    }
+    if (is_file($dir . "/" . "filename")) {
+        $files[] = $filename;
+    }
+}
+
+foreach ($files as $f) {
+    echo $f;
+    echo "<br />";
+}
+
+// closedir($handle);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +34,7 @@
     <title>Camagru</title>
     <script src="../js/html2canvas.js"></script>
     <script>
-        window.onload = async() => {
+        window.onload = async () => {
             var video = document.getElementById("monitor");
             const canvas = document.getElementById("photo");
             const shutter = document.getElementById("shutter");
@@ -88,8 +110,8 @@
         <div class="header_row">
             <div class="dropdown">
                 <button>
-          <img src="../asset/burger_icon.svg" alt="burger" />
-        </button>
+                    <img src="../asset/burger_icon.svg" alt="burger" />
+                </button>
                 <div class="dropdown-content">
                     <form method="post">
                         <a href="/">PROFILE</a>
@@ -111,7 +133,11 @@
                     </div>
                 </div>
                 <div class="sticker_sec">
-                    
+                    <?php foreach ($files as $f) {
+                        echo "<span>" . $f . "</span>";
+                        echo "<br />";
+                    }
+                    ?>
                 </div>
             </section>
         </div>
