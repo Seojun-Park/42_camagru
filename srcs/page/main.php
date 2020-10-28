@@ -75,13 +75,26 @@ closedir($handle);
     if (isset($_SESSION['userid'])) {
         $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
         $me = $mesql->fetch_array();
-    ?>
+        ?>
         <div class='header'>
             <?php echo view('header.php'); ?>
         </div>
         <div class="wrapper">
-            main page test
-            <a href="camera/camera.php">camera page</a>
+            <div class="selection">
+                <div class="select_box">
+                    <div class="box_in">
+                        upload
+                    </div>
+                </div>
+                <div id="b_line"></div>
+                <div class="select_box">
+                    <div class="box_in">
+                        <a href="camera/camera.php">
+                            camera
+                        </a>
+                    </div>
+                </div>
+            </div>
             <!-- <div class="main_sec">
                 <section id="app" hidden>
                     <div class="camera_view">
@@ -96,11 +109,11 @@ closedir($handle);
                         <div>Choose your Sticker :D</div>
                         <ul class="sticker_list">
                             <?php foreach ($files as $f) {
-                                echo "<li class='li_img'>";
-                                echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
-                                echo "</li>";
-                            }
-                            ?>
+                                    echo "<li class='li_img'>";
+                                    echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
+                                    echo "</li>";
+                                }
+                                ?>
                         </ul>
                     </div>
                 </section>

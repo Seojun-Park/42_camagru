@@ -48,8 +48,21 @@
         </div>
     </header>
     <div class="wrapper">
-        test
-
+        <div class="selection">
+            <div class="select_box">
+                <div class="box_in">
+                    upload
+                </div>
+            </div>
+            <div id="b_line"></div>
+            <div class="select_box">
+                <div class="box_in">
+                    <a href="#">
+                        camera
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <footer>

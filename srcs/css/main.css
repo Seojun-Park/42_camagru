@@ -1,33 +1,69 @@
+/** @format */
+
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
 body {
-    font-family: "Nanum Gothic Coding", monospace;
-    background-color: #ecf0f1;
+  font-family: "Nanum Gothic Coding", monospace;
+  background-color: #ecf0f1;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    width: 80%;
-    min-width: 650px;
-    margin: 0 auto;
-    margin-top: 15px;
-    min-height: 70vh;
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    border: 3px solid #333;
-    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 80%;
+  min-width: 650px;
+  margin: 0 auto;
+  margin-top: 15px;
+  min-height: 70vh;
+  padding: 15px;
+  border: 3px solid #333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  background-color: #ffffff;
 }
 
-.upload_image {
-    border: 1px solid black;
-    margin-bottom: 15px;
+.select_box {
+  font-family: baron;
+  padding: 4rem 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #333;
+  font-size: 2rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch;
+  background: #fff;
+  position: relative;
+  margin: 20px auto;
+  width: 400px;
 }
 
-.to_camera {
-    border: 1px solid red;
+.select_box:hover {
+  transition: 0.2s linear;
+  background-color: #bdc3c7;
+}
+.select_box::before {
+  border: 2px solid #353535;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+}
+
+.box_in {
+  position: absolute;
+  cursor: pointer;
+}
+
+#b_line {
+  width: 550px;
+  margin: 0 auto;
+  border-top: 3px solid #7f8c8d;
 }
