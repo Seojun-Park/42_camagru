@@ -19,5 +19,5 @@ if (count($_FILES)) {
       print_r($_FILES);
   }
 
-  echo "<script>alert('Uploading Success');history.back()</script>";
+//   echo "<script>history.back()</script>";
 }
