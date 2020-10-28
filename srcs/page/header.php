@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <header>
+<header>
         <div class="header_row first_col">
             <a href="/">logo</a>
         </div>
         <div class="header_row second_col">
-            empty for now
+            <span>Camagru</span>
         </div>
         <div class="header_row third_col">
             <div class="col_block">
@@ -26,16 +26,15 @@
             </div>
             <div class="col_block">
                 <a href="../member/logout.php">
-                    <button>LOGOUT</button>
+                    <button>LOG OUT</button>
                 </a>
             </div>
         </div>
-
         <div class="header_row">
             <div class="dropdown">
                 <button>
-            <span class="glyphicon glyphicon-align-justify"></span>
-          </button>
+                    <img src="../asset/burger_icon.svg" alt="burger" />
+                </button>
                 <div class="dropdown-content">
                     <form method="post">
                         <a href="/">PROFILE</a>
