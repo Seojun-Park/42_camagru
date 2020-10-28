@@ -92,6 +92,11 @@ closedir($handle);
         </div>
         <div class="header_row third_col">
             <div class="col_block">
+                <div class="col_block">
+                    <a href="/">
+                        <button>GALLERY</button>
+                    </a>
+                </div>
                 <a href="/">
                     <button>PROFILE</button>
                 </a>
@@ -141,8 +146,8 @@ closedir($handle);
             </section>
         </div>
         <div class="side_sec">
+            <canvas id="photo"></canvas>
             <section id="app" class="side" hidden>
-                <canvas id="photo"></canvas>
             </section>
         </div>
     </div>
