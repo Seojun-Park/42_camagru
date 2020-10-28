@@ -49,19 +49,21 @@
     </header>
     <div class="wrapper">
         <div class="selection">
-            <div class="select_box">
-                <div class="box_in">
-                    upload
+            <a href="#">
+                <div class="select_box">
+                    <div class="box_in">
+                        upload
+                    </div>
                 </div>
-            </div>
+            </a>
             <div id="b_line"></div>
-            <div class="select_box">
-                <div class="box_in">
-                    <a href="#">
+            <a href="#">
+                <div class="select_box">
+                    <div class="box_in">
                         camera
-                    </a>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </body>

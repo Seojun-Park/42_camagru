@@ -24,6 +24,10 @@ body {
   background-color: #ffffff;
 }
 
+.selection a {
+  color: black;
+}
+
 .select_box {
   font-family: baron;
   padding: 4rem 6rem;
