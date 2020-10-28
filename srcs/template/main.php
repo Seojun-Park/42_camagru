@@ -4,21 +4,16 @@
 $dir = "../asset/stickers";
 $handle = opendir($dir);
 $files = array();
-while (false !== (!$filename = readdir($handle))) {
+while (($filename = readdir($handle)) !== false) {
     if ($filename == "." || $filename == "..") {
         continue;
     }
-    if (is_file($dir . "/" . "filename")) {
-        $files[] = $filename;
+    if (is_file($dir . "/" . $filename)) {
+        $files[] = $dir . "/" . $filename;
     }
 }
 
-foreach ($files as $f) {
-    echo $f;
-    echo "<br />";
-}
-
-// closedir($handle);
+closedir($handle);
 
 ?>
 
@@ -133,11 +128,15 @@ foreach ($files as $f) {
                     </div>
                 </div>
                 <div class="sticker_sec">
-                    <?php foreach ($files as $f) {
-                        echo "<span>" . $f . "</span>";
-                        echo "<br />";
-                    }
-                    ?>
+                    <div>Choose your Sticker :D</div>
+                    <ul class="sticker_list">
+                        <?php foreach ($files as $f) {
+                            echo "<li class='li_img'>";
+                            echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
+                            echo "</li>";
+                        }
+                        ?>
+                    </ul>
                 </div>
             </section>
         </div>

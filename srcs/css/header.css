@@ -8,12 +8,15 @@
 
 header {
     border-bottom: 2px solid black;
+    min-width: 700px;
     font-family: "Nanum Gothic Coding", monospace;
     margin: 0 auto;
     margin-top: 15px;
 }
 
 footer {
+    width: 80%;
+    min-width: 700px;
     border-top: 2px solid black;
     font-family: "Nanum Gothic Coding", monospace;
     margin: 15px auto;
@@ -140,6 +143,7 @@ a:hover {
 @media screen and (min-width: 769px) {
     header {
         height: 5vh;
+        min-width: 950px;
         max-height: 80px;
         width: 90%;
         padding: 5px;
@@ -205,5 +209,8 @@ a:hover {
     button {
         border: none;
         background-color: white;
+    }
+    footer {
+        min-width: 950px;
     }
 }
