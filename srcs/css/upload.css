@@ -1,0 +1,25 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+  background-color: #ecf0f1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 80%;
+  min-width: 650px;
+  margin: 0 auto;
+  margin-top: 15px;
+  min-height: 70vh;
+  padding: 15px;
+  border: 3px solid #333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  background-color: #ffffff;
+}
