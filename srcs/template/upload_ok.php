@@ -1,29 +1,23 @@
 <?php 
-$up_dir = '../upload';
+$up_dir = '../upload/';
 $allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
 
 $error = $_FILES['upimage']['error'];
-$name = $_FILES['upimage']['name]'];
+$name = $_FILES['upimage']['name'];
 $ext = array_pop(explode('.', $name));
 
-if ($error != UPLOAD_ERR_OK){
-    switch( $error) {
-        case UPLOAD_ERR_INI_SIZE:
-        case UPLOAD_ERR_FORM_SIZE:
-            echo "Size is too big. ($error)";
-            break;
-        case UPLOAD_ERR_FILE:
-            echo "No image attached. ($error)";
-            break;
-        default:
-            echo "Fail to upload the image. ($error)";
-    }
-    exit;
-}
 
-if (!in_array($ext, $allowed_ext)){
-    echo "Not allowed file type";
-    exit;
-}
+if (count($_FILES)) {
+  $uploadfile = $up_dir . basename($_FILES['upimage']['name']);
 
-move_uploaded_file($_FILES['upimage']['tmp_name'], "$up_dir/$name");
+  echo '<pre>';
+  if (move_uploaded_file($_FILES['upimage']['tmp_name'], $uploadfile)) {
+      echo "File is valid, and was successfully uploaded.\n";
+  } else {
+      echo "Error occured!\n";
+      echo 'Here is some more debugging info:';
+      print_r($_FILES);
+  }
+
+  echo "<script>alert('Uploading Success');history.back()</script>";
+}

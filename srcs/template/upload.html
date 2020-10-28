@@ -50,10 +50,11 @@
       </div>
     </header>
     <div class="wrapper">
-        <form enctype="multipart/form-data" action="upload_ok.php" method="post">
-            <input type="file" name="upimage">
-            <button>upload</button>
-        </form>
+      <form enctype="multipart/form-data" action="upload_ok.php" method="post">
+        <label for="image">imagename:</label>
+        <input type="file" name="upimage" id="up_image" /><br />
+        <input type="submit" name="submit" value="Submit" />
+      </form>
     </div>
     <footer>
       Copyright &copy; Jin 2020 - All Rights Reserved
