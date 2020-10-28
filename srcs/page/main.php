@@ -1,6 +1,20 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
+
+$dir = $_SERVER['DOCUMENT_ROOT'] . "/asset/stickers";
+$handle = opendir($dir);
+$files = array();
+while (($filename = readdir($handle)) !== false) {
+    if ($filename == "." || $filename == "..") {
+        continue;
+    }
+    if (is_file($dir . "/" . $filename)) {
+        $files[] = $dir . "/" . $filename;
+    }
+}
+
+closedir($handle);
 ?>
 <!DOCTYPE html>
 
@@ -76,11 +90,15 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
                         </div>
                     </div>
                     <div class="sticker_sec">
-                        <?php foreach ($files as $f) {
-                            echo "<span>" . $f . "</span>";
-                            echo "<br />";
-                        }
-                        ?>
+                        <div>Choose your Sticker :D</div>
+                        <ul class="sticker_list">
+                            <?php foreach ($files as $f) {
+                                echo "<li class='li_img'>";
+                                echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
+                                echo "</li>";
+                            }
+                            ?>
+                        </ul>
                     </div>
                 </section>
             </div>
