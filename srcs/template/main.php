@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="sticker_sec">
-                    test
+                    
                 </div>
             </section>
         </div>
