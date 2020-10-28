@@ -121,35 +121,8 @@ closedir($handle);
             </div>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="main_sec">
-            <section id="app" hidden>
-                <div class="camera_view">
-                    <video id="monitor" autoplay></video>
-                    <div class="button_sec">
-                        <button id="on">Camera On</button>
-                        <button id="shutter">Capture</button>
-                        <button id="stop">Camera Off</button>
-                    </div>
-                </div>
-                <div class="sticker_sec">
-                    <div>Choose your Sticker :D</div>
-                    <ul class="sticker_list">
-                        <?php foreach ($files as $f) {
-                            echo "<li class='li_img'>";
-                            echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
-                            echo "</li>";
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </section>
-        </div>
-        <div class="side_sec">
-            <canvas id="photo"></canvas>
-            <section id="app" class="side" hidden>
-            </section>
-        </div>
+    <div>
+        maybe giving selection here
     </div>
 </body>
 <footer>

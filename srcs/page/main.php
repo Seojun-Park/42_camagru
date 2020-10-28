@@ -21,7 +21,7 @@ closedir($handle);
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/camera.css" />
     <title>Camagru</title>
     <script>
         window.onload = async () => {

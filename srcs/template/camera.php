@@ -1,8 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
-$dir = "../../asset/stickers";
+$dir = "../asset/stickers";
 $handle = opendir($dir);
 $files = array();
 while (($filename = readdir($handle)) !== false) {
@@ -20,8 +18,9 @@ closedir($handle);
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/camera.css" />
+<link rel="stylesheet" href="../css/reset.css" />
+<link rel="stylesheet" href="../css/camera.css" />
+<link rel="stylesheet" href="../css/header.css" />
 <title>Camagru</title>
 <script>
     window.onload = async () => {
@@ -70,9 +69,44 @@ closedir($handle);
 </head>
 
 <body>
-    <div class='header'>
-        <?php echo view('header.php'); ?>
-    </div>
+    <header>
+        <div class="header_row first_col">
+            <a href="/">logo</a>
+        </div>
+        <div class="header_row second_col">
+            <span>Camagru</span>
+        </div>
+        <div class="header_row third_col">
+            <div class="col_block">
+                <div class="col_block">
+                    <a href="/">
+                        <button>GALLERY</button>
+                    </a>
+                </div>
+                <a href="/">
+                    <button>PROFILE</button>
+                </a>
+            </div>
+            <div class="col_block">
+                <a href="../member/logout.php">
+                    <button>LOG OUT</button>
+                </a>
+            </div>
+        </div>
+        <div class="header_row">
+            <div class="dropdown">
+                <button>
+                    <img src="../asset/burger_icon.svg" alt="burger" />
+                </button>
+                <div class="dropdown-content">
+                    <form method="post">
+                        <a href="/">PROFILE</a>
+                        <a href="../member/logout.php">LOGOUT</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="wrapper">
         <div class="main_sec">
             <section id="app" hidden>
@@ -103,9 +137,9 @@ closedir($handle);
             </section>
         </div>
     </div>
-    <div class="header">
-        <?php echo view('footer.html') ?>
-    </div>
 </body>
+<footer>
+    Copyright &copy; Jin 2020 - All Rights Reserved
+</footer>
 
 </html>
