@@ -3,3 +3,31 @@ body {
     font-family: "Nanum Gothic Coding", monospace;
     background-color: #ecf0f1;
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    min-width: 650px;
+    margin: 0 auto;
+    margin-top: 15px;
+    min-height: 70vh;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    border: 3px solid #333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    background-color: #ffffff;
+}
+
+.upload_image {
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+
+.to_camera {
+    border: 1px solid red;
+}

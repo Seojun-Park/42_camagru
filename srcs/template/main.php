@@ -1,85 +1,11 @@
-<!-- @format -->
-
-<?php
-$dir = "../asset/stickers";
-$handle = opendir($dir);
-$files = array();
-while (($filename = readdir($handle)) !== false) {
-    if ($filename == "." || $filename == "..") {
-        continue;
-    }
-    if (is_file($dir . "/" . $filename)) {
-        $files[] = $dir . "/" . $filename;
-    }
-}
-
-closedir($handle);
-
-?>
-
 <!DOCTYPE html>
-<html>
 
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/header.css" />
-
+    <link rel="stylesheet" href="../css/main.css" />
     <title>Camagru</title>
-    <script src="../js/html2canvas.js"></script>
-    <script>
-        window.onload = async () => {
-            var video = document.getElementById("monitor");
-            const canvas = document.getElementById("photo");
-            const shutter = document.getElementById("shutter");
-            const stop = document.getElementById("stop");
-            const on = document.getElementById("on");
-            const save = document.getElementById("save");
-
-            try {
-                video.srcObject = await navigator.mediaDevices.getUserMedia({
-                    video: true
-                });
-
-                await new Promise(resolve => (video.onloadedmetadata = resolve));
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                document.getElementById("app").hidden = false;
-
-                shutter.onclick = () => {
-                    canvas.getContext("2d").drawImage(video, 0, 0);
-                    html2canvas(document.querySelector("#photo")).then(canvas => {
-                        document.querySelector(".side").appendChild(canvas);
-                    });
-                };
-
-                on.onclick = () => {
-                    if (navigator.mediaDevices.getUserMedia) {
-                        navigator.mediaDevices
-                            .getUserMedia({
-                                video: true
-                            })
-                            .then(function(stream) {
-                                video.srcObject = stream;
-                            });
-                    }
-                };
-                stop.onclick = () => {
-                    const stream = video.srcObject;
-                    var tracks = stream.getTracks();
-
-                    for (var i = 0; i < tracks.length; i++) {
-                        var track = tracks[i];
-                        track.stop();
-                    }
-                    video.srcObject = null;
-                };
-            } catch (err) {
-                console.error(err);
-            }
-        };
-    </script>
 </head>
 
 <body>
@@ -121,12 +47,14 @@ closedir($handle);
             </div>
         </div>
     </header>
-    <div>
-        maybe giving selection here
+    <div class="wrapper">
+        test
+
     </div>
 </body>
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
+
 
 </html>

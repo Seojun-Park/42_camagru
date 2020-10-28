@@ -21,7 +21,7 @@ closedir($handle);
 <link rel="stylesheet" href="../css/reset.css" />
 <link rel="stylesheet" href="../css/camera.css" />
 <link rel="stylesheet" href="../css/header.css" />
-<title>Camagru</title>
+<script src="../js/html2canvas.js"></script>
 <script>
     window.onload = async () => {
         var video = document.getElementById('monitor');
@@ -29,18 +29,21 @@ closedir($handle);
         const shutter = document.getElementById('shutter');
         const stop = document.getElementById('stop');
         const on = document.getElementById('on');
-
         try {
             video.srcObject = await navigator.mediaDevices.getUserMedia({
                 video: true
             });
-
             await new Promise((resolve) => video.onloadedmetadata = resolve);
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             document.getElementById('app').hidden = false;
+            shutter.onclick = () => {
+                canvas.getContext("2d").drawImage(video, 0, 0);
+                html2canvas(document.querySelector("#photo")).then(canvas => {
+                    document.querySelector(".side").appendChild(canvas);
+                });
+            };
 
-            shutter.onclick = () => canvas.getContext('2d').drawImage(video, 0, 0);
             on.onclick = () => {
                 if (navigator.mediaDevices.getUserMedia) {
                     navigator.mediaDevices.getUserMedia({
@@ -54,7 +57,6 @@ closedir($handle);
             stop.onclick = () => {
                 const stream = video.srcObject;
                 var tracks = stream.getTracks();
-
                 for (var i = 0; i < tracks.length; i++) {
                     var track = tracks[i];
                     track.stop();
@@ -141,5 +143,6 @@ closedir($handle);
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
+
 
 </html>
