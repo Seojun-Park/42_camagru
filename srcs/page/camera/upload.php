@@ -1,6 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/hook/func_view.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +12,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hook/func_view.php";
 </head>
 
 <body>
-    <?php echo view('../header.php'); ?>
+    <div class="header">
+        <?php echo view('../header.php'); ?>
+    </div>
     <div class="wrapper">
         <form enctype="multipart/form-data" action="upload_ok.php" method="post">
             <label for="image">imagename:</label>
@@ -21,7 +22,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hook/func_view.php";
             <input type="submit" name="submit" value="Submit" />
         </form>
     </div>
-    <?php echo view('../footer.php'); ?>
+    <div class="header">
+        <?php echo view('../footer.html'); ?>
+    </div>
 </body>
 
 </html>

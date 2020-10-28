@@ -6,8 +6,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/header.css" />
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="col_block">
-                <a href="../member/logout.php">
+                <a href="/member/logout.php">
                     <button>LOG OUT</button>
                 </a>
             </div>
