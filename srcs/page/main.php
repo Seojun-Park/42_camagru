@@ -34,7 +34,7 @@ closedir($handle);
         </div>
         <div class="wrapper">
             <div class="selection">
-                <a href="#">
+                <a href="camera/upload.php">
                     <div class="select_box">
                         <div class="box_in">
                             upload
