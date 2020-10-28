@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
+include $_SERVER['DOCUMENT_ROOT'] . "db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "hooks/func_view.php";
 
 $dir = "../../asset/stickers";
 $handle = opendir($dir);
@@ -20,10 +20,10 @@ closedir($handle);
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/camera.css" />
+<link rel="stylesheet" href="../../css/reset.css" />
+<link rel="stylesheet" href="../../css/camera.css" />
 <title>Camagru</title>
-<script src="/js/html2canvas.js"></script>
+<script src="../../js/html2canvas.js"></script>
 <script>
     window.onload = async () => {
         var video = document.getElementById('monitor');
@@ -74,7 +74,7 @@ closedir($handle);
 
 <body>
     <div class='header'>
-        <?php echo view('header.php'); ?>
+        <?php echo view('../header.php'); ?>
     </div>
     <div class="wrapper">
         <div class="main_sec">
@@ -107,7 +107,7 @@ closedir($handle);
         </div>
     </div>
     <div class="header">
-        <?php echo view('footer.html') ?>
+        <?php echo view('../footer.html') ?>
     </div>
 </body>
 

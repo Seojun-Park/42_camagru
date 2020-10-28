@@ -81,7 +81,7 @@ closedir($handle);
         </div>
         <div class="wrapper">
             main page test
-            <a href="/camera/camera.php">camera page</a>
+            <a href="camera/camera.php">camera page</a>
             <!-- <div class="main_sec">
                 <section id="app" hidden>
                     <div class="camera_view">
@@ -120,19 +120,5 @@ closedir($handle);
     }
     ?>
 </body>
-<script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-                video: true
-            })
-            .then(function(stream) {
-                video.srcObject = stream;
-            })
-            .catch(function(error) {
-                console.log("Something went wrong!");
-            });
-    }
-</script>
 
 </html>
