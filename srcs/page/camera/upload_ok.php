@@ -1,6 +1,11 @@
-<?php 
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+
 $up_dir = '/upload/';
 $allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
+
+$sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
+$user = $sql->fetch_array();
 
 $error = $_FILES['upimage']['error'];
 $name = $_FILES['upimage']['name'];
@@ -12,12 +17,12 @@ if (count($_FILES)) {
 
   echo '<pre>';
   if (move_uploaded_file($_FILES['upimage']['tmp_name'], $uploadfile)) {
-      echo "File is valid, and was successfully uploaded.\n";
+    echo "File is valid, and was successfully uploaded.\n";
   } else {
-      echo "Error occured!\n";
-      echo 'Here is some more debugging info:';
-      print_r($_FILES);
+    echo "Error occured!\n";
+    echo 'Here is some more debugging info:';
+    print_r($_FILES);
   }
 
-//   echo "<script>history.back()</script>";
+  //   echo "<script>history.back()</script>";
 }

@@ -1,5 +1,12 @@
 <!-- @format -->
 
+<?php 
+$user = array();
+$user['userid'] = "jinpark";
+$user['username'] = "jinchul";
+
+?>
+
 <!DOCTYPE html>
 <html>
 
