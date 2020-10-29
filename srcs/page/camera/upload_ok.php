@@ -6,6 +6,7 @@ $allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
 
 $sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
+$userid = $user['userid'];
 
 $error = $_FILES['upimage']['error'];
 $name = $_FILES['upimage']['name'];
@@ -13,7 +14,11 @@ $ext = array_pop(explode('.', $name));
 
 
 if (count($_FILES)) {
-  $uploadfile = $up_dir . basename($_FILES['upimage']['name']);
+  if (file_exists("/upload/$userid") === false) {
+    mkdir("/upload/$userid", 0777, true);
+  }
+
+  $uploadfile = $up_dir . $userid . "/" . basename($_FILES['upimage']['name']);
 
   echo '<pre>';
   if (move_uploaded_file($_FILES['upimage']['tmp_name'], $uploadfile)) {
