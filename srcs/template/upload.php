@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<?php 
+<?php
 $user = array();
 $user['userid'] = "jinpark";
 $user['username'] = "jinchul";
@@ -15,7 +15,6 @@ $user['username'] = "jinchul";
   <title>Camagru_Upload</title>
   <link rel="stylesheet" href="../css/reset.css" />
   <link rel="stylesheet" href="../css/header.css" />
-
   <link rel="stylesheet" href="../css/upload.css" />
 </head>
 
@@ -59,15 +58,38 @@ $user['username'] = "jinchul";
     </div>
   </header>
   <div class="wrapper">
-    <form enctype="multipart/form-data" action="upload_ok.php" method="post">
+    <form enctype="multipart/form-data" method="post">
       <label for="image">imagename:</label>
       <input type="file" name="upimage" id="up_image" /><br />
       <input type="submit" name="submit" value="Submit" />
     </form>
+    <div id="preview">
+    </div>
   </div>
   <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
   </footer>
 </body>
+<script>
+  var upload = document.querySelector("#up_image");
+  var preview = document.querySelector("preview");
+
+  upload.addEventListener('change', function(e) {
+    var getfile = e.target.files;
+    var image = document.createElement('img');
+    var reader = new FileReader();
+
+    reader.onload = (function(aimg) {
+      return function(e) {
+        aimg.src = e.target.result
+      }
+    })(image)
+    if (getfile){
+      reader.readAsDataURL(getfile[0]);
+    }
+    console.log(image);
+    preview.appendChild(image);
+  });
+</script>
 
 </html>
