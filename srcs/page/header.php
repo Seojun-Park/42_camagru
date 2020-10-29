@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="header_row first_col">
             <a href="/page/main.php">logo</a>
         </div>
@@ -20,7 +20,12 @@
         </div>
         <div class="header_row third_col">
             <div class="col_block">
-                <a href="/">
+                <a href="#">
+                    <button>GALLERY</button>
+                </a>
+            </div>
+            <div class="col_block">
+                <a href="#">
                     <button>PROFILE</button>
                 </a>
             </div>
@@ -37,7 +42,8 @@
                 </button>
                 <div class="dropdown-content">
                     <form method="post">
-                        <a href="/">PROFILE</a>
+                        <a href="#">GALLERY</a>
+                        <a href="#">PROFILE</a>
                         <a href="/member/logout.php">LOGOUT</a>
                     </form>
                 </div>
