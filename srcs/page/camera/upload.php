@@ -38,40 +38,69 @@ closedir($handle);
             <label for="up_image">
                 <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
                 <div id="preview">
-                    <img id="img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="temp" />
+                    <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
                 </div>
             </label>
             <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
         </form>
         <div class="side">
             <div class="stick_title">Choose your Sticker :D</div>
-            <ul class="sticker_list">
-                <?php foreach ($files as $f) {
-                    echo "<li class='li_img'>";
-                    echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
-                    echo "</li>";
+            <div class="sticker_list">
+                <?php
+                $i = 0;
+                foreach ($files as $f) {
+                    echo "<button onclick='chosen_sticker(" . $i . ")';>";
+                    echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
+                    echo "</button>";
+                    $i++;
                 }
                 ?>
-            </ul>
+            </div>
             <button class="sticker_btn">CHOOSE</button>
         </div>
     </div>
 </body>
 <script>
-    const reader = new FileReader();
-    const fileInput = document.getElementById("up_image");
-    const img = document.getElementById("img");
-    let file;
+    var canvas = document.createElement("canvas");
+    canvas.width = 500;
+    canvas.height = 500;
+    var context = canvas.getContext("2d");
+    context.globalCompositeOperation = "source-over";
 
-    reader.onload = e => {
-        img.src = e.target.result;
+    var file = document.querySelector("#up_image");
+    var file2 = document.querySelector("#getfile2");
+
+    file.onchange = function() {
+        var fileList = file.files;
+
+        var reader = new FileReader();
+        reader.readAsDataURL(fileList[0]);
+
+        reader.onload = function() {
+            var tempImage = new Image();
+            tempImage.src = reader.result;
+            tempImage.onload = function() {
+                context.drawImage(this, 0, 0, 500, 500);
+                var dataURI = canvas.toDataURL("image/jpeg");
+                document.querySelector("#pre_img").src = dataURI;
+            };
+        };
+    };
+
+
+    const chosen_sticker = index => {
+        const img = document.getElementsByClassName('li_img')[index];
+        const uri = img.getAttribute('src')
+        // 소스 구하기
+        var tmpImage = new Image();
+        tmpImage.src = uri;
+        tmpImage.onload = function() {
+            context.drawImage(this, 0, 0, 300, 400);
+            var dataURI = canvas.toDataURL("image/jpeg");
+            document.querySelector("#pre_img").src = dataURI;
+        }
+
     }
-
-    fileInput.addEventListener('change', e => {
-        const f = e.target.files[0];
-        file = f;
-        reader.readAsDataURL(f);
-    })
 </script>
 
 </html>

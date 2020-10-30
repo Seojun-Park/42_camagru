@@ -75,7 +75,10 @@ closedir($handle);
       <label for="up_image">
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+          <a id="download">
+            <!-- <a id="download" download="thumnail.jpg" target="_blank"> -->
+            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+          </a>
         </div>
       </label>
       <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
@@ -83,8 +86,13 @@ closedir($handle);
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
       <div class="sticker_list">
-        <?php foreach ($files as $f) {
-          echo "<img class='li_img' id='getfile2' src='" . $f . "' alt='sticker'/>";
+        <?php
+        $i = 0;
+        foreach ($files as $f) {
+          echo "<button onclick='chosen_sticker(" . $i . ")';>";
+          echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
+          echo "</button>";
+          $i++;
         }
         ?>
       </div>
@@ -99,9 +107,8 @@ closedir($handle);
 </body>
 <script>
   var canvas = document.createElement("canvas");
-  //캔버스 크기 설정
-  canvas.width = 500; //가로 100px
-  canvas.height = 500; //세로 100px
+  canvas.width = 500;
+  canvas.height = 500;
   var context = canvas.getContext("2d");
   context.globalCompositeOperation = "source-over";
 
@@ -109,66 +116,37 @@ closedir($handle);
   var file2 = document.querySelector("#getfile2");
 
   file.onchange = function() {
-    var fileList = $file.files;
+    var fileList = file.files;
 
-    // 읽기
     var reader = new FileReader();
     reader.readAsDataURL(fileList[0]);
 
-    //로드 한 후
     reader.onload = function() {
-      //썸네일 이미지 생성
-      var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
-      tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
+      var tempImage = new Image();
+      tempImage.src = reader.result;
       tempImage.onload = function() {
-        //이미지를 캔버스에 그리기
         context.drawImage(this, 0, 0, 500, 500);
-
-        //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
         var dataURI = canvas.toDataURL("image/jpeg");
-
-        //썸네일 이미지 보여주기
         document.querySelector("#pre_img").src = dataURI;
-
-        //썸네일 이미지를 다운로드할 수 있도록 링크 설정
         document.querySelector("#download").href = dataURI;
       };
     };
   };
 
-  console.log(file2);
 
-  // console.log(file2);
-
-  // $file2.onchange = function() {
-  //   var fileList = $file2.files;
-
-  //   // 읽기
-  //   var reader = new FileReader();
-  //   reader.readAsDataURL(fileList[0]);
-
-  //   //로드 한 후
-  //   reader.onload = function() {
-  //     //썸네일 이미지 생성
-  //     var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
-  //     tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
-  //     tempImage.onload = function() {
-  //       //모드 변경
-  //       //context.globalCompositeOperation = "darker";
-  //       //이미지를 캔버스에 그리기
-  //       context.drawImage(this, 0, 0, 500, 500);
-
-  //       //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
-  //       var dataURI = canvas.toDataURL("image/jpeg");
-
-  //       //썸네일 이미지 보여주기
-  //       document.querySelector("#pre_img").src = dataURI;
-
-  //       //썸네일 이미지를 다운로드할 수 있도록 링크 설정
-  //       document.querySelector("#download").href = dataURI;
-  //     };
-  //   };
-  // };
+  const chosen_sticker = index => {
+    const img = document.getElementsByClassName('li_img')[index];
+    const uri = img.getAttribute('src')
+    // 소스 구하기
+    var tmpImage = new Image();
+    tmpImage.src = uri;
+    tmpImage.onload = function() {
+      context.drawImage(this, 0, 0, 300, 400);
+      var dataURI = canvas.toDataURL("image/jpeg");
+      document.querySelector("#pre_img").src = dataURI;
+      document.querySelector("#download").href = dataURI;
+    };
+  };
 </script>
 
 </html>

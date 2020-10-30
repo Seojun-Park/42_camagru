@@ -18,3 +18,4 @@ function getTextBetweenTags($string, $tagname)
     preg_match($pattern, $string, $matches);
     return $matches[1];
 }
+
