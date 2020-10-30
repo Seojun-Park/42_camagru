@@ -5,6 +5,19 @@ $user = array();
 $user['userid'] = "jinpark";
 $user['username'] = "jinchul";
 
+$dir = "../asset/stickers";
+$handle = opendir($dir);
+$files = array();
+while (($filename = readdir($handle)) !== false) {
+  if ($filename == "." || $filename == "..") {
+    continue;
+  }
+  if (is_file($dir . "/" . $filename)) {
+    $files[] = $dir . "/" . $filename;
+  }
+}
+
+closedir($handle);
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +81,16 @@ $user['username'] = "jinchul";
       <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
     </form>
     <div class="side">
-      side
+      <div class="stick_title">Choose your Sticker :D</div>
+      <ul class="sticker_list">
+        <?php foreach ($files as $f) {
+          echo "<li class='li_img'>";
+          echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
+          echo "</li>";
+        }
+        ?>
+      </ul>
+      <button class="sticker_btn">CHOOSE</button>
     </div>
   </div>
   <footer>

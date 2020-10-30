@@ -48,7 +48,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 55px; 
+  margin-bottom: 55px;
 }
 
 #preview span {
@@ -57,9 +57,9 @@ body {
 }
 
 #preview img {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
+  width: 380px;
+  height: 240px;
+  object-fit: cover;
 }
 
 #submit_btn {
@@ -78,6 +78,7 @@ body {
   margin: 20px auto;
   width: 400px;
   margin-top: 20px;
+  cursor: pointer;
 }
 #submit_btn:hover {
   transition: 0.2s linear;
@@ -104,4 +105,66 @@ body {
   border: 3px solid #333;
   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stick_title {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.sticker_list {
+  display: flex;
+  align-items: center;
+  border-top: 3px solid #333;
+  border-bottom: 3px solid #333;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 35px;
+  overflow: scroll;
+}
+
+.sticker_list::-webkit-scrollbar {
+  width: 5px;
+}
+.sticker_list::-webkit-scrollbar-thumb {
+  background-color: #7f8c8d;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+.sticker_list::-webkit-scrollbar-track {
+  background-color: #ecf0f1;
+}
+.li_img {
+  padding: 10px;
+  margin: 10px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+.li_img:hover {
+  background-color: #bdc3c7;
+  transition: 0.2s linear;
+  border-radius: 5px;
+}
+#sticker_img {
+  width: 80px;
+  height: 80px;
+}
+
+.sticker_btn {
+  font-family: baron;
+  padding: 12px;
+  font-size: 1rem;
+  border: 3px solid #333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  background-color: #ffffff;
+}
+
+.sticker_btn:hover {
+  transition: 0.2s linear;
+  background-color: #bdc3c7;
 }
