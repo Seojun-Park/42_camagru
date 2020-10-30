@@ -91,7 +91,6 @@ closedir($handle);
     const chosen_sticker = index => {
         const img = document.getElementsByClassName('li_img')[index];
         const uri = img.getAttribute('src')
-        // 소스 구하기
         var tmpImage = new Image();
         tmpImage.src = uri;
         tmpImage.onload = function() {
