@@ -4,6 +4,20 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 $sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
+
+$dir = "../../asset/stickers";
+$handle = opendir($dir);
+$files = array();
+while (($filename = readdir($handle)) !== false) {
+    if ($filename == "." || $filename == "..") {
+        continue;
+    }
+    if (is_file($dir . "/" . $filename)) {
+        $files[] = $dir . "/" . $filename;
+    }
+}
+
+closedir($handle);
 ?>
 
 <!DOCTYPE html>

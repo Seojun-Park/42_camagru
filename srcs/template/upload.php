@@ -1,6 +1,8 @@
 <!-- @format -->
-
 <?php
+
+include "editing.php";
+include "../hooks/get_tag.php";
 $user = array();
 $user['userid'] = "jinpark";
 $user['username'] = "jinchul";
