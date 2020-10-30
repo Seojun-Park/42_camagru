@@ -76,8 +76,8 @@ closedir($handle);
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
           <a id="download">
-            <!-- <a id="download" download="thumnail.jpg" target="_blank"> -->
-            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+            <!-- <input type="image" id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="preview" width="300" onchange="changedCheck();" /> -->
+            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" onchange='changedCheck();' />
           </a>
         </div>
       </label>
@@ -147,6 +147,12 @@ closedir($handle);
       document.querySelector("#download").href = dataURI;
     };
   };
+
+  const changedCheck = () => {
+    const img = document.getElementById('pre_img');
+    const uri = img.getAttribute('src');
+    console.log(uri);
+  }
 </script>
 
 </html>
