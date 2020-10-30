@@ -1,7 +1,5 @@
 <!-- @format -->
 <?php
-
-include "editing.php";
 include "../hooks/get_tag.php";
 $user = array();
 $user['userid'] = "jinpark";
@@ -77,43 +75,96 @@ closedir($handle);
       <label for="up_image">
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <img id="img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="temp" />
+          <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
         </div>
       </label>
       <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
     </form>
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
-      <ul class="sticker_list">
+      <div class="sticker_list">
         <?php foreach ($files as $f) {
-          echo "<li class='li_img'>";
-          echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
-          echo "</li>";
+          echo "<input type='image' class='li_img' src='" . $f . "' alt='sticker' />";
         }
         ?>
-      </ul>
+      </div>
       <button class="sticker_btn">CHOOSE</button>
     </div>
   </div>
+
+
   <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
   </footer>
 </body>
 <script>
-  const reader = new FileReader();
-  const fileInput = document.getElementById("up_image");
-  const img = document.getElementById("img");
-  let file;
+  var canvas = document.createElement("canvas");
+  //캔버스 크기 설정
+  canvas.width = 500; //가로 100px
+  canvas.height = 500; //세로 100px
+  var context = canvas.getContext("2d");
+  context.globalCompositeOperation = "source-over";
 
-  reader.onload = e => {
-    img.src = e.target.result;
-  }
+  var $file = document.querySelector("#up_image");
+  var $file2 = document.querySelector("#getfile2");
 
-  fileInput.addEventListener('change', e => {
-    const f = e.target.files[0];
-    file = f;
-    reader.readAsDataURL(f);
-  })
+  $file.onchange = function() {
+    var fileList = $file.files;
+
+    // 읽기
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList[0]);
+
+    //로드 한 후
+    reader.onload = function() {
+      //썸네일 이미지 생성
+      var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
+      tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
+      tempImage.onload = function() {
+        //이미지를 캔버스에 그리기
+        context.drawImage(this, 0, 0, 500, 500);
+
+        //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
+        var dataURI = canvas.toDataURL("image/jpeg");
+
+        //썸네일 이미지 보여주기
+        document.querySelector("#pre_img").src = dataURI;
+
+        //썸네일 이미지를 다운로드할 수 있도록 링크 설정
+        document.querySelector("#download").href = dataURI;
+      };
+    };
+  };
+
+  $file2.onchange = function() {
+    var fileList = $file2.files;
+
+    // 읽기
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList[0]);
+
+    //로드 한 후
+    reader.onload = function() {
+      //썸네일 이미지 생성
+      var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
+      tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
+      tempImage.onload = function() {
+        //모드 변경
+        //context.globalCompositeOperation = "darker";
+        //이미지를 캔버스에 그리기
+        context.drawImage(this, 0, 0, 500, 500);
+
+        //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
+        var dataURI = canvas.toDataURL("image/jpeg");
+
+        //썸네일 이미지 보여주기
+        document.querySelector("#pre_img").src = dataURI;
+
+        //썸네일 이미지를 다운로드할 수 있도록 링크 설정
+        document.querySelector("#download").href = dataURI;
+      };
+    };
+  };
 </script>
 
 </html>
