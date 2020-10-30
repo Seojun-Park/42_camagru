@@ -84,7 +84,7 @@ closedir($handle);
       <div class="stick_title">Choose your Sticker :D</div>
       <div class="sticker_list">
         <?php foreach ($files as $f) {
-          echo "<input type='image' class='li_img' src='" . $f . "' alt='sticker' />";
+          echo "<img class='li_img' id='getfile2' src='" . $f . "' alt='sticker'/>";
         }
         ?>
       </div>
@@ -105,10 +105,10 @@ closedir($handle);
   var context = canvas.getContext("2d");
   context.globalCompositeOperation = "source-over";
 
-  var $file = document.querySelector("#up_image");
-  var $file2 = document.querySelector("#getfile2");
+  var file = document.querySelector("#up_image");
+  var file2 = document.querySelector("#getfile2");
 
-  $file.onchange = function() {
+  file.onchange = function() {
     var fileList = $file.files;
 
     // 읽기
@@ -136,35 +136,39 @@ closedir($handle);
     };
   };
 
-  $file2.onchange = function() {
-    var fileList = $file2.files;
+  console.log(file2);
 
-    // 읽기
-    var reader = new FileReader();
-    reader.readAsDataURL(fileList[0]);
+  // console.log(file2);
 
-    //로드 한 후
-    reader.onload = function() {
-      //썸네일 이미지 생성
-      var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
-      tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
-      tempImage.onload = function() {
-        //모드 변경
-        //context.globalCompositeOperation = "darker";
-        //이미지를 캔버스에 그리기
-        context.drawImage(this, 0, 0, 500, 500);
+  // $file2.onchange = function() {
+  //   var fileList = $file2.files;
 
-        //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
-        var dataURI = canvas.toDataURL("image/jpeg");
+  //   // 읽기
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(fileList[0]);
 
-        //썸네일 이미지 보여주기
-        document.querySelector("#pre_img").src = dataURI;
+  //   //로드 한 후
+  //   reader.onload = function() {
+  //     //썸네일 이미지 생성
+  //     var tempImage = new Image(); //drawImage 메서드에 넣기 위해 이미지 객체화
+  //     tempImage.src = reader.result; //data-uri를 이미지 객체에 주입
+  //     tempImage.onload = function() {
+  //       //모드 변경
+  //       //context.globalCompositeOperation = "darker";
+  //       //이미지를 캔버스에 그리기
+  //       context.drawImage(this, 0, 0, 500, 500);
 
-        //썸네일 이미지를 다운로드할 수 있도록 링크 설정
-        document.querySelector("#download").href = dataURI;
-      };
-    };
-  };
+  //       //캔버스에 그린 이미지를 다시 data-uri 형태로 변환
+  //       var dataURI = canvas.toDataURL("image/jpeg");
+
+  //       //썸네일 이미지 보여주기
+  //       document.querySelector("#pre_img").src = dataURI;
+
+  //       //썸네일 이미지를 다운로드할 수 있도록 링크 설정
+  //       document.querySelector("#download").href = dataURI;
+  //     };
+  //   };
+  // };
 </script>
 
 </html>

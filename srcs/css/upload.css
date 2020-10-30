@@ -146,6 +146,7 @@ body {
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
   width: 80px;
   height: 80px;
+  cursor: pointer;
 }
 .li_img:hover {
   background-color: #bdc3c7;
