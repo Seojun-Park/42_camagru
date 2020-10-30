@@ -58,16 +58,18 @@ $user['username'] = "jinchul";
     </div>
   </header>
   <div class="wrapper">
-    <form enctype="multipart/form-data" method="post">
+    <form enctype="multipart/form-data" method="post" class="form_view">
       <label for="up_image">
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <span>Click here to upload image</span>
-          <img id="img" src="https://dummyimage.com/250x250/fff/aaa" alt="temp" />
+          <img id="img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="temp" />
         </div>
       </label>
-      <input type="submit" name="submit" value="Submit" formaction="upload_ok.php" />
+      <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
     </form>
+    <div class="side">
+      side
+    </div>
   </div>
   <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
