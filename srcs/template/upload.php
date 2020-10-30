@@ -59,37 +59,35 @@ $user['username'] = "jinchul";
   </header>
   <div class="wrapper">
     <form enctype="multipart/form-data" method="post">
-      <label for="image">imagename:</label>
-      <input type="file" name="upimage" id="up_image" /><br />
-      <input type="submit" name="submit" value="Submit" />
+      <label for="up_image">
+        <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
+        <div id="preview">
+          <span>Click here to upload image</span>
+          <img id="img" src="https://dummyimage.com/250x250/fff/aaa" alt="temp" />
+        </div>
+      </label>
+      <input type="submit" name="submit" value="Submit" formaction="upload_ok.php" />
     </form>
-    <div id="preview">
-    </div>
   </div>
   <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
   </footer>
 </body>
 <script>
-  var upload = document.querySelector("#up_image");
-  var preview = document.querySelector("preview");
+  const reader = new FileReader();
+  const fileInput = document.getElementById("up_image");
+  const img = document.getElementById("img");
+  let file;
 
-  upload.addEventListener('change', function(e) {
-    var getfile = e.target.files;
-    var image = document.createElement('img');
-    var reader = new FileReader();
+  reader.onload = e => {
+    img.src = e.target.result;
+  }
 
-    reader.onload = (function(aimg) {
-      return function(e) {
-        aimg.src = e.target.result
-      }
-    })(image)
-    if (getfile){
-      reader.readAsDataURL(getfile[0]);
-    }
-    console.log(image);
-    preview.appendChild(image);
-  });
+  fileInput.addEventListener('change', e => {
+    const f = e.target.files[0];
+    file = f;
+    reader.readAsDataURL(f);
+  })
 </script>
 
 </html>

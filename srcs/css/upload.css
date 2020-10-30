@@ -24,7 +24,33 @@ body {
   background-color: #ffffff;
 }
 
+#up_image {
+  display: none;
+}
+
 #preview {
   width: 250px;
   height: 250px;
+  border: 3px solid #333;
+  font-size: 1.3rem;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch;
+  background: #fff;
+  position: relative;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#preview span {
+  position: absolute;
+}
+
+#preview img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
 }
