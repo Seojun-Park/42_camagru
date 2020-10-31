@@ -77,24 +77,16 @@ closedir($handle);
       <label for="up_image" id="pre_label">
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <a id="download" download="image.jpg" target="_blank">
-            <!-- <a id="download" href="upload_ok.php"> -->
-            <!-- <input type="image" id="pre_img" name="upimage" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="preview" width="300" onchange="changedCheck();" /> -->
+          <!-- <a id="download" download="image.jpg" target="_blank">
             <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
-          </a>
+          </a> -->
+          <!-- <input type="image" id="pre_img" name="combimg" value="test" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" /> -->
+          <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+
         </div>
       </label>
-      <?php
-      $con = 'fix';
-      if (strcmp($con, 'fix') == 0) {
-        echo "<input type='button' id='submit_btn' name='submit' value='FIX' onclick='changedCheck();' />";
-        $con = 'confirm';
-      } else {
-        echo "<input type='submit' id='submit_btn' name='submit' value='UPLOAD' formaction='upload_ok.php' />";
-      }
-      ?>
-      <!-- <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" /> -->
-      <!-- <input type="submit" id="submit_btn" value="Upload" onclick="changedCheck();" formaction="upload_ok.php" /> -->
+      <input type="submit" id="submit_btn" value="UPLOAD" formaction="upload_ok.php" />
+      <!-- <input type="button" id="submit_btn" value="FIX" onclick="changedCheck();" /> -->
     </form>
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
@@ -140,7 +132,7 @@ closedir($handle);
         context.drawImage(this, 0, 0, 500, 500);
         var dataURI = canvas.toDataURL("image/jpeg");
         document.querySelector("#pre_img").src = dataURI;
-        document.querySelector("#download").href = dataURI;
+        // document.querySelector("#download").href = dataURI;
       };
     };
   };
@@ -154,16 +146,21 @@ closedir($handle);
       context.drawImage(this, 80, 180, 150, 150);
       var dataURI = canvas.toDataURL("image/jpeg");
       document.querySelector("#pre_img").src = dataURI;
-      document.querySelector("#download").href = dataURI;
+      // document.querySelector("#download").href = dataURI;
     };
   };
 
   const changedCheck = () => {
     const img = document.getElementById('pre_img');
     const uri = img.getAttribute('src');
-    const input = document.getElementById('up_image')
+    const input = document.getElementById('up_image');
+    const submitBtn = document.getElementById('submit_btn');
+
+    // submitBtn.removeAttribute('onclick');
+    // submitBtn.removeAttribute('value');
     input.setAttribute('value', uri);
-    console.log(input);
+    // submitBtn.setAttribute('value', "UPLOAD");
+    // submitBtn.setAttribute('formaction', "upload_ok.php")
   }
 </script>
 

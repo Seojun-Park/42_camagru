@@ -10,7 +10,7 @@ $error = $_FILES['upimage']['error'];
 $name = $_FILES['upimage']['name'];
 $ext = array_pop(explode('.', $name));
 
-echo var_dump($_FILES['upimage']);
+echo var_dump($_POST);
 
 
 if (count($_FILES)) {
