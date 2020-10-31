@@ -59,13 +59,7 @@ body {
 #preview img {
   width: 380px;
   height: 240px;
-  object-fit: cover;
-}
-
-#preview input {
-  width: 380px;
-  height: 240px;
-  object-fit: cover;
+  object-fit: cover;  
 }
 
 #submit_btn {
