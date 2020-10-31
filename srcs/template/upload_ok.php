@@ -22,7 +22,7 @@ if (count($_FILES)) {
   echo '<pre>';
   if (move_uploaded_file($_FILES['upimage']['tmp_name'], $uploadfile)) {
     echo "File is valid, and was successfully uploaded.\n";
-    // echo "<script>alert('Upload success!');location.href('#');</script>";
+    // echo "<script>alert('Upload success!');history.back();</script>";
   } else {
     echo "Error occured!\n";
     echo 'Here is some more debugging info:';

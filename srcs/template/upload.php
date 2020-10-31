@@ -17,6 +17,8 @@ while (($filename = readdir($handle)) !== false) {
   }
 }
 
+$flag = false;
+
 closedir($handle);
 ?>
 
@@ -73,20 +75,20 @@ closedir($handle);
   <div class="wrapper">
     <form enctype="multipart/form-data" method="post" class="form_view">
       <label for="up_image">
-        <input type="file" name="upimage" id="up_image" accept="image/*" onchange="console.log('change');" /><br />
+        <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <a id="download" onclick="changedCheck();">
-            <!-- <input type="image" id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="preview" width="300" onchange="changedCheck();" /> -->
-            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
-          </a>
+          <!-- <a id="download" onchange="changedCheck();"> -->
+          <input type="image" id="pre_img" name="upimage" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="preview" width="300" onchange="changedCheck();" />
+          <!-- <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" /> -->
+          <!-- </a> -->
         </div>
       </label>
-      <!-- <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" /> -->
-      <input type="submit" id="submit_btn" value="Upload" onclick="changedCheck();" formaction="upload_ok.php" />
+      <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
+      <!-- <input type="submit" id="submit_btn" value="Upload" onclick="changedCheck();" formaction="upload_ok.php" /> -->
     </form>
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
-      <div class="sticker_list">
+      <a class="sticker_list">
         <?php
         $i = 0;
         foreach ($files as $f) {
@@ -96,8 +98,7 @@ closedir($handle);
           $i++;
         }
         ?>
-      </div>
-      <button class="sticker_btn">CHOOSE</button>
+      </a>
     </div>
   </div>
 
@@ -116,7 +117,6 @@ closedir($handle);
   var file = document.querySelector("#up_image");
   var file2 = document.querySelector("#getfile2");
 
-
   file.onchange = function() {
     var fileList = file.files;
 
@@ -130,12 +130,12 @@ closedir($handle);
         context.drawImage(this, 0, 0, 500, 500);
         var dataURI = canvas.toDataURL("image/jpeg");
         document.querySelector("#pre_img").src = dataURI;
-        document.querySelector("#download").href = dataURI;
+        // document.querySelector("#download").href = dataURI;
       };
     };
   };
 
-  const chosen_sticker = index => {
+  const chosen_sticker = (index) => {
     const img = document.getElementsByClassName('li_img')[index];
     const uri = img.getAttribute('src')
     var tmpImage = new Image();
@@ -144,16 +144,16 @@ closedir($handle);
       context.drawImage(this, 80, 180, 150, 150);
       var dataURI = canvas.toDataURL("image/jpeg");
       document.querySelector("#pre_img").src = dataURI;
-      document.querySelector("#download").href = dataURI;
+      // document.querySelector("#download").href = dataURI;
     };
   };
 
   const changedCheck = () => {
-    const img = document.getElementById('pre_img');
-    const uri = img.getAttribute('src');
-    const input = document.getElementById('up_image')
-    input.setAttribute('value', uri);
-    console.log(input);
+    // const img = document.getElementById('pre_img');
+    // const uri = img.getAttribute('src');
+    // const input = document.getElementById('up_image')
+    // input.setAttribute('value', uri);
+    console.log("click");
   }
 </script>
 
