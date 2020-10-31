@@ -73,15 +73,16 @@ closedir($handle);
   <div class="wrapper">
     <form enctype="multipart/form-data" method="post" class="form_view">
       <label for="up_image">
-        <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
+        <input type="file" name="upimage" id="up_image" accept="image/*" onchange="console.log('change');" /><br />
         <div id="preview">
-          <a id="download">
+          <a id="download" onclick="changedCheck();">
             <!-- <input type="image" id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" alt="preview" width="300" onchange="changedCheck();" /> -->
-            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" onchange='changedCheck();' />
+            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
           </a>
         </div>
       </label>
-      <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
+      <!-- <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" /> -->
+      <input type="submit" id="submit_btn" value="Upload" onclick="changedCheck();" formaction="upload_ok.php" />
     </form>
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
@@ -115,6 +116,7 @@ closedir($handle);
   var file = document.querySelector("#up_image");
   var file2 = document.querySelector("#getfile2");
 
+
   file.onchange = function() {
     var fileList = file.files;
 
@@ -133,14 +135,13 @@ closedir($handle);
     };
   };
 
-
   const chosen_sticker = index => {
     const img = document.getElementsByClassName('li_img')[index];
     const uri = img.getAttribute('src')
     var tmpImage = new Image();
     tmpImage.src = uri;
     tmpImage.onload = function() {
-      context.drawImage(this, 0, 0, 300, 400);
+      context.drawImage(this, 80, 180, 150, 150);
       var dataURI = canvas.toDataURL("image/jpeg");
       document.querySelector("#pre_img").src = dataURI;
       document.querySelector("#download").href = dataURI;
@@ -150,7 +151,9 @@ closedir($handle);
   const changedCheck = () => {
     const img = document.getElementById('pre_img');
     const uri = img.getAttribute('src');
-    console.log(uri);
+    const input = document.getElementById('up_image')
+    input.setAttribute('value', uri);
+    console.log(input);
   }
 </script>
 

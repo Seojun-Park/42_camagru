@@ -10,6 +10,8 @@ $error = $_FILES['upimage']['error'];
 $name = $_FILES['upimage']['name'];
 $ext = array_pop(explode('.', $name));
 
+echo var_dump($_FILES['upimage']);
+
 
 if (count($_FILES)) {
   if (file_exists("../upload/$userid") === false) {
@@ -20,7 +22,7 @@ if (count($_FILES)) {
   echo '<pre>';
   if (move_uploaded_file($_FILES['upimage']['tmp_name'], $uploadfile)) {
     echo "File is valid, and was successfully uploaded.\n";
-    echo "<script>alert('Upload success!');location.href('#');</script>";
+    // echo "<script>alert('Upload success!');location.href('#');</script>";
   } else {
     echo "Error occured!\n";
     echo 'Here is some more debugging info:';
