@@ -77,16 +77,11 @@ closedir($handle);
       <label for="up_image" id="pre_label">
         <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
         <div id="preview">
-          <!-- <a id="download" download="image.jpg" target="_blank">
-            <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
-          </a> -->
-          <!-- <input type="image" id="pre_img" name="combimg" value="test" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" /> -->
           <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
-
         </div>
       </label>
-      <input type="submit" id="submit_btn" value="UPLOAD" formaction="upload_ok.php" />
-      <!-- <input type="button" id="submit_btn" value="FIX" onclick="changedCheck();" /> -->
+      <!-- <input type="submit" id="submit_btn" name="submit" value="UPLOAD" formaction="upload_ok.php" /> -->
+      <input type="button" id="submit_btn" value="UPLOAD" onclick=changedCheck(); />
     </form>
     <div class="side">
       <div class="stick_title">Choose your Sticker :D</div>
@@ -150,15 +145,15 @@ closedir($handle);
     };
   };
 
-  const changedCheck = () => {
-    const img = document.getElementById('pre_img');
-    const uri = img.getAttribute('src');
+  const changedCheck = async (e) => {
+    const uri = document.getElementById('pre_img').getAttribute('src');
     const input = document.getElementById('up_image');
-    const submitBtn = document.getElementById('submit_btn');
+    // console.log(uri)
+    // const submitBtn = document.getElementById('submit_btn');
 
     // submitBtn.removeAttribute('onclick');
     // submitBtn.removeAttribute('value');
-    input.setAttribute('value', uri);
+    // input.setAttribute('value', uri);
     // submitBtn.setAttribute('value', "UPLOAD");
     // submitBtn.setAttribute('formaction', "upload_ok.php")
   }

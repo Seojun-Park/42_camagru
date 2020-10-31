@@ -25,7 +25,14 @@ body {
   background-color: #ffffff;
 }
 
+/* form{
+  display: flex;
+  flex-direction: row; */
+/* } */
+
 .form_view {
+  /* display: flex;
+  flex-direction: row; */
   max-height: 382px;
 }
 
