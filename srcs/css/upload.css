@@ -40,6 +40,7 @@ body {
   display: none;
 }
 
+
 #preview {
   width: 250px;
   height: 250px;
@@ -75,22 +76,31 @@ body {
   object-fit: cover;  
 }
 
+#send_image{
+  display: none;
+}
+
+.submit_btns {
+  display: flex;
+  flex-direction: row;
+}
+
 #submit_btn {
   font-family: baron;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid #333;
-  font-size: 2rem;
+  font-size: 1rem;
   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
   text-transform: uppercase;
   letter-spacing: 0.3ch;
   background: #fff;
   /* position: relative; */
   margin: 20px auto;
-  width: 400px;
-  margin-top: 20px;
+  width: 200px;
+  margin-top: 10px;
   cursor: pointer;
 }
 #submit_btn:hover {
