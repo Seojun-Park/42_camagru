@@ -162,8 +162,8 @@ closedir($handle);
     const img = document.getElementById('pre_img');
     const uri = img.getAttribute('src');
     const input = document.getElementById('up_image')
-    // input.setAttribute('value', uri);
-    console.log(img);
+    input.setAttribute('value', uri);
+    console.log(input);
   }
 </script>
 
