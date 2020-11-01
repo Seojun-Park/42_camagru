@@ -20,7 +20,7 @@ $up_dir = '../upload/';
 
 $user = array();
 $feed = array();
-$feed['name'] = "jinpark_1.jpg";
+$feed['name'] = "jinpark_0.jpg";
 if (isset($feed['name'])) {
   $tmp = explode("_", $feed['name']);
   $imgindex = explode(".", $tmp[1])[0];

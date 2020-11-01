@@ -3,6 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 function base64ToImage($base64_string, $output_file, $userid)
 {
+  chdir("../upload/$userid");
   $file = fopen($output_file, "wb");
 
   $data = explode(',', $base64_string);
@@ -14,7 +15,6 @@ function base64ToImage($base64_string, $output_file, $userid)
 }
 
 $up_dir = '/upload/';
-$allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
 $date = date('Y-m-d');
 
 $sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
@@ -31,16 +31,22 @@ if (isset($feed['imgname'])) {
 }
 $imagename = $userid . "_" . $i . ".jpg";
 
-$sqlsend = mq("inset into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "'");
+$sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "'");
 
-echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
+echo $userid . "\n";
+echo $imagename . "\n";
+
+echo $date . "\n";
+
+
+// echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
 
 if (isset($_POST['send'])) {
   if (file_exists("../upload/$userid") === false) {
     mkdir("../upload/$userid", 0777, true);
   }
-  base64ToImage($_POST['send'], $userid . ".jpg", $userid);
+  base64ToImage($_POST['send'], $imagename, $userid);
   echo '<pre>';
 }
 
-echo "<script>history.back()</script>";
+// echo "<script>history.back()</script>";
