@@ -23,10 +23,9 @@ USE `db_cama`;
 
 CREATE TABLE `feed` (
   `idx` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `content` text NOT NULL,
+  `userid` varchar(100) NOT NULL,
+  `imgname` varchar(100) NOT NULL,
   `date` date NOT NULL,
-  `file` VARCHAR(1000),
   PRIMARY KEY (`idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

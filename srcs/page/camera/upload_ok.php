@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-function base64ToImage($base64_string, $output_file)
+function base64ToImage($base64_string, $output_file, $userid)
 {
   $file = fopen($output_file, "wb");
 
@@ -15,18 +15,23 @@ function base64ToImage($base64_string, $output_file)
 
 $up_dir = '/upload/';
 $allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
+$date = date('Y-m-d');
 
 $sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
 $userid = $user['userid'];
+$imgsql = mq("select * from feed where userid ='" . $userid . "'");
+$feed = $imgsql->fetch_array();
+if (isset($feed['imgname'])) {
+  $tmp = explode("_", $feed['name']);
+  $imgindex = explode(".", $tmp[1])[0];
+  $i = intval($imgindex) + 1;
+} else {
+  $i = 0;
+}
+$imagename = $userid . "_" . $i . ".jpg";
 
-
-$up_dir = '../upload/';
-$allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
-
-$user = array();
-$user['userid'] = "jinpark";
-$userid = $user['userid'];
+$sqlsend = mq("inset into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "'");
 
 echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
 
@@ -34,8 +39,7 @@ if (isset($_POST['send'])) {
   if (file_exists("../upload/$userid") === false) {
     mkdir("../upload/$userid", 0777, true);
   }
-  $uploadfile = $up_dir . $userid . "/" . "upimage.jpeg";
-  base64ToImage($_POST['send'], "test.jpg");
+  base64ToImage($_POST['send'], $userid . ".jpg", $userid);
   echo '<pre>';
 }
 

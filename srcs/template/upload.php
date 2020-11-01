@@ -142,7 +142,7 @@ closedir($handle);
     var tmpImage = new Image();
     tmpImage.src = img;
     tmpImage.onload = function() {
-      context.drawImage(this, 0, 0, 500, 400);
+      context.drawImage(this, 0, 0, 500, 500);
       var dataURI = canvas.toDataURL("image/jpeg");
       document.querySelector("#send_image").value = dataURI;
 

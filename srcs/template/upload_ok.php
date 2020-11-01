@@ -2,8 +2,9 @@
 
 // sql에서 들구와서 멤버 이름과 인덱스 추가 후, 원하는 폴더에 저장
 
-function base64ToImage($base64_string, $output_file)
+function base64ToImage($base64_string, $output_file, $userid)
 {
+  chdir("../upload/$userid");
   $file = fopen($output_file, "wb");
 
   $data = explode(',', $base64_string);
@@ -15,13 +16,24 @@ function base64ToImage($base64_string, $output_file)
 }
 
 $up_dir = '../upload/';
-$allowed_ext = array('jpg', 'jpeg', 'png', 'gif');
+
 
 $user = array();
+$feed = array();
+$feed['name'] = "jinpark_1.jpg";
+if (isset($feed['name'])) {
+  $tmp = explode("_", $feed['name']);
+  $imgindex = explode(".", $tmp[1])[0];
+  $i = intval($imgindex) + 1;
+} else {
+  $i = 0;
+}
+
+echo $i;
 $user['userid'] = "jinpark";
 $userid = $user['userid'];
 
-echo var_dump($_POST['send']);
+$imageName = $userid . "_" . $i . ".jpg";
 
 echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
 
@@ -29,8 +41,9 @@ if (isset($_POST['send'])) {
   if (file_exists("../upload/$userid") === false) {
     mkdir("../upload/$userid", 0777, true);
   }
-  $uploadfile = $up_dir . $userid . "/" . "upimage.jpeg";
-  base64ToImage($_POST['send'], "test.jpg");
+  $path = base64ToImage($_POST['send'], $imageName, $userid);
+  echo var_dump($path). "\n";
+  echo $imageName;
   echo '<pre>';
 }
 
