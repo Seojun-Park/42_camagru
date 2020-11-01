@@ -93,7 +93,7 @@ closedir($handle);
         <?php
         $i = 0;
         foreach ($files as $f) {
-          echo "<button onclick='chosen_sticker(" . $i . ")';>";
+          echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn';>";
           echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
           echo "</button>";
           $i++;

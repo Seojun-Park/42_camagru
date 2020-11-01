@@ -1,5 +1,7 @@
 <?php
 
+// sql에서 들구와서 멤버 이름과 인덱스 추가 후, 원하는 폴더에 저장
+
 function base64ToImage($base64_string, $output_file)
 {
   $file = fopen($output_file, "wb");
