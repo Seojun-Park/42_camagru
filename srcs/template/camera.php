@@ -37,6 +37,7 @@ closedir($handle);
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             document.getElementById('app').hidden = false;
+
             shutter.onclick = () => {
                 canvas.getContext("2d").drawImage(video, 0, 0);
                 html2canvas(document.querySelector("#photo")).then(canvas => {
@@ -68,6 +69,7 @@ closedir($handle);
         }
     };
 </script>
+
 </head>
 
 <body>
@@ -143,6 +145,5 @@ closedir($handle);
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
-
 
 </html>
