@@ -21,16 +21,20 @@ docker / php / html / mysql
 **Page**
 > Header
 >   > - [x] : responsive layout
->   > - [x] : logout
->	> - [ ] : searching user by username or user id
+>   > - [x] : logout in any pages
 
-> Feed
->   > - [x] : display writer and link to profile page of writer
->   > - [x] : display feed content
->   > - [ ] : display image / photo
->   > - [ ] : delete feed
->   > - [x] : add reply
->   > - [x] : delete reply
+> Upload
+>   > - [x] : image upload and preview
+>   > - [x] : put sticker on uploaded image
+>   > - [x] : save the image file on storage
+>   > - [x] : save the data in the DB
+>   > - [x] : CSS media query
+
+> Camera
+>   > - [x] : Put the camera on
+>   > - [x] : Capture 
+>   > - [ ] : put sticker on the preview image
+>   > - [ ] : save the edited image file
 
 >  Profile
 >   > - [x] : display the information of user

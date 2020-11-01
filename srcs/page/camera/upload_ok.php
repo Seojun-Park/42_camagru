@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
 function base64ToImage($base64_string, $output_file, $userid)
 {
-  chdir("../upload/$userid");
+  chdir("../../upload/$userid");
   $file = fopen($output_file, "wb");
 
   $data = explode(',', $base64_string);
@@ -14,24 +14,24 @@ function base64ToImage($base64_string, $output_file, $userid)
   return $output_file;
 }
 
-$up_dir = '/upload/';
 $date = date('Y-m-d');
 
-$sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
+$sql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
-$userid = $user['userid'];
-$imgsql = mq("select * from feed where userid ='" . $userid . "'");
+$userid = $user['username'];
+$imgsql = mq("select * from feed where userid='" . $userid . "'");
 $feed = $imgsql->fetch_array();
-if (isset($feed['imgname'])) {
+if ($feed !== NULL) {
   $tmp = explode("_", $feed['name']);
   $imgindex = explode(".", $tmp[1])[0];
   $i = intval($imgindex) + 1;
 } else {
   $i = 0;
 }
+
 $imagename = $userid . "_" . $i . ".jpg";
 
-$sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "'");
+$sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "')");
 
 echo $userid . "\n";
 echo $imagename . "\n";
@@ -48,5 +48,5 @@ if (isset($_POST['send'])) {
   base64ToImage($_POST['send'], $imagename, $userid);
   echo '<pre>';
 }
-
-// echo "<script>history.back()</script>";
+echo "<script>alert('Upload Success!')</script>";
+echo "<script>history.back()</script>";
