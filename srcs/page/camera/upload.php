@@ -35,29 +35,36 @@ closedir($handle);
     </div>
     <div class="wrapper">
         <form enctype="multipart/form-data" method="post" class="form_view">
-            <label for="up_image">
+            <label for="up_image" id="pre_label">
                 <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
                 <div id="preview">
                     <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+                    <input type="text" id="send_image" name="send" />
                 </div>
             </label>
-            <input type="submit" id="submit_btn" name="submit" value="Upload" formaction="upload_ok.php" />
+            <div class="submit_btns">
+                <input type="button" id="submit_btn" value="FIX" onclick=fix_image(); />
+                <input type="submit" id="submit_btn" name="submit" value="UPLOAD" formaction="upload_ok.php" />
+                <!-- <input type="button" id="submit_btn" value="UPLOAD" onclick=changedCheck(); /> -->
+            </div>
         </form>
         <div class="side">
             <div class="stick_title">Choose your Sticker :D</div>
-            <div class="sticker_list">
+            <a class="sticker_list">
                 <?php
                 $i = 0;
                 foreach ($files as $f) {
-                    echo "<button onclick='chosen_sticker(" . $i . ")';>";
+                    echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn';>";
                     echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
                     echo "</button>";
                     $i++;
                 }
                 ?>
-            </div>
-            <button class="sticker_btn">CHOOSE</button>
+            </a>
         </div>
+    </div>
+    <div class="header">
+        <?php echo view('../footer.html'); ?>
     </div>
 </body>
 <script>
@@ -69,6 +76,7 @@ closedir($handle);
 
     var file = document.querySelector("#up_image");
     var file2 = document.querySelector("#getfile2");
+
 
     file.onchange = function() {
         var fileList = file.files;
@@ -87,19 +95,30 @@ closedir($handle);
         };
     };
 
+    const fix_image = () => {
+        const img = document.querySelector("#pre_img").getAttribute('src');
+        const input = document.getElementById('send_image');
+        var tmpImage = new Image();
+        tmpImage.src = img;
+        tmpImage.onload = function() {
+            context.drawImage(this, 0, 0, 500, 400);
+            var dataURI = canvas.toDataURL("image/jpeg");
+            document.querySelector("#send_image").value = dataURI;
 
-    const chosen_sticker = index => {
+        }
+    }
+
+    const chosen_sticker = (index) => {
         const img = document.getElementsByClassName('li_img')[index];
         const uri = img.getAttribute('src')
         var tmpImage = new Image();
         tmpImage.src = uri;
         tmpImage.onload = function() {
-            context.drawImage(this, 0, 0, 150, 150);
+            context.drawImage(this, 80, 180, 150, 150);
             var dataURI = canvas.toDataURL("image/jpeg");
             document.querySelector("#pre_img").src = dataURI;
-        }
-
-    }
+        };
+    };
 </script>
 
 </html>

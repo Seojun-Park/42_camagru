@@ -124,10 +124,12 @@ body {
     font-size: 20px;
     text-align: center;
     margin: 20px 0;
+    margin-bottom: 30px;
   }
 
   .sticker_list {
     display: flex;
+    flex-direction: column;
     align-items: center;
     border-top: 3px solid #333;
     border-bottom: 3px solid #333;
@@ -138,7 +140,7 @@ body {
   }
 
   .sticker_list::-webkit-scrollbar {
-    width: 5px;
+    width: 15px;
   }
   .sticker_list::-webkit-scrollbar-thumb {
     background-color: #7f8c8d;
@@ -146,7 +148,7 @@ body {
     box-shadow: inset 0px 0px 5px white;
   }
   .sticker_list::-webkit-scrollbar-track {
-    background-color: #ecf0f1;
+    background-color: white;
   }
   .li_img {
     padding: 10px;
@@ -154,8 +156,8 @@ body {
     -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
   }
   .li_img:hover {
@@ -169,6 +171,7 @@ body {
     width: 80px;
     height: 80px;
     display: flex;
+    margin: 8px;
     justify-content: center;
     align-items: center;
   }
