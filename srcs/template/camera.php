@@ -40,9 +40,12 @@ closedir($handle);
 
             shutter.onclick = () => {
                 canvas.getContext("2d").drawImage(video, 0, 0);
-                html2canvas(document.querySelector("#photo")).then(canvas => {
-                    document.querySelector(".side").appendChild(canvas);
-                });
+                // html2canvas(document.querySelector("#photo")).then(canvas => {
+                //     document.querySelector(".side").appendChild(canvas);
+                // });
+                html2canvas(document.querySelector("#preview")).then(canvas => {
+                    document.querySelector(".preview_sec").appendChild(canvas);
+                })
             };
 
             on.onclick = () => {
@@ -136,6 +139,9 @@ closedir($handle);
             </section>
         </div>
         <div class="side_sec">
+            <div class="preview_sec">
+                <div id="preview"></div>
+            </div>
             <section id="app" class="side" hidden>
                 <canvas id="photo"></canvas>
             </section>
