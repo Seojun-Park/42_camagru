@@ -37,15 +37,19 @@ closedir($handle);
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             document.getElementById('app').hidden = false;
+            document.getElementById('preview').hidden = true;
+            document.getElementById('photo').hidden = true;
 
             shutter.onclick = () => {
                 canvas.getContext("2d").drawImage(video, 0, 0);
-                // html2canvas(document.querySelector("#photo")).then(canvas => {
-                //     document.querySelector(".side").appendChild(canvas);
-                // });
-                html2canvas(document.querySelector("#preview")).then(canvas => {
-                    document.querySelector(".preview_sec").appendChild(canvas);
-                })
+                html2canvas(document.querySelector("#photo")).then(canvas => {
+                    document.querySelector(".side").appendChild(canvas);
+                });
+                video.hidden = true;
+                document.querySelector(".preview").appendChild(canvas);
+                document.getElementById('photo').hidden = false;
+
+                console.log("captured")
             };
 
             on.onclick = () => {
@@ -66,6 +70,12 @@ closedir($handle);
                     track.stop();
                 }
                 video.srcObject = null;
+                navigator.mediaDevices.getUserMedia({
+                        video: true
+                    })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                    })
             }
         } catch (err) {
             console.error(err);
@@ -119,9 +129,14 @@ closedir($handle);
             <section id="app" hidden>
                 <div class="camera_view">
                     <video id="monitor" autoplay></video>
+                    <section id="app" class="preview">
+                        <canvas id="photo" width="50" height="50"></canvas>
+                    </section>
                     <div class="button_sec">
                         <button id="on">Camera On</button>
-                        <button id="shutter">Capture</button>
+                        <?php $i = 0;
+                        echo "<button id='shutter' onclick='setFlag();'>Capture</button>"
+                        ?>
                         <button id="stop">Camera Off</button>
                     </div>
                 </div>
@@ -138,18 +153,15 @@ closedir($handle);
                 </div>
             </section>
         </div>
-        <div class="side_sec">
-            <div class="preview_sec">
-                <div id="preview"></div>
-            </div>
-            <section id="app" class="side" hidden>
-                <canvas id="photo"></canvas>
-            </section>
-        </div>
     </div>
 </body>
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
+<script>
+    const setFlag = () => {
+        console.log(lala);
+    }
+</script>
 
 </html>
