@@ -46,7 +46,8 @@ closedir($handle);
                 document.querySelector(".preview").appendChild(canvas);
                 });
                 video.hidden = true;
-                document.getElementById('photo').hidden = false;
+                document.getElementById('photo').hidden = false; 
+                document.getElementById('photo').hidden = false; 
 
             };
 
