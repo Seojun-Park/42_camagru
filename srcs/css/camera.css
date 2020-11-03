@@ -223,6 +223,7 @@ body {
         height: 120px;
         padding: 10px;
         display: flex;
+        width: 700px;
         align-items: center;
         border: 3px solid #333;
         overflow: scroll;
@@ -254,42 +255,7 @@ body {
         width: 80px;
         height: 80px;
     }
-    .side_sec {
-        padding: 8px;
-        max-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 3px solid #333;
-        border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-        text-transform: uppercase;
-        letter-spacing: 0.3ch;
-        background: #fff;
-        position: relative;
-        overflow: scroll;
-    }
-    .side_sec::-webkit-scrollbar {
-        width: 10px;
-    }
-    .side_sec::-webkit-scrollbar-thumb {
-        background-color: #7f8c8d;
-        border-radius: 10px;
-        box-shadow: inset 0px 0px 5px white;
-    }
-    .side_sec::-webkit-scrollbar-track {
-        background-color: #ecf0f1;
-    }
-    .side_sec section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .side_sec canvas {
-        width: 177px;
-        height: 132px;
-        margin: 5px 0;
-    }
+    
     .sticker_sec {
         border-top: 3px solid #333;
         margin-top: 15px;
@@ -302,13 +268,5 @@ body {
         max-width: 650px;
         max-height: 365px;
         object-fit: cover;
-    }
-
-    .side canvas {
-        border-radius: 5px;
-    }
-    .side canvas:hover {
-        transition: 0.2s;
-        opacity: 0.5;
     }
 }

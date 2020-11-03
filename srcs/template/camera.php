@@ -43,13 +43,10 @@ closedir($handle);
             shutter.onclick = () => {
                 canvas.getContext("2d").drawImage(video, 0, 0);
                 html2canvas(document.querySelector("#photo")).then(canvas => {
-                document.querySelector(".preview").appendChild(canvas);
+                    document.querySelector(".preview").appendChild(canvas);
                 });
                 video.hidden = true;
-                document.getElementById('photo').hidden = false; 
-                document.getElementById('photo').hidden = false; 
-                document.getElementById('photo').hidden = false 
-
+                document.getElementById('photo').hidden = false;
             };
 
             on.onclick = () => {
@@ -140,15 +137,18 @@ closedir($handle);
                     </div>
                 </div>
                 <div class="sticker_sec">
-                    <div>Choose your Sticker :D</div>
-                    <ul class="sticker_list">
-                        <?php foreach ($files as $f) {
-                            echo "<li class='li_img'>";
-                            echo "<img id='sticker_img' src='" . $f . "' alt='sticker' />";
-                            echo "</li>";
+                    <div class="sitkcer_title">Choose your Sticker :D</div>
+                    <a class="sticker_list">
+                        <?php
+                        $i = 0;
+                        foreach ($files as $f) {
+                            echo "<button class='li_img' onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
+                            echo "<img id='sticker_img " . $i . "'  src='" . $f . "' alt='sticker' />";
+                            echo "</button>";
+                            $i++;
                         }
                         ?>
-                    </ul>
+                    </a>
                 </div>
             </section>
         </div>
@@ -157,5 +157,18 @@ closedir($handle);
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
+<script>
+    const chosen_sticker = (index) => {
+        const img = document.getElementsByClassName('li_img')[index];
+        const uri = img.getAttribute('src');
+        var tmpImage = new Image();
+        tmpImage.src = uri;
+        tmpImage.onload = function() {
+            context.drawImage(this, 80, 180, 150, 150);
+            var dataURI = canvas.toDataURL("image/jpeg");
+            document.querySelector("#pre_img").src = dataURI;
+        }
+    }
+</script>
 
 </html>
