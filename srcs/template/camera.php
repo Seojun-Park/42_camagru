@@ -48,6 +48,7 @@ closedir($handle);
                 video.hidden = true;
                 document.getElementById('photo').hidden = false; 
                 document.getElementById('photo').hidden = false; 
+                document.getElementById('photo').hidden = false 
 
             };
 
