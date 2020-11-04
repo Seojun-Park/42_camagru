@@ -124,10 +124,40 @@ closedir($handle);
     </header>
     <div class="wrapper">
         <div class="main_sec">
+            <form enctype="multipart/form-data" method="post" class="form_view">
+                <label for="video_img" id="pre_lable">
+                    <video id="monitor" autoplay></video>
+                    <div id="preview">
+                        <img id="pre_img" alt="preview" width="300" />
+                        <input type="text" id="send_image" name="send" />
+                    </div>
+                </label>
+                <div class="submit_btns">
+                    <input type="button" id="submit_btn" value="CAPTURE" onclick=fix_image(); />
+                    <input type="submit" id="submit_btn" value="UPLOAD" name="submit" />
+                </div>
+            </form>
+        </div>
+        <div class="sticker_sec">
+            <div class="sitkcer_title">Choose your Sticker :D</div>
+            <a class="sticker_list">
+                <?php
+                $i = 0;
+                foreach ($files as $f) {
+                    echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
+                    echo "<img class='li_img " . $i . "'  src='" . $f . "' alt='sticker' />";
+                    echo "</button>";
+                    $i++;
+                }
+                ?>
+            </a>
+        </div>
+        <!-- <div class="main_sec">
             <section id="app" hidden>
                 <div class="camera_view">
-                    <video id="monitor" autoplay></video>
                     <section id="app" class="preview">
+                        <video id="monitor" autoplay></video>
+                        <input type="text" id="send_image" name="send" />
                         <canvas id="photo"></canvas>
                     </section>
                     <div class="button_sec">
@@ -140,10 +170,10 @@ closedir($handle);
                     <div class="sitkcer_title">Choose your Sticker :D</div>
                     <a class="sticker_list">
                         <?php
-                        // $i = 0;
+                        $i = 0;
                         foreach ($files as $f) {
-                            echo "<button class='li_img' onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
-                            echo "<img id='sticker_img " . $i . "'  src='" . $f . "' alt='sticker' />";
+                            echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
+                            echo "<img class='li_img " . $i . "'  src='" . $f . "' alt='sticker' />";
                             echo "</button>";
                             $i++;
                         }
@@ -151,23 +181,37 @@ closedir($handle);
                     </a>
                 </div>
             </section>
-        </div>
+        </div> -->
     </div>
 </body>
 <footer>
     Copyright &copy; Jin 2020 - All Rights Reserved
 </footer>
 <script>
+    var pre_img = document.getElementById('photo');
+    var canvas = document.createElement("canvas");
+    canvas.width = 500;
+    canvas.height = 500;
+    var context = canvas.getContext("2d");
+    context.globalCompositeOperation = "source-over";
+
     const chosen_sticker = (index) => {
         const img = document.getElementsByClassName('li_img')[index];
         const uri = img.getAttribute('src');
         var tmpImage = new Image();
         tmpImage.src = uri;
         tmpImage.onload = function() {
-            context.drawImage(this, 80, 180, 150, 150);
+            context.drawImage(this, 280, 280, 250, 250);
             var dataURI = canvas.toDataURL("image/jpeg");
-            document.querySelector("#pre_img").src = dataURI;
+            document.querySelector("#photo").src = dataURI;
         }
+    }
+
+    const fix_image = () => {
+        const img = document.querySelector("#photo").getAttribute('src');
+        const input = document.getElementById('send_image');
+        var tmpImage = new Image();
+        tmpImage.src = img;
     }
 </script>
 
