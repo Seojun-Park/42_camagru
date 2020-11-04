@@ -196,6 +196,15 @@ body {
     margin-right: 15px;
   }
 
+  #preview { 
+      margin-right: 15px;
+  }
+
+  #pre_img { 
+      width: 649px;
+      height: 365px;
+  }
+
   #send_image {
     display: none;
   }
