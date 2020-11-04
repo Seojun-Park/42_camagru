@@ -140,7 +140,7 @@ closedir($handle);
                     <div class="sitkcer_title">Choose your Sticker :D</div>
                     <a class="sticker_list">
                         <?php
-                        $i = 0;
+                        // $i = 0;
                         foreach ($files as $f) {
                             echo "<button class='li_img' onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
                             echo "<img id='sticker_img " . $i . "'  src='" . $f . "' alt='sticker' />";

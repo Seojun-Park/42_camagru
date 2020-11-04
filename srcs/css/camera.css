@@ -251,6 +251,12 @@ body {
         transition: 0.2s linear;
         border-radius: 5px;
     }
+
+    .li_img img {
+        width: 80px;
+        height: 80px;
+    }
+
     #sticker_img {
         width: 80px;
         height: 80px;
@@ -261,6 +267,7 @@ body {
         margin-top: 15px;
         padding: 15px;
     }
+    
     #photo {
         margin-bottom: 15px;
         border: 3px solid #333;
