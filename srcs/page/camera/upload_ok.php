@@ -33,12 +33,6 @@ $imagename = $userid . "_" . $i . ".jpg";
 
 $sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "')");
 
-echo $userid . "\n";
-echo $imagename . "\n";
-
-echo $date . "\n";
-
-
 // echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
 
 if (isset($_POST['send'])) {
