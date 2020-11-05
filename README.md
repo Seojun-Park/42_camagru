@@ -34,6 +34,7 @@ docker / php / html / mysql
 > Camera
 >   > - [x] : Put the camera on
 >   > - [x] : Capture 
+>	> - [ ] : Camera control
 >   > - [ ] : put sticker on the preview image
 >   > - [ ] : save the edited image file
 
