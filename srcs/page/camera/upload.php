@@ -4,7 +4,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 $sql = mq("select * from member where id ='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
-echo var_dump($user);
 
 $dir = "../../asset/stickers";
 $handle = opendir($dir);
@@ -46,8 +45,6 @@ closedir($handle);
             <div class="submit_btns">
                 <input type="button" id="submit_btn" value="FIX" onclick=fix_image(); />
                 <input type="submit" id="submit_btn" name="submit" value="UPLOAD" formaction="upload_ok.php" />
-                <?php echo $_SESSION['userid']; ?>
-                <!-- <input type="button" id="submit_btn" value="UPLOAD" onclick=changedCheck(); /> -->
             </div>
         </form>
         <div class="side">
