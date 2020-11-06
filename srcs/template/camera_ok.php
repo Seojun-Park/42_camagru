@@ -1,7 +1,7 @@
 <?php
 
 function base64ToImage($base64_string, $output_file, $userid){
-    chdir("../../upload/$userid");
+    chdir("../upload/$userid");
     $file = fopen($output_file, "wb");
     $data = explode(',', $base64_string);
     fwrite($file, base64_decode($data[1]));

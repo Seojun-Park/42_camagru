@@ -47,4 +47,5 @@ if (isset($_POST['send'])) {
   echo '<pre>';
 }
 
-//   echo "<script>history.back()</script>";
+echo "<script>alert('Upload Success!')</script>";
+echo "<script>history.back()</script>";
