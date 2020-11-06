@@ -3,8 +3,10 @@ include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 
-$sql = mq("select * from feed");
-$feed = $sql->fetch_array();
+$sql = mq("select * from feed order by idx desc limit 0,10");
+while($feed = $sql->fetch_array()){
+	echo var_dump($feed);
+}
 
 ?>
 

@@ -20,12 +20,12 @@
         </div>
         <div class="header_row third_col">
             <div class="col_block">
-                <a href="#">
+                <a href="/page/feed/gallery.php">
                     <button>GALLERY</button>
                 </a>
             </div>
             <div class="col_block">
-                <a href="/page/feed/gallery.php">
+                <a href="#">
                     <button>PROFILE</button>
                 </a>
             </div>

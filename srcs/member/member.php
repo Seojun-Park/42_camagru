@@ -29,7 +29,7 @@ include "check.php";
                     </span>
                 </label>
                 <label class="field field_v1">
-                    <input type="password" class="field__input" name="userpw" placeholder="Password" />
+                    <input type="password" class="field__input" name="userpw" placeholder="Min. 10character inc. special letter" />
                     <span class="field__label-wrap">
                         <span class="field__label">Password</span>
                     </span>

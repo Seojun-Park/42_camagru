@@ -20,14 +20,22 @@ $sql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
 $userid = $user['username'];
 $imgsql = mq("select * from feed where userid='" . $userid . "'");
-$feed = $imgsql->fetch_array();
-if ($feed !== NULL) {
+while ($feed = $imgsql->fetch_array()) {
   $tmp = explode("_", $feed['name']);
   $imgindex = explode(".", $tmp[1])[0];
-  $i = intval($imgindex) + 1;
-} else {
-  $i = 0;
+  if (intval($imgindex) !== 0){
+    $i = intval($imgindex) + 1;
+  } else{
+    $i = 0;
+  }
 }
+// if ($feed !== NULL) {
+//   $tmp = explode("_", $feed['name']);
+//   $imgindex = explode(".", $tmp[1])[0];
+//   $i = intval($imgindex) + 1;
+// } else {
+//   $i = 0;
+// }
 
 $imagename = $userid . "_" . $i . ".jpg";
 
