@@ -140,18 +140,14 @@ body {
 
 #sticker_btn {
   width: 100%;
-  height: 100%;
+  height: 150px;
+  margin: 15px;
 }
 
   #sticker_btn img {
     width: 80px;
     height: 80px;
   }
-
-  /* #sticker_img {
-    width: 80px;
-    height: 80px;
-  } */
 
   #sticker_sec {
     border-top: 3px solid #ddd;
