@@ -34,16 +34,15 @@ docker / php / html / mysql
 > Camera
 >   > - [x] : Put the camera on
 >   > - [x] : Capture 
->	> - [ ] : Camera control
->   > - [ ] : put sticker on the preview image
->   > - [ ] : save the edited image file
+>   > - [x] : put sticker on the preview image
+>   > - [x] : save the edited image file
 
 > Gallery
->   > To Be Updated
+>   > - [ ] : Showing feed
+>   > - [ ] : connect to user profile
 
 >  Profile
 >   > - [x] : display the information of user
->   > - [ ] : following?? (not sure)
 >	> - [ ] : display Avatar
 
 ## memo
