@@ -50,16 +50,36 @@
     </header>
     <div class="wrapper">
         <div class="box_t1">
-            t1 box
+            <div class="box_head">
+                jinpark
+            </div>
+            <div class="box_cont">
+                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
+            </div>
         </div>
         <div class="box_t2">
-            t2 obx
+            <div class="box_head">
+                jinpark
+            </div>
+            <div class="box_cont">
+                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
+            </div>
         </div>
         <div class="box_t3">
-            t3 obx
+            <div class="box_head">
+                jinpark
+            </div>
+            <div class="box_cont">
+                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
+            </div>
         </div>
         <div class="box_t1">
-            t3 obx
+            <div class="box_head">
+                jinpark
+            </div>
+            <div class="box_cont">
+                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
+            </div>
         </div>
     </div>
     <footer>
