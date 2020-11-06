@@ -36,6 +36,7 @@ docker / php / html / mysql
 >   > - [x] : Capture 
 >   > - [x] : put sticker on the preview image
 >   > - [x] : save the edited image file
+>   > - [ ] : saved image index check needed
 
 > Gallery
 >   > - [ ] : Showing feed
