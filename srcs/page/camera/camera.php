@@ -118,7 +118,7 @@ closedir($handle);
         </div>
     <?php
     } else {
-        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+        echo "<script>alert('where access, where are you from?'); history.back();</script>";
     }
     ?>
 </body>

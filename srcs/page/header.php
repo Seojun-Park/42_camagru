@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="col_block">
-                <a href="#">
+                <a href="/page/feed/gallery.php">
                     <button>PROFILE</button>
                 </a>
             </div>
@@ -42,7 +42,7 @@
                 </button>
                 <div class="dropdown-content">
                     <form method="post">
-                        <a href="/feed/gallery.php">GALLERY</a>
+                        <a href="/page/feed/gallery.php">GALLERY</a>
                         <a href="#">PROFILE</a>
                         <a href="/member/logout.php">LOGOUT</a>
                     </form>

@@ -26,7 +26,7 @@ $feed = $sql->fetch_array();
         $me = $mesql->fetch_array();
         ?>
         <div class='header'>
-            <?php echo view('header.php'); ?>
+            <?php echo view('../header.php'); ?>
         </div>
         <div class="wrapper">
             <div class="box_t1">
@@ -43,11 +43,11 @@ $feed = $sql->fetch_array();
             </div>
         </div>
         <div class="header">
-            <?php echo view('footer.html') ?>
+            <?php echo view('../footer.html') ?>
         </div>
     <?php
     } else {
-        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+        echo "<script>alert('where access, where are you from?'); history.back();</script>";
     }
     ?>
 </body>
