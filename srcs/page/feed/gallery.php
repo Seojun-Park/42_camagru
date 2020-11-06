@@ -1,6 +1,7 @@
 <?php
-
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
+
 
 $sql = mq("select * from feed");
 $feed = $sql->fetch_array();
@@ -19,61 +20,36 @@ $feed = $sql->fetch_array();
 </head>
 
 <body>
-    <header>
-        <div class="header_row first_col">
-            <a href="/">logo</a>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
+        $me = $mesql->fetch_array();
+        ?>
+        <div class='header'>
+            <?php echo view('header.php'); ?>
         </div>
-        <div class="header_row second_col">
-            <span>Camagru</span>
-        </div>
-        <div class="header_row third_col">
-            <div class="col_block">
-                <div class="col_block">
-                    <a href="/">
-                        <button>GALLERY</button>
-                    </a>
-                </div>
-                <a href="/">
-                    <button>PROFILE</button>
-                </a>
+        <div class="wrapper">
+            <div class="box_t1">
+                t1 box
             </div>
-            <div class="col_block">
-                <a href="../member/logout.php">
-                    <button>LOG OUT</button>
-                </a>
+            <div class="box_t2">
+                t2 obx
+            </div>
+            <div class="box_t3">
+                t3 obx
+            </div>
+            <div class="box_t1">
+                t3 obx
             </div>
         </div>
-        <div class="header_row">
-            <div class="dropdown">
-                <button>
-                    <img src="../asset/burger_icon.svg" alt="burger" />
-                </button>
-                <div class="dropdown-content">
-                    <form method="post">
-                        <a href="/">PROFILE</a>
-                        <a href="../member/logout.php">LOGOUT</a>
-                    </form>
-                </div>
-            </div>
+        <div class="header">
+            <?php echo view('footer.html') ?>
         </div>
-    </header>
-    <div class="wrapper">
-        <div class="box_t1">
-            t1 box
-        </div>
-        <div class="box_t2">
-            t2 obx
-        </div>
-        <div class="box_t3">
-            t3 obx
-        </div>
-        <div class="box_t1">
-            t3 obx
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; Jin 2020 - All Rights Reserved
-    </footer>
+    <?php
+    } else {
+        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+    }
+    ?>
 </body>
 
 </html>

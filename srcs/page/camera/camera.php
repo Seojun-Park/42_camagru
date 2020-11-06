@@ -73,44 +73,54 @@ closedir($handle);
 </head>
 
 <body>
-    <div class='header'>
-        <?php echo view('../header.php'); ?>
-    </div>
-    <div class="wrapper">
-        <div class="main_sec">
-            <form enctype="multipart/form-data" method="post" class="form_view">
-                <label for="video_img" id="pre_lable">
-                    <video id="monitor" autoplay></video>
-                    <div id="preview">
-                        <canvas id="pre_img" alt="preview" width="300"></canvas>
-                        <input type="text" id="send_image" name="send" />
+    <?php
+    if (isset($_SESSION['userid'])) {
+        $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
+        $me = $mesql->fetch_array();
+        ?>
+        <div class='header'>
+            <?php echo view('../header.php'); ?>
+        </div>
+        <div class="wrapper">
+            <div class="main_sec">
+                <form enctype="multipart/form-data" method="post" class="form_view">
+                    <label for="video_img" id="pre_lable">
+                        <video id="monitor" autoplay></video>
+                        <div id="preview">
+                            <canvas id="pre_img" alt="preview" width="300"></canvas>
+                            <input type="text" id="send_image" name="send" />
+                        </div>
+                    </label>
+                    <div class="submit_btns">
+                        <input type="button" id="submit_btn" class="shu" value="SHUTTER" onclick=cameraShutter(); />
+                        <input type="button" id="submit_btn" class="fix" value="FIX" onclick=fix_image(); />
+                        <input type="submit" id="submit_btn" value="UPLOAD" name="submit" formaction="camera_ok.php" />
                     </div>
-                </label>
-                <div class="submit_btns">
-                    <input type="button" id="submit_btn" class="shu" value="SHUTTER" onclick=cameraShutter(); />
-                    <input type="button" id="submit_btn" class="fix" value="FIX" onclick=fix_image(); />
-                    <input type="submit" id="submit_btn" value="UPLOAD" name="submit" formaction="camera_ok.php" />
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="sticker_sec">
+                <div class="sitkcer_title">Choose your Sticker :D</div>
+                <a class="sticker_list">
+                    <?php
+                        $i = 0;
+                        foreach ($files as $f) {
+                            echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
+                            echo "<img class='li_img " . $i . "'  src='" . $f . "' alt='sticker' />";
+                            echo "</button>";
+                            $i++;
+                        }
+                        ?>
+                </a>
+            </div>
         </div>
-        <div class="sticker_sec">
-            <div class="sitkcer_title">Choose your Sticker :D</div>
-            <a class="sticker_list">
-                <?php
-                $i = 0;
-                foreach ($files as $f) {
-                    echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
-                    echo "<img class='li_img " . $i . "'  src='" . $f . "' alt='sticker' />";
-                    echo "</button>";
-                    $i++;
-                }
-                ?>
-            </a>
+        <div class="header">
+            <?php echo view('../footer.html') ?>
         </div>
-    </div>
-    <div class="header">
-        <?php echo view('../footer.html') ?>
-    </div>
+    <?php
+    } else {
+        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+    }
+    ?>
 </body>
 <script>
     window.onload = async () => {

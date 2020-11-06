@@ -30,41 +30,51 @@ closedir($handle);
 </head>
 
 <body>
-    <div class="header">
-        <?php echo view('../header.php'); ?>
-    </div>
-    <div class="wrapper">
-        <form enctype="multipart/form-data" method="post" class="form_view">
-            <label for="up_image" id="pre_label">
-                <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
-                <div id="preview">
-                    <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
-                    <input type="text" id="send_image" name="send" />
-                </div>
-            </label>
-            <div class="submit_btns">
-                <input type="button" id="submit_btn" value="FIX" onclick=fix_image(); />
-                <input type="submit" id="submit_btn" name="submit" value="UPLOAD" formaction="upload_ok.php" />
-            </div>
-        </form>
-        <div class="side">
-            <div class="stick_title">Choose your Sticker :D</div>
-            <a class="sticker_list">
-                <?php
-                $i = 0;
-                foreach ($files as $f) {
-                    echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn';>";
-                    echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
-                    echo "</button>";
-                    $i++;
-                }
-                ?>
-            </a>
+    <?php
+    if (isset($_SESSION['userid'])) {
+        $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
+        $me = $mesql->fetch_array();
+        ?>
+        <div class="header">
+            <?php echo view('../header.php'); ?>
         </div>
-    </div>
-    <div class="header">
-        <?php echo view('../footer.html'); ?>
-    </div>
+        <div class="wrapper">
+            <form enctype="multipart/form-data" method="post" class="form_view">
+                <label for="up_image" id="pre_label">
+                    <input type="file" name="upimage" id="up_image" accept="image/*" /><br />
+                    <div id="preview">
+                        <img id="pre_img" src="https://dummyimage.com/406x256/ffffff/000333&text=Click+here+to+upload+image" width="300" alt="preview" />
+                        <input type="text" id="send_image" name="send" />
+                    </div>
+                </label>
+                <div class="submit_btns">
+                    <input type="button" id="submit_btn" value="FIX" onclick=fix_image(); />
+                    <input type="submit" id="submit_btn" name="submit" value="UPLOAD" formaction="upload_ok.php" />
+                </div>
+            </form>
+            <div class="side">
+                <div class="stick_title">Choose your Sticker :D</div>
+                <a class="sticker_list">
+                    <?php
+                        $i = 0;
+                        foreach ($files as $f) {
+                            echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn';>";
+                            echo "<img class='li_img " . $i . "' id='getfile2' src='" . $f . "' alt='sticker'/>";
+                            echo "</button>";
+                            $i++;
+                        }
+                        ?>
+                </a>
+            </div>
+        </div>
+        <div class="header">
+            <?php echo view('../footer.html'); ?>
+        </div>
+    <?php
+    } else {
+        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+    }
+    ?>
 </body>
 <script>
     var canvas = document.createElement("canvas");
