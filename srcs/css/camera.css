@@ -22,60 +22,92 @@ body {
     border: 3px solid #333;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
   }
   .main_sec {
-    max-width: 400px;
+    /* max-width: 400px; */
     padding: 8px;
-    margin-right: 15px;
     border: 3px solid #333;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
     letter-spacing: 0.3ch;
     background: #fff;
     position: relative;
   }
-  .camera_view {
+
+  .form_view {
     display: flex;
     flex-direction: column;
   }
+
   #monitor {
-    width: 90%;
-    background-color: #666;
-    margin: 0 auto;
+    width: 550px;
   }
-  .button_sec {
-    padding: 8px;
-    margin-top: 15px;
+
+  #pre_img {
+    width: 550px;
+  }
+
+  #send_image {
+    display: none;
+  }
+
+  .submit_btns {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
   }
-  .button_sec button {
-    border: none;
-    min-width: 80px;
-    padding: 8px 12px;
-    background-color: gray;
-    color: white;
-    border-radius: 4px;
+
+  #submit_btn {
+    font-family: baron;
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #333;
+    font-size: 0.7rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #fff;
+    margin: 10px auto;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
   }
-  .button_sec button:hover {
+
+  #submit_btn:hover {
     transition: 0.2s linear;
-    color: black;
-    background-color: lightgray;
+    background-color: #bdc3c7;
   }
-  /* .camera_button {
-        border: 1px solid blue;
-    } */
+  #submit_btn::before {
+    border: 2px solid #353535;
+    display: inline-block;
+    /* width: 100%;
+    height: 100%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+    border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+  }
+
   .sticker_sec {
     border-top: 3px solid #333;
     margin-top: 15px;
-    padding: 15px;
+    padding: 8px;
   }
   .sticker_list {
     margin-top: 20px;
     height: 120px;
-    padding: 10px;
+    padding: 8px;
     display: flex;
     align-items: center;
     border: 3px solid #333;
@@ -99,61 +131,40 @@ body {
     -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
   }
+
   .li_img:hover {
     background-color: #bdc3c7;
     transition: 0.2s linear;
     border-radius: 5px;
   }
-  #sticker_img {
+
+#sticker_btn {
+  width: 100%;
+  height: 100%;
+}
+
+  #sticker_btn img {
     width: 80px;
     height: 80px;
   }
-  .side_sec {
-    min-width: 185px;
-    max-height: 80vh;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.5rem;
-    border: 3px solid #333;
-    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    text-transform: uppercase;
-    letter-spacing: 0.3ch;
-    background: #fff;
-    position: relative;
-    overflow: scroll;
-  }
-  .side_sec::-webkit-scrollbar {
-    width: 5px;
-  }
-  .side_sec::-webkit-scrollbar-thumb {
-    background-color: #7f8c8d;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-  }
-  .side_sec::-webkit-scrollbar-track {
-    background-color: #ecf0f1;
-  }
-  .side_sec section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+  /* #sticker_img {
+    width: 80px;
+    height: 80px;
+  } */
+
+  #sticker_sec {
+    border-top: 3px solid #ddd;
+    margin-top: 15px;
+    padding: 15px;
   }
   #photo {
-    width: 160px;
-    height: 115px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     border: 3px solid #333;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-  }
-  .side canvas {
-    border-radius: 5px;
-  }
-  .side canvas:hover {
-    transition: 0.2s;
-    opacity: 0.5;
+    max-width: 650px;
+    max-height: 365px;
+    object-fit: cover;
   }
 }
 
@@ -196,13 +207,13 @@ body {
     margin-right: 15px;
   }
 
-  #preview { 
-      margin-right: 15px;
+  #preview {
+    margin-right: 15px;
   }
 
-  #pre_img { 
-      width: 649px;
-      height: 365px;
+  #pre_img {
+    width: 649px;
+    height: 365px;
   }
 
   #send_image {
@@ -304,7 +315,7 @@ body {
   }
 
   #photo {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     border: 3px solid #333;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     max-width: 650px;

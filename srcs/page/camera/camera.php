@@ -90,7 +90,6 @@ closedir($handle);
                     <input type="button" id="submit_btn" class="shu" value="SHUTTER" onclick=cameraShutter(); />
                     <input type="button" id="submit_btn" class="fix" value="FIX" onclick=fix_image(); />
                     <input type="submit" id="submit_btn" value="UPLOAD" name="submit" formaction="camera_ok.php" />
-                    <input type="button" id="submit_btn" class="re" value="RETRY" />
                 </div>
             </form>
         </div>
