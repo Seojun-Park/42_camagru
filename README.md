@@ -45,6 +45,7 @@ docker / php / html / mysql
 >  Profile
 >   > - [x] : display the information of user
 >	> - [ ] : display Avatar
+>   > - [ ] : set Avatar(option...)
 
 ## memo
 
