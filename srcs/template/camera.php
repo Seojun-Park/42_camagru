@@ -29,6 +29,7 @@ closedir($handle);
         const shutter = document.getElementsByClassName('shut');
         const fix = document.getElementsByClassName('fix');
         const retry = document.getElementsByClassName('re');
+
         try {
             video.srcObject = await navigator.mediaDevices.getUserMedia({
                 video: true
@@ -55,7 +56,7 @@ closedir($handle);
         });
         video.hidden = true;
         document.getElementById("pre_img").hidden = false;
-        for(var i =0; i < tracks.length; i++){
+        for (var i = 0; i < tracks.length; i++) {
             var track = tracks[i];
             track.stop();
         }
@@ -63,77 +64,34 @@ closedir($handle);
     }
 
     const fix_image = () => {
-        const img = document.querySelector("#pre_img").getAttribute('src')
+        const img = document.querySelector("#pre_img").getAttribute('src');
+        const canvas = document.getElementById('pre_img');
+        const input = document.getElementById('send_image');
+        var tmpImage = new Image();
+        var context = canvas.getContext("2d");
+        context.globalCompositeOperation = "source-over";
+        tmpImage.src = img;
+        tmpImage.onload = function() {
+            context.drawImage(this, 0, 0, 500, 500);
+            var dataURI = canvas.toDataURL("image/jpeg");
+            document.querySelector("#send_image").value = dataURI;;
+        }
     }
 
     const chosen_sticker = (index) => {
         const img = document.getElementsByClassName('li_img')[index];
+        const canvas = document.getElementById("pre_img");
         const uri = img.getAttribute('src');
         var tmpImage = new Image();
         tmpImage.src = uri;
+        var context = canvas.getContext("2d");
+        context.globalCompositeOperation = "source-over";
         tmpImage.onload = function() {
             context.drawImage(this, 280, 280, 250, 250);
             var dataURI = canvas.toDataURL("image/jpeg");
             document.querySelector("#photo").src = dataURI;
         }
     }
-    //     window.onload = async () => {
-    //         var video = document.getElementById('monitor');
-    //         const canvas = document.getElementById('photo');
-    //         const shutter = document.getElementById('shutter');
-    //         const stop = document.getElementById('stop');
-    //         const on = document.getElementById('on');
-    //         try {
-    //             video.srcObject = await navigator.mediaDevices.getUserMedia({
-    //                 video: true
-    //             });
-    //             await new Promise((resolve) => video.onloadedmetadata = resolve);
-    //             canvas.width = video.videoWidth;
-    //             canvas.height = video.videoHeight;
-    //             document.getElementById('app').hidden = false;
-    //             document.getElementsByClassName('preview').hidden = true;
-    //             document.getElementById('photo').hidden = true;
-
-    //             shutter.onclick = () => {
-    //                 canvas.getContext("2d").drawImage(video, 0, 0);
-    //                 html2canvas(document.querySelector("#photo")).then(canvas => {
-    //                     document.querySelector(".preview").appendChild(canvas);
-    //                 });
-    //                 video.hidden = true;
-    //                 document.getElementById('photo').hidden = false;
-    //             };
-
-    //             on.onclick = () => {
-    //                 if (navigator.mediaDevices.getUserMedia) {
-    //                     navigator.mediaDevices.getUserMedia({
-    //                             video: true
-    //                         })
-    //                         .then(function(stream) {
-    //                             video.srcObject = stream;
-    //                         })
-    //                 }
-    //             }
-    //             stop.onclick = () => {
-    //                 const stream = video.srcObject;
-    //                 var tracks = stream.getTracks();
-    //                 for (var i = 0; i < tracks.length; i++) {
-    //                     var track = tracks[i];
-    //                     track.stop();
-    //                 }
-    //                 video.srcObject = null;
-    //                 navigator.mediaDevices.getUserMedia({
-    //                         video: true
-    //                     })
-    //                     .then(function(stream) {
-    //                         video.srcObject = stream;
-    //                     })
-    //                 console.log("captured")
-    //             }
-    //         } catch (err) {
-    //             console.error(err);
-    //         }
-    //     };
-    // 
 </script>
 
 </head>
@@ -209,36 +167,6 @@ closedir($handle);
                 ?>
             </a>
         </div>
-        <!-- <div class="main_sec">
-            <section id="app" hidden>
-                <div class="camera_view">
-                    <section id="app" class="preview">
-                        <video id="monitor" autoplay></video>
-                        <input type="text" id="send_image" name="send" />
-                        <canvas id="photo"></canvas>
-                    </section>
-                    <div class="button_sec">
-                        <button id="on">Camera On</button>
-                        <button id='shutter'>Capture</button>
-                        <button id="stop">Camera Off</button>
-                    </div>
-                </div>
-                <div class="sticker_sec">
-                    <div class="sitkcer_title">Choose your Sticker :D</div>
-                    <a class="sticker_list">
-                        <?php
-                        $i = 0;
-                        foreach ($files as $f) {
-                            echo "<button onclick='chosen_sticker(" . $i . ")' id='sticker_btn'>";
-                            echo "<img class='li_img " . $i . "'  src='" . $f . "' alt='sticker' />";
-                            echo "</button>";
-                            $i++;
-                        }
-                        ?>
-                    </a>
-                </div>
-            </section>
-        </div> -->
     </div>
 </body>
 <footer>
@@ -246,3 +174,61 @@ closedir($handle);
 </footer>
 
 </html>
+
+<!-- window.onload = async () => {
+            var video = document.getElementById('monitor');
+            const canvas = document.getElementById('photo');
+            const shutter = document.getElementById('shutter');
+            const stop = document.getElementById('stop');
+            const on = document.getElementById('on');
+            try {
+                video.srcObject = await navigator.mediaDevices.getUserMedia({
+                    video: true
+                });
+                await new Promise((resolve) => video.onloadedmetadata = resolve);
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                document.getElementById('app').hidden = false;
+                document.getElementsByClassName('preview').hidden = true;
+                document.getElementById('photo').hidden = true;
+
+                shutter.onclick = () => {
+                    canvas.getContext("2d").drawImage(video, 0, 0);
+                    html2canvas(document.querySelector("#photo")).then(canvas => {
+                        document.querySelector(".preview").appendChild(canvas);
+                    });
+                    video.hidden = true;
+                    document.getElementById('photo').hidden = false;
+                };
+
+                on.onclick = () => {
+                    if (navigator.mediaDevices.getUserMedia) {
+                        navigator.mediaDevices.getUserMedia({
+                                video: true
+                            })
+                            .then(function(stream) {
+                                video.srcObject = stream;
+                            })
+                    }
+                }
+                stop.onclick = () => {
+                    const stream = video.srcObject;
+                    var tracks = stream.getTracks();
+                    for (var i = 0; i < tracks.length; i++) {
+                        var track = tracks[i];
+                        track.stop();
+                    }
+                    video.srcObject = null;
+                    navigator.mediaDevices.getUserMedia({
+                            video: true
+                        })
+                        .then(function(stream) {
+                            video.srcObject = stream;
+                        })
+                    console.log("captured")
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        };
+     -->
