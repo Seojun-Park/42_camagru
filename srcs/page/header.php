@@ -42,7 +42,7 @@
                 </button>
                 <div class="dropdown-content">
                     <form method="post">
-                        <a href="#">GALLERY</a>
+                        <a href="/feed/gallery.php">GALLERY</a>
                         <a href="#">PROFILE</a>
                         <a href="/member/logout.php">LOGOUT</a>
                     </form>

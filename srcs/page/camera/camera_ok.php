@@ -35,12 +35,12 @@ $sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "',
 
 
 if (isset($_POST['send'])) {
-    if (file_exists("../upload/$userid") === false) {
-        mkdir("../upload/$userid", 0777, true);
+    if (file_exists("../../upload/$userid") === false) {
+        mkdir("../../upload/$userid", 0777, true);
     }
     base64ToImage($_POST['send'], $imagename, $userid);
     echo '<pre>';
 }
 
 echo "<script>alert('Upload Success!')</script>";
-echo "<script>history.back()</script>";
+echo "<script>location.href('/page/feed/gallery.php')</script>";

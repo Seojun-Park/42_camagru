@@ -43,4 +43,4 @@ if (isset($_POST['send'])) {
   echo '<pre>';
 }
 echo "<script>alert('Upload Success!')</script>";
-echo "<script>history.back()</script>";
+echo "<script>location.href('/page/feed/gallery.php')</script>";
