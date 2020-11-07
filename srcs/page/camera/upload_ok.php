@@ -31,6 +31,7 @@ while ($feed = $imgsql->fetch_array()) {
     $i = 0;
   }
 }
+
 // if ($feed !== NULL) {
 //   $tmp = explode("_", $feed['name']);
 //   $imgindex = explode(".", $tmp[1])[0];
