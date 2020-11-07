@@ -39,6 +39,7 @@ while ($feed = $imgsql->fetch_array()) {
 //   $i = 0;
 // }
 
+
 $imagename = $userid . "_" . $i . ".jpg";
 
 $sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "','" . $imagename . "','" . $date . "')");
@@ -46,8 +47,8 @@ $sqlsend = mq("insert into feed(userid, imgname, date) values('" . $userid . "',
 // echo "<img src='" . $_POST['send'] . "'alt='test' width='300' />";
 
 if (isset($_POST['send'])) {
-  if (file_exists("../upload/$userid") === false) {
-    mkdir("../upload/$userid", 0777, true);
+  if (file_exists("../../upload/$userid") === false) {
+    mkdir("../../upload/$userid", 0777, true);
   }
   base64ToImage($_POST['send'], $imagename, $userid);
   echo '<pre>';
