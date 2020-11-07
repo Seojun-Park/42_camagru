@@ -20,6 +20,8 @@ $sql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $user = $sql->fetch_array();
 $userid = $user['username'];
 $imgsql = mq("select * from feed where userid='" . $userid . "'");
+
+// 0부터 순차적으로 올리기 필요
 while ($feed = $imgsql->fetch_array()) {
   $tmp = explode("_", $feed['name']);
   $imgindex = explode(".", $tmp[1])[0];
