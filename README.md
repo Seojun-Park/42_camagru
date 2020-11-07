@@ -15,7 +15,7 @@ docker / php / html / mysql
 **Auth**
 > - [x] : sign up with basic information
 > - [x] : requiring password including special character
-> - [ ] : Send email to be verified
+> - [ ] : Send email to be verified || the last todo!!!!
 > - [x] : duplicated User ID check
 > - [x] : login with User ID and pw
 
@@ -36,16 +36,10 @@ docker / php / html / mysql
 >   > - [x] : Capture 
 >   > - [x] : put sticker on the preview image
 >   > - [x] : save the edited image file
->   > - [ ] : saved image index check needed
+>   > - [x] : saved image index check needed
 
 > Gallery
->   > - [ ] : Showing feed
->   > - [ ] : connect to user profile
-
->  Profile
->   > - [x] : display the information of user
->	> - [ ] : display Avatar
->   > - [ ] : set Avatar(option...)
+>   > - [x] : Showing feed
 
 ## memo
 
