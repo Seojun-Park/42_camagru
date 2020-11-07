@@ -2,12 +2,10 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
-
 $sql = mq("select * from feed order by idx desc limit 0,10");
-while($feed = $sql->fetch_array()){
-	echo var_dump($feed);
+while ($feed = $sql->fetch_array()) {
+    echo var_dump($feed);
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +14,9 @@ while($feed = $sql->fetch_array()){
 <head>
     <meta charset="utf-8" />
     <title>Camagru_Gallery</title>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/gallery.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/gallery.css" />
 </head>
 
 <body>
@@ -31,18 +29,18 @@ while($feed = $sql->fetch_array()){
             <?php echo view('../header.php'); ?>
         </div>
         <div class="wrapper">
-            <div class="box_t1">
-                t1 box
-            </div>
-            <div class="box_t2">
-                t2 obx
-            </div>
-            <div class="box_t3">
-                t3 obx
-            </div>
-            <div class="box_t1">
-                t3 obx
-            </div>
+            <?php
+                $i = 1;
+                while ($feed = $sql->fetch_array()) {
+                    echo "<div class='box_t" . $i . "'>";
+                    echo "<div class='box_head'>" . $feed['userid'] . "</div>";
+                    echo "<div class='box_cont'><img id='gal_img' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' /></div>";
+                    echo "</div>";
+                    if ($i == 3)
+                        $i = 0;
+                    $i++;
+                }
+                ?>
         </div>
         <div class="header">
             <?php echo view('../footer.html') ?>

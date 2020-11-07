@@ -21,24 +21,17 @@ $user = $sql->fetch_array();
 $userid = $user['username'];
 $imgsql = mq("select * from feed where userid='" . $userid . "'");
 
-// 0부터 순차적으로 올리기 필요
+$i = 0;
+
 while ($feed = $imgsql->fetch_array()) {
-  $tmp = explode("_", $feed['name']);
-  $imgindex = explode(".", $tmp[1])[0];
-  if (intval($imgindex) !== 0){
-    $i = intval($imgindex) + 1;
-  } else{
+  if (isset($feed['imgname'])) {
+    $tmp = explode("_", $feed['imgname']);
+    $imgindex = explode(".", $tmp[1])[0];
+    $i = $imgindex + 1;
+  } else {
     $i = 0;
   }
 }
-
-// if ($feed !== NULL) {
-//   $tmp = explode("_", $feed['name']);
-//   $imgindex = explode(".", $tmp[1])[0];
-//   $i = intval($imgindex) + 1;
-// } else {
-//   $i = 0;
-// }
 
 
 $imagename = $userid . "_" . $i . ".jpg";
