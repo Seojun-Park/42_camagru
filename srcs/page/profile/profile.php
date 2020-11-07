@@ -15,7 +15,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/hooks/func_view.php";
 
 <body>
 <?php
-    $sql = mq("select * from member where id='" . $_GET['id'] . "'");
+    $sql = mq("select * from member where userid='" . $_GET['id'] . "'");
     $profile = $sql->fetch_array();
     ?>
     <div class='header'>

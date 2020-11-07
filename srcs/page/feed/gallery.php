@@ -33,7 +33,7 @@ while ($feed = $sql->fetch_array()) {
                 $i = 1;
                 while ($feed = $sql->fetch_array()) {
                     echo "<div class='box_t" . $i . "'>";
-                    echo "<div class='box_head'>" . $feed['userid'] . "</div>";
+                    echo "<div class='box_head'><a href=/page/profile/profile.php?id=" . $feed['userid'] . ">" . $feed['userid'] . "</a></div>";
                     echo "<div class='box_cont'><img id='gal_img' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' /></div>";
                     echo "</div>";
                     if ($i == 3)
