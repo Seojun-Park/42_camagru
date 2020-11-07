@@ -6,6 +6,10 @@
     src: url(font/Baron-Neue.ttf) format("truetype");
 }
 
+body {
+    background-color: #ecf0f1;
+}
+
 header {
     border-bottom: 2px solid black;
     min-width: 700px;
@@ -13,6 +17,7 @@ header {
     margin: 0 auto;
     margin-top: 15px;
 }
+
 
 footer {
     width: 80%;
