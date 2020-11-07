@@ -29,7 +29,6 @@ if (isset($feed['name'])) {
   $i = 0;
 }
 
-echo $i;
 $user['userid'] = "jinpark";
 $userid = $user['userid'];
 
@@ -42,10 +41,9 @@ if (isset($_POST['send'])) {
     mkdir("../upload/$userid", 0777, true);
   }
   $path = base64ToImage($_POST['send'], $imageName, $userid);
-  echo var_dump($path). "\n";
   echo $imageName;
   echo '<pre>';
 }
 
 echo "<script>alert('Upload Success!')</script>";
-echo "<script>history.back()</script>";
+// echo "<script>history.back()</script>";
