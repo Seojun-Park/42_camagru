@@ -24,7 +24,7 @@ $imgsql = mq("select * from feed where userid='" . $userid . "'");
 $i = 0;
 
 while ($feed = $imgsql->fetch_array()) {
-  if (isset($feed['imgname'])) {
+	if (isset($feed['imgname'])){
     $tmp = explode("_", $feed['imgname']);
     $imgindex = explode(".", $tmp[1])[0];
     $i = $imgindex + 1;
@@ -48,4 +48,4 @@ if (isset($_POST['send'])) {
   echo '<pre>';
 }
 echo "<script>alert('Upload Success!')</script>";
-echo "<script>location.href('/page/feed/gallery.php')</script>";
+echo "<meta http-equiv='refresh' content='0 url=/page/main.php' />";

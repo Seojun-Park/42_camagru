@@ -43,4 +43,4 @@ if (isset($_POST['send'])) {
 }
 
 echo "<script>alert('Upload Success!')</script>";
-echo "<script>location.href('/page/feed/gallery.php')</script>";
+echo "<meta http-equiv='refresh' content='0 url=/page/main.php' />";
