@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="header_row first_col">
-            <a href="/page/main.php">logo</a>
+            <a href="/page/main.php"><img src="/asset/logo.png" alt="logo" /></a>
         </div>
         <div class="header_row second_col">
             <span>Camagru</span>
