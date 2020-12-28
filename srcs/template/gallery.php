@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header_row first_col">
-            <a href="/">logo</a>
+            <a href="/"><img src="../asset/logo.png" alt="logo" width="50px" /></a>
         </div>
         <div class="header_row second_col">
             <span>Camagru</span>
