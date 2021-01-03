@@ -16,7 +16,7 @@
 
 ---
 
-<img src="/markdown/preview.gif" alt="preview" width="50%" />
+<img src="/markdown/preview_update.gif" alt="preview" width="50%" />
 
 ---
 
