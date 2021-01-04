@@ -28,7 +28,7 @@ closedir($handle);
     if (isset($_SESSION['userid'])) {
         $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
         $me = $mesql->fetch_array();
-        ?>
+    ?>
         <div class='header'>
             <?php echo view('header.php'); ?>
         </div>
@@ -56,7 +56,7 @@ closedir($handle);
         </div>
     <?php
     } else {
-        echo "<script>alert('잘못된 접근입니다.'); history.back();</script>";
+        echo "<script>alert('Wrong approach.'); history.back();</script>";
     }
     ?>
 </body>
