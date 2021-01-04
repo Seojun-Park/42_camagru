@@ -39,6 +39,13 @@ function idCheck($_str)
     }
 }
 
+$idresult = idCheck($_POST['userid']);
+if ($idresult == false) {
+    echo "<script>alert('this ID is already taken')</script>";
+    echo "<script>history.back();</script>";
+    exit;
+}
+
 $pwresult = passwordCheck($_POST['userpw']);
 if ($pwresult[0] == false) {
     echo $pwresult[1];
