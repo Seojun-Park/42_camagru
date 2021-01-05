@@ -42,7 +42,7 @@ function idCheck($_str)
 function usernameCheck($_str)
 {
     $username = $_str;
-    $username_check = mq("select * from member wehre username='{$username}'");
+    $username_check = mq("select * from member where username='{$username}'");
     $username_check = $username_check->fetch_array();
 
     if ($username_check >= 1) {

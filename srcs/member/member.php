@@ -61,6 +61,10 @@ include "check.php";
                     </span>
                 </label>
             </div>
+            <div class="signup_btn">
+                <input type="submit" value="Sign up" id="btn" formaction="member_ok.php" />
+                <input type="reset" id="btn" class="res" value="Reset" />
+            </div>
         </form>
     </div>
 </body>

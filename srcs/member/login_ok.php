@@ -22,10 +22,10 @@ if ($_POST["userid"] == "" || $_POST["userpw"] == "") {
 	$password = $_POST['userpw'];
 	$sql = mq("select * from member where id='" . $_POST['userid'] . "'");
 	$member = $sql->fetch_array();
-	if ($member['verified'] == 0) {
-		echo "<script>alert('Verification email has sent')</script>";
-		send_mail($member['email']);
-	}
+	// if ($member['verified'] == 0) {
+	// 	echo "<script>alert('Verification email has sent')</script>";
+	// 	send_mail($member['email']);
+	// }
 	$hash_pw = $member['pw'];
 
 	if (password_verify($password, $hash_pw)) {
