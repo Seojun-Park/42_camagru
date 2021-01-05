@@ -2,19 +2,8 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 include "check.php";
 
-function send_mail($email)
-{
-    $to = $email;
-    $subject = "Camagru Sign up | Verification email";
-    $message = "This is email is verificated";
-    $headers = 'From :jinpark@student.42.fr' . "\r\n" .
-        'Reply-To : jinpark@student.42.fr' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    mail($to, $subject, $message, $headers);
-}
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -70,15 +59,8 @@ function send_mail($email)
                     <span class="field__label-wrap">
                         <span class="field__label">Email</span>
                     </span>
-                    <form>
-                        <input type="submit" value="Verify" class="verifyButton" formaction="" />
-                    </form>
                 </label>
             </div>
-            <!-- <div class="signup_btn">
-                <input type="submit" value="Sign up" id="btn" formaction="member_ok.php" />
-                <input type="reset" id="btn" class="res" value="Reset" />
-            </div> -->
         </form>
     </div>
 </body>

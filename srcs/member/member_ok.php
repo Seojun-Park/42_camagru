@@ -78,7 +78,7 @@ $userpw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
 $username = $_POST['username'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
-$email = $_POST['email'] . '@' . $_POST['emaddress'];
+$email = $_POST['email'];
 $avatar = 'TBU';
 
 $sql = mq(
