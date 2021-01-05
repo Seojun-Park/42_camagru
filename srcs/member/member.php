@@ -1,6 +1,19 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 include "check.php";
+
+function send_mail($email)
+{
+    $to = $email;
+    $subject = "Camagru Sign up | Verification email";
+    $message = "This is email is verificated";
+    $headers = 'From :jinpark@student.42.fr' . "\r\n" .
+        'Reply-To : jinpark@student.42.fr' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +27,7 @@ include "check.php";
 </head>
 
 <body>
-    <div class="bg_signup">
+    <div class="bg_image_signup">
         <div class="bg_cover"></div>
     </div>
     <div class="wrapper">
@@ -57,38 +70,18 @@ include "check.php";
                     <span class="field__label-wrap">
                         <span class="field__label">Email</span>
                     </span>
+                    <form>
+                        <input type="submit" value="Verify" class="verifyButton" formaction="" />
+                    </form>
                 </label>
             </div>
-            <div class="signup_btn">
-                <input type="submit" value="Sign up" id="btn" formaction="member_ok.php" /><input type="reset" id="btn" class="res" value="Reset" />
-            </div>
+            <!-- <div class="signup_btn">
+                <input type="submit" value="Sign up" id="btn" formaction="member_ok.php" />
+                <input type="reset" id="btn" class="res" value="Reset" />
+            </div> -->
         </form>
     </div>
 </body>
 
 
 </html>
-<script>
-    $(document).ready(function(e) {
-        $(".check").on("keyup", function() { //check라는 클래스에 입력을 감지
-            var self = $(this);
-            var userid;
-
-            if (self.attr("id") === "userid") {
-                userid = self.val();
-            }
-
-            $.post( //post방식으로 id_check.php에 입력한 userid값을 넘깁니다
-                "id_check.php", {
-                    userid: userid
-                },
-                function(data) {
-                    if (data) { //만약 data값이 전송되면
-                        self.parent().parent().find("div").html(data); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
-                        self.parent().parent().find("div").css("color", "#F00"); //div 태그를 찾아 css효과로 빨간색을 설정합니다
-                    }
-                }
-            );
-        });
-    });
-</script>

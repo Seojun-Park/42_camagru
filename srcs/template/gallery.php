@@ -49,6 +49,9 @@
         </div>
     </header>
     <div class="wrapper">
+        <!-- <form action="mail.php" method="post" enctype="multipart/form-data">
+            <input type="submit" />
+        </form> -->
         <div class="box_t1">
             <div class="box_head">
                 jinpark
