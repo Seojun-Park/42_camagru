@@ -39,6 +39,19 @@ function idCheck($_str)
     }
 }
 
+function usernameCheck($_str)
+{
+    $username = $_str;
+    $username_check = mq("select * from member where username='{$username}'");
+    $username_check = $username_check->fetch_array();
+
+    if ($username_check >= 1) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 $idresult = idCheck($_POST['userid']);
 if ($idresult == false) {
     echo "<script>alert('this ID is already taken')</script>";
@@ -52,12 +65,20 @@ if ($pwresult[0] == false) {
     echo "<script>history.back();</script>";
     exit;
 }
+
+$usernameresult = usernameCheck($_POST['username']);
+if ($usernameresult == false) {
+    echo "<script>alert('this username is already taken')</script>";
+    echo "<script>history.back();</script>";
+    exit;
+}
+
 $userid = $_POST['userid'];
 $userpw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);
 $username = $_POST['username'];
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
-$email = $_POST['email'] . '@' . $_POST['emaddress'];
+$email = $_POST['email'];
 $avatar = 'TBU';
 
 $sql = mq(

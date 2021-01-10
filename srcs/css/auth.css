@@ -1,126 +1,138 @@
 /** @format */
 
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Graduate&family=Nanum+Gothic:wght@400;700&display=swap&family=Black+Han+Sans&display=swap");
-
 @font-face {
-  font-family: "baron";
-  src: url(font/Baron-Neue.ttf) format("truetype");
+    font-family: "baron";
+    src: url(font/Baron-Neue.ttf) format("truetype");
 }
 
 a {
-  text-decoration: none;
-  font-family: baron;
-  color: white;
+    text-decoration: none;
+    font-family: baron;
+    color: white;
 }
 
 * {
-  margin: 0;
-  font-family: "Nanum Gothic Coding", monospace;
+    margin: 0;
+    font-family: "Nanum Gothic Coding", monospace;
 }
 
 .bg_image {
-  background-image: url(https://images.unsplash.com/photo-1532105111962-e23707867985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 0;
+    background-image: url(https://images.unsplash.com/photo-1532105111962-e23707867985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
 }
 
 .bg_image_signup {
-  background-image: url(https://images.unsplash.com/photo-1523705480679-b5d0cc17a656?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 0;
+    background-image: url(https://images.unsplash.com/photo-1523705480679-b5d0cc17a656?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
 }
 
 .bg_cover {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background-color: black;
-  z-index: 1;
-  opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.5;
 }
 
 .wrapper {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #web_title {
-  font-family: baron;
-  letter-spacing: 8px;
-  color: white;
-  font-size: 40px;
+    font-family: baron;
+    letter-spacing: 8px;
+    color: white;
+    font-size: 40px;
 }
 
 #web_subtitle {
-  font-family: baron;
-  letter-spacing: 3px;
-  color: white;
-  font-size: 12px;
-  margin-bottom: 35px;
-  width: 250px;
-  display: flex;
-  justify-content: flex-end;
+    font-family: baron;
+    letter-spacing: 3px;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 35px;
+    width: 250px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #web_subtitle_signup {
-  font-family: baron;
-  letter-spacing: 3px;
-  color: white;
-  font-size: 16px;
-  margin-bottom: 35px;
-  width: 250px;
-  text-align: center;
-  margin-top: 15px;
+    font-family: baron;
+    letter-spacing: 3px;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 35px;
+    width: 250px;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .login_box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 50px;
-  border-bottom: 1px solid white;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
 }
 
 .login_form {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .login_sec {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 480px;
-  margin: auto;
-  padding: 1rem;
-  display: grid;
-  grid-gap: 30px;
-  margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-gap: 30px;
+    margin-bottom: 20px;
 }
 
 .text_box {
-  background: none;
-  border: 1px solid white;
-  padding: 8px;
-  width: 250px;
-  margin: 5px 0;
+    background: none;
+    border: 1px solid white;
+    padding: 8px;
+    width: 250px;
+    margin: 5px 0;
 }
+
+.verifyButton {
+    border: none;
+    background-color: #d1c4e9;
+    border-radius: 8px;
+    color: white;
+}
+
+.verifyButton:hover {
+    background-color: #e74c3c;
+    transition: 0.2s linear;
+}
+
 
 /*
 =====
@@ -129,26 +141,25 @@ RESET STYLES
 */
 
 .field__input {
-  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  font-family: inherit;
-  font-size: inherit;
+    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
 }
 
 .field__input:focus::-webkit-input-placeholder {
-  color: var(--uiFieldPlaceholderColor);
+    color: var(--uiFieldPlaceholderColor);
 }
 
 .field__input:focus::-moz-placeholder {
-  color: var(--uiFieldPlaceholderColor);
+    color: var(--uiFieldPlaceholderColor);
 }
+
 
 /*
   =====
@@ -157,136 +168,127 @@ RESET STYLES
   */
 
 .field {
-  --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
-  --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
-  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
-  --uiFieldBorderColorActive: var(
-    --fieldBorderColorActive,
-    rgba(22, 22, 22, 1)
-  );
-
-  display: var(--fieldDisplay, inline-flex);
-  position: relative;
-  font-size: var(--fieldFontSize, 1rem);
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+    --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+    --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+    --uiFieldBorderColorActive: var( --fieldBorderColorActive, rgba(22, 22, 22, 1));
+    display: var(--fieldDisplay, inline-flex);
+    position: relative;
+    font-size: var(--fieldFontSize, 1rem);
 }
 
 .field__input {
-  box-sizing: border-box;
-  width: var(--fieldWidth, 100%);
-  height: var(--fieldHeight, 3rem);
-  padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight)
-    var(--fieldPaddingBottom, 0.5rem) var(--uiFieldPaddingLeft);
-  border-bottom: var(--uiFieldBorderWidth) solid
-    var(--fieldBorderColor, rgba(0, 0, 0, 0.25));
+    box-sizing: border-box;
+    width: var(--fieldWidth, 100%);
+    height: var(--fieldHeight, 3rem);
+    padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, 0.5rem) var(--uiFieldPaddingLeft);
+    border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, 0.25));
+    color: white;
 }
 
 .field__input:focus {
-  outline: none;
+    outline: none;
 }
 
 .field__input::-webkit-input-placeholder {
-  color: lightgray;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
+    color: lightgray;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
 }
 
 .field__input::-moz-placeholder {
-  color: lightgray;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
+    color: lightgray;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
 }
 
 .field__input:focus::-webkit-input-placeholder {
-  color: lightgray;
-  opacity: 1;
-  transition-delay: 0.2s;
+    color: lightgray;
+    opacity: 1;
+    transition-delay: 0.2s;
 }
 
 .field__input:focus::-moz-placeholder {
-  color: lightgray;
-
-  opacity: 1;
-  transition-delay: 0.2s;
+    color: lightgray;
+    opacity: 1;
+    transition-delay: 0.2s;
 }
 
 .field__label-wrap {
-  box-sizing: border-box;
-  pointer-events: none;
-  cursor: text;
-  color: white;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    cursor: text;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .field__label-wrap::after {
-  content: "";
-  box-sizing: border-box;
-  width: 100%;
-  height: 0;
-  opacity: 0;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
+    content: "";
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
-.field__input:focus ~ .field__label-wrap::after {
-  opacity: 1;
+.field__input:focus~.field__label-wrap::after {
+    opacity: 1;
 }
 
 .field__label {
-  position: absolute;
-  left: var(--uiFieldPaddingLeft);
-  top: calc(50% - 0.5em);
-
-  line-height: 1;
-  font-size: var(--fieldHintFontSize, inherit);
-
-  transition: top 0.2s cubic-bezier(0.9, -0.15, 0.1, 1.15),
-    opacity 0.2s ease-out, font-size 0.2s ease-out;
-  will-change: bottom, opacity, font-size;
+    position: absolute;
+    left: var(--uiFieldPaddingLeft);
+    top: calc(50% - 0.5em);
+    line-height: 1;
+    font-size: var(--fieldHintFontSize, inherit);
+    transition: top 0.2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity 0.2s ease-out, font-size 0.2s ease-out;
+    will-change: bottom, opacity, font-size;
 }
 
-.field__input:focus ~ .field__label-wrap .field__label,
-.field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label {
-  --fieldHintFontSize: var(--fieldHintFontSizeFocused, 0.75rem);
-
-  top: var(--fieldHintTopHover, 0.25rem);
+.field__input:focus~.field__label-wrap .field__label,
+.field__input:not(:placeholder-shown)~.field__label-wrap .field__label {
+    --fieldHintFontSize: var(--fieldHintFontSizeFocused, 0.75rem);
+    top: var(--fieldHintTopHover, 0.25rem);
 }
+
 
 /* 
   effect 1
   */
 
 .field_v1 .field__label-wrap::after {
-  border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-  transition: opacity 0.2s ease-out;
-  will-change: opacity;
+    border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+    transition: opacity 0.2s ease-out;
+    will-change: opacity;
 }
+
 
 /* 
   effect 2
   */
 
 .field_v2 .field__label-wrap {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .field_v2 .field__label-wrap::after {
-  border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-  transform: translate3d(-105%, 0, 0);
-  will-change: transform, opacity;
-  transition: transform 0.285s ease-out 0.2s, opacity 0.2s ease-out 0.2s;
+    border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+    transform: translate3d(-105%, 0, 0);
+    will-change: transform, opacity;
+    transition: transform 0.285s ease-out 0.2s, opacity 0.2s ease-out 0.2s;
 }
 
-.field_v2 .field__input:focus ~ .field__label-wrap::after {
-  transform: translate3d(0, 0, 0);
-  transition-delay: 0;
+.field_v2 .field__input:focus~.field__label-wrap::after {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0;
 }
+
 
 /*
   =====
@@ -295,164 +297,176 @@ RESET STYLES
   */
 
 .field {
-  --fieldBorderColor: #d1c4e9;
-  --fieldBorderColorActive: #673ab7;
+    --fieldBorderColor: #d1c4e9;
+    --fieldBorderColorActive: #673ab7;
 }
 
 button {
-  background: #d1c4e9;
-  color: #fff;
-  border: none;
-  position: relative;
-  height: 50px;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  font-family: baron;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-  border-radius: 5px;
+    background: #d1c4e9;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 50px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-family: baron;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    border-radius: 5px;
 }
+
 button:hover {
-  background: none;
-  color: #fff;
+    background: none;
+    color: #fff;
 }
+
 button:before,
 button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #fff;
-  transition: 400ms ease all;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: 400ms ease all;
 }
+
 button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
 }
+
 button:hover:before,
 button:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
+    width: 100%;
+    transition: 800ms ease all;
 }
 
 .signup_sec {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .signup_sec a {
-  text-decoration: none;
-  color: #fff;
-  border: none;
-  position: relative;
-  height: 60px;
-  font-size: 1em;
-  letter-spacing: 2px;
-  font-family: baron;
-  padding: 10px 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 60px;
+    font-size: 1em;
+    letter-spacing: 2px;
+    font-family: baron;
+    padding: 10px 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
 }
 
 .signup_sec a:hover {
-  background: none;
-  color: #fff;
+    background: none;
+    color: #fff;
 }
+
 .signup_sec a:before,
 .signup_sec a:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 1px;
-  width: 0;
-  background: #fff;
-  transition: 400ms ease all;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1px;
+    width: 0;
+    background: #fff;
+    transition: 400ms ease all;
 }
+
 .signup_sec a:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
 }
+
 .signup_sec a:hover:before,
 .signup_sec a:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
+    width: 100%;
+    transition: 800ms ease all;
 }
+
 
 /* sign up */
 
 .signup_box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .signup_box label {
-  margin: 10px;
+    margin: 10px;
 }
 
 .signup_btn {
-  margin-top: 40px;
-  border-top: 3px solid lightgray;
-  padding-top: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+    margin-top: 40px;
+    border-top: 3px solid lightgray;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 500px;
 }
 
 #btn {
-  background: #d1c4e9;
-  color: #fff;
-  border: none;
-  position: relative;
-  height: 50px;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  font-family: baron;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-  border-radius: 5px;
+    background: #d1c4e9;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 50px;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    font-family: baron;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    border-radius: 5px;
 }
 
 #btn:hover {
-  background: none;
-  color: #fff;
+    background: none;
+    color: #fff;
 }
 
 #btn.res:hover {
-  background: #e74c3c;
-  color: #fff;
+    background: #e74c3c;
+    color: #fff;
 }
+
 #btn:before,
 #btn:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #fff;
-  transition: 400ms ease all;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #fff;
+    transition: 400ms ease all;
 }
+
 #btn:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
 }
+
 #btn:hover:before,
 #btn:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
+    width: 100%;
+    transition: 800ms ease all;
 }
