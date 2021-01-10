@@ -41,7 +41,8 @@ body {
     }
     .col_title {
         width: 120px;
-        margin-right: 20px;
+        margin-right: 40px;
+        text-transform: uppercase;
     }
     .modify_button {
         width: 80px;
@@ -100,6 +101,8 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     .title {
         text-align: center;
@@ -123,7 +126,8 @@ body {
     }
     .col_title {
         width: 120px;
-        margin-right: 20px;
+        margin-right: 40px;
+        text-transform: uppercase;
     }
     .modify_button {
         width: 80px;

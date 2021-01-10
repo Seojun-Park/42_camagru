@@ -16,8 +16,8 @@ header {
     font-family: "Nanum Gothic Coding", monospace;
     margin: 0 auto;
     margin-top: 15px;
+    height: 8vh;
 }
-
 
 footer {
     width: 80%;

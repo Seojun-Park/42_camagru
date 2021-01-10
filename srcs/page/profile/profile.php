@@ -33,7 +33,7 @@ $me = $sql->fetch_array();
             </div>
             <div class="profile_col">
                 <div class="col_title">name</div>
-                <div class="col_cont"><?php echo $me['firstname'] . $me['lastname']; ?> </div>
+                <div class="col_cont"><?php echo $me['firstname'] . "   " . $me['lastname']; ?> </div>
             </div>
         </div>
         <?php echo '<a href="./profile_modify.php?' . $query . '" class="modify_button">modify</a>' ?>
