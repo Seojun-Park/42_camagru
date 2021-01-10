@@ -41,7 +41,7 @@
                 </button>
                 <div class="dropdown-content">
                     <form method="post">
-                        <a href="/">PROFILE</a>
+                        <a href="./profile.php?jinpark">PROFILE</a>
                         <a href="../member/logout.php">LOGOUT</a>
                     </form>
                 </div>

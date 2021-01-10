@@ -1,8 +1,6 @@
 <!-- @format -->
 <?php
 $userId = $_SESSION['userid'];
-
-echo '<script>console.log(' . $userId . ')</script>'
 ?>
 
 
@@ -19,7 +17,7 @@ echo '<script>console.log(' . $userId . ')</script>'
 <body>
     <header>
         <div class="header_row first_col">
-            <a href="/page/main.php"><img src="/asset/logo.png" alt="logo" width="50px" /></a>
+            <a href="/page/main.php"><img src="/asset/logo.png" alt="logo" width="50px" /></a>'
         </div>
         <div class="header_row second_col">
             <span>Camagru</span>
@@ -31,9 +29,10 @@ echo '<script>console.log(' . $userId . ')</script>'
                 </a>
             </div>
             <div class="col_block">
-                <a href="/page/profile/profile.php">
-                    <button>PROFILE</button>
-                </a>
+                <?php
+                echo '<a href="/page/profile/profile.php?' . $_SESSION['userid'] . '">
+                    <button>PROFILE</button></a>'
+                ?>
             </div>
             <div class="col_block">
                 <a href="/member/logout.php">
@@ -49,7 +48,9 @@ echo '<script>console.log(' . $userId . ')</script>'
                 <div class="dropdown-content">
                     <form method="post">
                         <a href="/page/feed/gallery.php">GALLERY</a>
-                        <a href="/page/profile/profile.php">PROFILE</a>
+                        <?php
+                        echo '<a href="/page/profile/profile.php?' . $_SESSION['userid'] . '">PROFILE</a>'
+                        ?>
                         <a href="/member/logout.php">LOGOUT</a>
                     </form>
                 </div>

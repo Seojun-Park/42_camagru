@@ -47,6 +47,9 @@
             </div>
         </div>
     </header>
+    <div>
+        <?php echo $_SERVER['QUERY_STRING']; ?>
+    </div>
 </body>
 
 </html>
