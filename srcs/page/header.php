@@ -1,4 +1,10 @@
 <!-- @format -->
+<?php
+$userId = $_SESSION['userid'];
+
+echo '<script>console.log(' . $userId . ')</script>'
+?>
+
 
 <!DOCTYPE html>
 
@@ -25,6 +31,11 @@
                 </a>
             </div>
             <div class="col_block">
+                <a href="/page/profile/profile.php">
+                    <button>PROFILE</button>
+                </a>
+            </div>
+            <div class="col_block">
                 <a href="/member/logout.php">
                     <button>LOG OUT</button>
                 </a>
@@ -38,6 +49,7 @@
                 <div class="dropdown-content">
                     <form method="post">
                         <a href="/page/feed/gallery.php">GALLERY</a>
+                        <a href="/page/profile/profile.php">PROFILE</a>
                         <a href="/member/logout.php">LOGOUT</a>
                     </form>
                 </div>

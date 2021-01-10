@@ -6,7 +6,6 @@
     <title>Camagru_Gallery</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/gallery.css" />
 </head>
 
 <body>
@@ -24,7 +23,7 @@
                         <button>GALLERY</button>
                     </a>
                 </div>
-                <a href="./profile.php?jinpark">
+                <a href="/">
                     <button>PROFILE</button>
                 </a>
             </div>
@@ -48,43 +47,6 @@
             </div>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="box_t1">
-            <div class="box_head">
-                jinpark
-            </div>
-            <div class="box_cont">
-                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
-            </div>
-        </div>
-        <div class="box_t2">
-            <div class="box_head">
-                jinpark
-            </div>
-            <div class="box_cont">
-                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
-            </div>
-        </div>
-        <div class="box_t3">
-            <div class="box_head">
-                jinpark
-            </div>
-            <div class="box_cont">
-                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
-            </div>
-        </div>
-        <div class="box_t1">
-            <div class="box_head">
-                jinpark
-            </div>
-            <div class="box_cont">
-                <img alt="box_cont" src="https://dummyimage.com/300x200/fff/black" />
-            </div>
-        </div>
-    </div>
-    <footer>
-        Copyright &copy; Jin 2020 - All Rights Reserved
-    </footer>
 </body>
 
 </html>
