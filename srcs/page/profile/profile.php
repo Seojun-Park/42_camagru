@@ -2,10 +2,11 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/db.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/hooks/func_view.php';
 
-$query =  $_SERVER['QUERY_STRING'];
+$query = $_SERVER['QUERY_STRING'];
+$sql = mq("select * from member where id='$query'");
+$me = $sql->fetch_array();
 ?>
 
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -20,15 +21,23 @@ $query =  $_SERVER['QUERY_STRING'];
         <?php echo view("../header.php") ?>
     </div>
     <div class="profile_container">
-        <h2 class="title">User Setting</h2>
-        <form method="post" class="profile_form" action="<?php echo "./profile_ok.php?" . $query ?>">
-            <input type="email" class="profile_input" name="email" placeholder="Email" />
-            <input type="text" class="profile_input" name="firstname" placeholder="First name" />
-            <input type="text" class="profile_input" name="lastname" placeholder="Last name" />
-            <input type="password" class="profile_input" name="password" placeholder="Password" />
-            <input type="password" class="profile_input" name="passwordcheck" placeholder="Password Check" />
-            <button type="submit" class="profile_button">Submit</button>
-        </form>
+        <h2 class="title">Jinpark's Profile</h2>
+        <div class="profile_box">
+            <div class="profile_col">
+                <div class="col_title">username</div>
+                <div class="col_cont"><?php echo $me['id']; ?></div>
+            </div>
+            <div class="profile_col">
+                <div class="col_title">email</div>
+                <div class="col_cont"><?php echo $me['email']; ?></div>
+            </div>
+            <div class="profile_col">
+                <div class="col_title">name</div>
+                <div class="col_cont"><?php echo $me['firstname'] . $me['lastname']; ?> </div>
+            </div>
+        </div>
+        <?php echo '<a href="./profile_modify.php?' . $query . '" class="modify_button">modify</a>' ?>
+
     </div>
 </body>
 

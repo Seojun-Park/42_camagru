@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Camagru Profile</title>
-    <!-- <link rel="stylesheet" href="../css/reset/css" /> -->
+    <meta charset="utf-8" />
+    <title>Camagru_Gallery</title>
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/profile.css" />
 </head>
@@ -47,23 +48,18 @@
             </div>
         </div>
     </header>
-    <div class="profile_container">
-        <h2 class="title">Jinpark's Profile</h2>
-        <div class="profile_box">
-            <div class="profile_col">
-                <div class="col_title">username</div>
-                <div class="col_cont">cont</div>
-            </div>
-            <div class="profile_col">
-                <div class="col_title">email</div>
-                <div class="col_cont">cont</div>
-            </div>
-            <div class="profile_col">
-                <div class="col_title">name</div>
-                <div class="col_cont">cont </div>
-            </div>
+    <div>
+        <div class="profile_container">
+            <h2 class="title">User Setting</h2>
+            <form method="post" class="profile_form">
+                <input type="email" class="profile_input" name="email" placeholder="Email" />
+                <input type="text" class="profile_input" name="firstname" placeholder="First name" />
+                <input type="text" class="profile_input" name="lastname" placeholder="Last name" />
+                <input type="password" class="profile_input" name="password" placeholder="Password" />
+                <input type="password" class="profile_input" name="passwordcheck" placeholder="Password Check" />
+                <button type="submit" class="profile_button">Submit</button>
+            </form>
         </div>
-        <a href="./profile_modify.php?jinpark" class="modify_button">modify</a>
     </div>
 </body>
 
