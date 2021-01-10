@@ -17,14 +17,15 @@ if ($_POST['password'] != "") {
     }
 }
 
-$_POST['password'] == "" ? $pwd = password_verify($me['password'], PASSWORD_DEFAULT) : $_POST['password'];
+$_POST['password'] == "" ? $pwd = password_verify($me['password'], PASSWORD_DEFAULT) : $pwd = $_POST['password'];
 
 $cryptedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-$updatesql = mq("update member set email='" . $email . "', firstname='" . $firstname . "', lastname='" . $lastname . "', password='" . $pwd . "' where id='" . $query . "'");
+$updatesql = mq("update member set email='" . $email . "', firstname='" . $firstname . "', lastname='" . $lastname . "', pw='" . $cryptedpwd . "' where id='" . $query . "'");
+
 
 $mesql = mq("select * from member where id='" . $query . "'");
 $me = $mesql->fetch_array();
 
-echo "<script>alert('Modified!);</script>";
+echo "<script>alert('Modified!')</script>";
 echo "<script>location.href='/page/main.php';</script>";

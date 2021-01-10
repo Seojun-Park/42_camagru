@@ -29,7 +29,7 @@ function passwordCheck($_str)
 function idCheck($_str)
 {
     $id = $_str;
-    $id_check = mq("select * from member where id='{$id}'");
+    $id_check = mq("select * from member where id='" . $id . "'");
     $id_check = $id_check->fetch_array();
 
     if ($id_check >= 1) {
@@ -42,7 +42,7 @@ function idCheck($_str)
 function usernameCheck($_str)
 {
     $username = $_str;
-    $username_check = mq("select * from member where username='{$username}'");
+    $username_check = mq("select * from member where username='" . $username . "'");
     $username_check = $username_check->fetch_array();
 
     if ($username_check >= 1) {
