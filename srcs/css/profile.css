@@ -1,71 +1,102 @@
 /** @format */
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
 body {
-  font-family: "Nanum Gothic Coding", monospace;
+    font-family: "Nanum Gothic Coding", monospace;
 }
 
 @media screen and (max-width: 768px) {
-  .profile_container {
-    width: 450px;
-    margin-top: 80px;
-    margin: 10px auto;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    border-radius: 4px;
-    background-color: lightblue;
-  }
-  .avatar {
-    width: 130px;
-    height: 130px;
-    border-radius: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid gray;
-  }
-
-  .user_card td {
-    font-size: 16px;
-    padding: 10px 0;
-  }
-
-  #name {
-    font-weight: 700;
-  }
+    .profile_container {
+        padding: 8px;
+        border: 3px solid #333;
+        border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+        background-color: #ffffff;
+        max-width: 680px;
+        min-height: 40vh;
+        margin: 55px auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+    .profile_form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .profile_input {
+        width: 200px;
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        border: none;
+        background-color: #e6e6e6;
+        border-radius: 4px;
+    }
+    .profile_button {
+        border: none;
+        background-color: #9b59b6;
+        border-radius: 4px;
+        padding: 12px;
+        color: white;
+    }
+    .profile_button:hover {
+        background-color: #e74c3c;
+        transition: 0.2s linear;
+        color: white;
+    }
 }
 
 @media screen and (min-width: 769px) {
-  .profile_container {
-    width: 600px;
-    margin: 10px auto;
-    margin-top: 80px;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 4px;
-    background-color: lightblue;
-  }
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid gray;
-  }
-
-  .user_card td {
-    font-size: 20px;
-    padding: 10px 0;
-  }
-
-  #name {
-    font-weight: 700;
-  }
+    .profile_container {
+        padding: 8px;
+        border: 3px solid #333;
+        border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+        background-color: #ffffff;
+        max-width: 680px;
+        min-height: 40vh;
+        margin: 55px auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+    .profile_form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .profile_input {
+        width: 200px;
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        border: none;
+        background-color: #e6e6e6;
+        border-radius: 4px;
+    }
+    .profile_button {
+        border: none;
+        background-color: #9b59b6;
+        border-radius: 4px;
+        padding: 12px;
+        color: white;
+    }
+    .profile_button:hover {
+        background-color: #e74c3c;
+        transition: 0.2s linear;
+        color: white;
+    }
 }

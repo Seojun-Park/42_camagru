@@ -57,6 +57,7 @@ closedir($handle);
     <?php
     } else {
         echo "<script>alert('Wrong approach.'); history.back();</script>";
+        echo "<script>location.href='/'";
     }
     ?>
 </body>

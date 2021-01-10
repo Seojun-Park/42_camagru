@@ -9,9 +9,19 @@ $_POST['email'] == "" ? $email = $me['email'] : $email = $_POST['email'];
 $_POST['firstname'] == "" ? $firstname = $me['firstname'] : $firstname = $_POST['firstname'];
 $_POST['lastname'] == "" ? $lastname = $me['lastname'] : $lastname = $_POST['lastname'];
 
-if (!strcmp($_POST['password'], $_POST['passwordchedk'])) {
-    echo "<script>alert('Passwords are not match')</script>";
-    exit;
+if (isset($_POST['password'])) {
+    if (!strcmp($_POST['password'], $_POST['passwordchedk'])) {
+        echo "<script>alert('Passwords are not match')</script>";
+        echo "<script>history.back();</script>";
+        exit;
+    }
 }
 
-$_POST['password'] == "" ? $pwd = password_verify($me['password'], PASSWORD_DEFAULT) : $pwd = $_POST['password'];
+$_POST['password'] == "" ? $pwd = password_verify($me['password'], PASSWORD_DEFAULT) : $_POST['password'];
+
+$cryptedpwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+$sql = mq("update from member set email=" . $email . "," . "firstname=" . $firstname . "," . "lastname=" . $lastname . "," . "password=" . $pwd);
+
+echo "<script>alert('Modified!);</script>";
+echo "<script>location.href='/page/main.php';</script>";
