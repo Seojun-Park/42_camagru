@@ -9,7 +9,7 @@ $_POST['email'] == "" ? $email = $me['email'] : $email = $_POST['email'];
 $_POST['firstname'] == "" ? $firstname = $me['firstname'] : $firstname = $_POST['firstname'];
 $_POST['lastname'] == "" ? $lastname = $me['lastname'] : $lastname = $_POST['lastname'];
 
-if (isset($_POST['password'])) {
+if ($_POST['password'] != "") {
     if (!strcmp($_POST['password'], $_POST['passwordchedk'])) {
         echo "<script>alert('Passwords are not match')</script>";
         echo "<script>history.back();</script>";
@@ -21,7 +21,10 @@ $_POST['password'] == "" ? $pwd = password_verify($me['password'], PASSWORD_DEFA
 
 $cryptedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-$sql = mq("update from member set email=" . $email . "," . "firstname=" . $firstname . "," . "lastname=" . $lastname . "," . "password=" . $pwd);
+$updatesql = mq("update member set email='" . $email . "', firstname='" . $firstname . "', lastname='" . $lastname . "', password='" . $pwd . "' where id='" . $query . "'");
+
+$mesql = mq("select * from member where id='" . $query . "'");
+$me = $mesql->fetch_array();
 
 echo "<script>alert('Modified!);</script>";
 echo "<script>location.href='/page/main.php';</script>";

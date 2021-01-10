@@ -21,7 +21,7 @@ $query =  $_SERVER['QUERY_STRING'];
     </div>
     <div class="profile_container">
         <h2 class="title">User Setting</h2>
-        <form method="post" class="profile_form" action="./profile_ok.php">
+        <form method="post" class="profile_form" action="<?php echo "./profile_ok.php?" . $query ?>">
             <input type="email" class="profile_input" name="email" placeholder="Email" />
             <input type="text" class="profile_input" name="firstname" placeholder="First name" />
             <input type="text" class="profile_input" name="lastname" placeholder="Last name" />
