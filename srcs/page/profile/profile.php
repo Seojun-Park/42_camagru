@@ -21,7 +21,7 @@ $me = $sql->fetch_array();
         <?php echo view("../header.php") ?>
     </div>
     <div class="profile_container">
-        <h2 class="title">Jinpark's Profile</h2>
+        <h2 class="title"><?php echo $me['username'] ?>'s Profile</h2>
         <div class="profile_box">
             <div class="profile_col">
                 <div class="col_title">username</div>

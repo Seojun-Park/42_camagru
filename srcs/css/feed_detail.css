@@ -14,13 +14,14 @@
     }
     .container_head {
         height: 60px;
-        width: 100%;
-        border-bottom: 1px solid black;
-        margin-bottom: 15px;
+        width: 500px;
+        border-bottom: spx solid #333;
         display: flex;
         justify-content: space-between;
         margin-left: 20px;
         align-items: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
     }
     .head_col {
         height: 100%;
@@ -32,7 +33,6 @@
         width: 500px;
         min-height: 30vh;
         max-height: 40vh;
-        border: 1px solid black;
         display: flex;
         margin-bottom: 15px;
     }
@@ -44,11 +44,10 @@
         width: 500px;
         min-height: 5vh;
         padding-bottom: 25px;
-        border-bottom: 1px solid red;
+        border-bottom: 2px solid #333;
     }
     .comment_inputbox {
         width: 500px;
-        border: 1px solid green;
         margin-top: 15px;
     }
     .comment_input {
@@ -78,8 +77,8 @@
     }
     .container_head {
         height: 60px;
-        width: 100%;
-        border-bottom: 1px solid black;
+        width: 600px;
+        border-bottom: 2px solid #333;
         margin-bottom: 15px;
         display: flex;
         justify-content: space-between;
@@ -96,7 +95,6 @@
         width: 500px;
         min-height: 30vh;
         max-height: 40vh;
-        border: 1px solid black;
         display: flex;
         margin-bottom: 15px;
     }
@@ -108,11 +106,12 @@
         width: 500px;
         min-height: 5vh;
         padding-bottom: 25px;
-        border-bottom: 1px solid red;
+        padding-top: 15px;
+        border-top: 2px solid #333;
+        border-bottom: 2px solid #333;
     }
     .comment_inputbox {
         width: 500px;
-        border: 1px solid green;
         margin-top: 15px;
     }
     .comment_input {

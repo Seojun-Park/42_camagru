@@ -1,7 +1,7 @@
 <?php include  $_SERVER['DOCUMENT_ROOT'] . "/db.php";
 
-$bno = $_GET['idx'];
-$sql = mq("delete from feed where idx='$bno';");
+$bno = $_SERVER['QUERY_STRING'];
+$sql = mq("delete from feed where idx='" . $bno . "';");
 ?>
 <script type="text/javascript">
 	alert("delete success.");
