@@ -59,7 +59,39 @@
         width: 500px;
         min-height: 5vh;
         padding-bottom: 25px;
+        padding-top: 15px;
         border-bottom: 2px solid #333;
+        border-top: 2px solid #333;
+        text-overflow: ellipsis;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .comment_row {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .comment_id {
+        font-weight: 500;
+    }
+    .comment_button {
+        cursor: pointer;
+        background-color: white;
+        color: #e74c3c;
+        font-size: 10px;
+        margin-left: 8px;
+        border: none;
+    }
+    .comment_date_col {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .comment_date {
+        color: #7f8c8d;
+        font-size: 10px;
     }
     .comment_inputbox {
         width: 500px;
@@ -135,14 +167,45 @@
     .comment_box {
         width: 500px;
         min-height: 5vh;
-        padding-bottom: 25px;
+        padding-bottom: 10px;
         padding-top: 15px;
         border-top: 2px solid #333;
         border-bottom: 2px solid #333;
+        text-overflow: ellipsis;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .comment_row {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .comment_id {
+        font-weight: 500;
+    }
+    .comment_date_col {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .comment_button {
+        cursor: pointer;
+        background-color: white;
+        color: #e74c3c;
+        font-size: 10px;
+        margin-left: 8px;
+        border: none;
+    }
+    .comment_date {
+        color: #7f8c8d;
+        font-size: 10px;
     }
     .comment_inputbox {
         width: 500px;
         margin-top: 15px;
+        margin-bottom: 30px;
     }
     .comment_input {
         width: 80%;

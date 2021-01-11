@@ -31,7 +31,6 @@ $sql = mq("select * from feed order by idx desc limit 0,10");
             while ($feed = $sql->fetch_array()) {
                 echo "<div class='box_t" . $i . "'>";
                 echo "<div class='box_head'><a href='../profile/profile.php?" . $feed['userid'] . "'>" . $feed['userid'] . "</a></div>";
-                
                 echo "<div class='box_cont'><a href='./feed_detail.php?" . $feed['idx'] . "'><img id='gal_img' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' /></a></div>";
                 echo "</div>";
                 if ($i == 3)

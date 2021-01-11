@@ -7,8 +7,9 @@ $sql = mq("select * from feed where idx='" . $query . "'");
 $feed = $sql->fetch_array();
 $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $me = $mesql->fetch_array();
-$commentsql = mq("select * from comment where feedId='" . $feed['idx'] . "'");
-$comment = $commentsql->fetch_array();
+$commentsql = mq("select * from comment where feedId='" . $query . "' order by idx desc limit 0,10");
+
+
 
 
 if (strcmp($me['id'], $feed['userid']) == 0) {
@@ -56,14 +57,23 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
         </div>
         <div class="comment_box">
             <?php
-            while ($comment) {
-                echo $comment['userId'] . ":" . $comment['text'];
+            while ($comment = $commentsql->fetch_array()) {
+                echo "<div class='comment_row'>";
+                echo "<div><a class='comment_id' href='../profile/profile.php?" . $comment['userId'] . "'>" . $comment['userId'] . "</a> : <span>" . $comment['text'] . "</span></div>";
+                echo "<div class='comment_date_col'><span class='comment_date'>" . $comment['date'] . "</span>";
+                if (strcmp($comment['userId'], $me['id']) == 0) {
+                    echo "<form method='POST' action='./delete_Comment.php?" . $comment['idx'] . "' ><input type='submit' value='X' class='comment_button' /></form>";
+                } else {
+                    echo " ";
+                }
+                echo "</div>";
+                echo "</div>";
             }
             ?>
         </div>
-        <form class="comment_inputbox" action="./add_Comment.php" method="POST">
-            <input type="text" name="comment" placeholder="Add comment..." class="comment_input" />
-            <input type="submit" value="Send" class="comment_submit" />
+        <?php echo "<form class='comment_inputbox' action='./add_Comment.php?" . $feed['idx'] . "' method='POST'> " ?>
+        <input type="text" name="comment" placeholder="Add comment..." class="comment_input" />
+        <input type="submit" value="Send" class="comment_submit" />
         </form>
     </div>
 </body>
