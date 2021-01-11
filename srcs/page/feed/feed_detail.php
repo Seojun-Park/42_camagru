@@ -55,7 +55,11 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
             <?php echo "<img id='feedimg' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' />"; ?>
         </div>
         <div class="comment_box">
-            comment
+            <?php
+            while ($comment) {
+                echo $comment['userId'] . ":" . $comment['text'];
+            }
+            ?>
         </div>
         <form class="comment_inputbox" action="./add_Comment.php" method="POST">
             <input type="text" name="comment" placeholder="Add comment..." class="comment_input" />
