@@ -33,16 +33,6 @@ CREATE TABLE `feed` (
 -- Table structure for tabl `reply`
 --
 
-CREATE TABLE `reply` (
-  `idx` int NOT NULL AUTO_INCREMENT,
-  `feed_num` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `content` text NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idx`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 CREATE TABLE `member` (
     `idx` INT NOT NULL AUTO_INCREMENT,
     `id` VARCHAR(100) NOT NULL ,
@@ -56,6 +46,14 @@ CREATE TABLE `member` (
     PRIMARY KEY (`idx`)
     ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `comment` (
+  `idx` INT NOT NULL AUTO_INCREMENT,
+  `userId` VARCHAR(100) NOT NULL,
+  `text` VARCHAR(1000) NOT NULL,
+  `feedId` INT NOT NULL,
+  `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY(`idx`)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `board`

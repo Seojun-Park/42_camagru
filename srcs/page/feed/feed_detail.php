@@ -7,14 +7,14 @@ $sql = mq("select * from feed where idx='" . $query . "'");
 $feed = $sql->fetch_array();
 $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $me = $mesql->fetch_array();
+$commentsql = mq("select * from comment where feedId='" . $feed['idx'] . "'");
+$comment = $commentsql->fetch_array();
 
 
 if (strcmp($me['id'], $feed['userid']) == 0) {
     $ismine = true;
-    echo " yay";
 } else {
     $ismine = false;
-    echo "nop";
 }
 
 ?>
@@ -25,11 +25,28 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/reset/css" />
     <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/feed_detail.css" />
 </head>
 
 <body>
     <div class="header">
         <?php echo view("../header.php") ?>
+    </div>
+    <div class="detail_container">
+        <div class="container_head">
+            <div class="head_col"><?php echo $feed['id']; ?></div>
+            <div class="head_col">button</div>
+        </div>
+        <div class="image_box">
+            <?php echo "<img id='feedimg' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' />;" ?>
+        </div>
+        <div class="comment_box">
+            comment
+        </div>
+        <form class="comment_inputbox" action="./add_Comment.php" method="POST">
+            <input type="text" name="comment" placeholder="Add comment..." class="comment_input" />
+            <input type="submit" value="Send" class="comment_submit" />
+        </form>
     </div>
 </body>
 
