@@ -5,6 +5,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/hooks/func_view.php';
 $query = $_SERVER['QUERY_STRING'];
 $sql = mq("select * from member where id='$query'");
 $me = $sql->fetch_array();
+
+if (strcmp($_SESSION['userid'], $me['id']) == 0) {
+    $ismine = true;
+} else {
+    $ismine = false;
+}
 ?>
 
 <html>
@@ -36,8 +42,13 @@ $me = $sql->fetch_array();
                 <div class="col_cont"><?php echo $me['firstname'] . "   " . $me['lastname']; ?> </div>
             </div>
         </div>
-        <?php echo '<a href="./profile_modify.php?' . $query . '" class="modify_button">modify</a>' ?>
-
+        <?php
+        if ($ismin == true){
+            echo '<a href="./profile_modify.php?' . $query . '" class="modify_button">modify</a>';
+        } else {
+            echo " ";
+        }
+        ?>
     </div>
 </body>
 
