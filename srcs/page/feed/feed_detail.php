@@ -34,12 +34,16 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
     </div>
     <div class="detail_container">
         <div class="container_head">
-            <div class="head_col"><?php echo $feed['userid'] ?></div>
             <div class="head_col">
+                <span class="user_title">
+                    <?php echo "<a href='../profile/profile.php?" . $feed['userid'] . "'>" . $feed['userid'] . "</a>"; ?>
+                </span>
+            </div>
+            <div class="head_col head_button">
                 <?php
                 if ($ismine == true) {
                     echo "<form action='./feed_delete.php?" . $feed['idx'] . "' method='POST'>";
-                    echo "<input type='submit' value='X' />";
+                    echo "<input type='submit' value='X' class='delete_button' />";
                     echo "</form>";
                 } else {
                     echo " ";
@@ -48,7 +52,7 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
             </div>
         </div>
         <div class="image_box">
-            <?php echo "<img id='feedimg' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' />;" ?>
+            <?php echo "<img id='feedimg' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' />"; ?>
         </div>
         <div class="comment_box">
             comment

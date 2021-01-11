@@ -15,7 +15,7 @@
     .container_head {
         height: 60px;
         width: 500px;
-        border-bottom: spx solid #333;
+        border-bottom: 2px solid #333;
         display: flex;
         justify-content: space-between;
         margin-left: 20px;
@@ -28,6 +28,21 @@
         min-width: 100px;
         display: flex;
         align-items: center;
+    }
+    .head_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .user_title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .delete_button {
+        border: none;
+        color: #e74c3c;
+        font-size: 20px;
+        background-color: white;
     }
     .image_box {
         width: 500px;
@@ -90,6 +105,21 @@
         min-width: 100px;
         display: flex;
         align-items: center;
+    }
+    .head_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .user_title {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .delete_button {
+        border: none;
+        color: #e74c3c;
+        font-size: 20px;
+        background-color: white;
     }
     .image_box {
         width: 500px;

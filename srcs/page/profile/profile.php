@@ -43,7 +43,7 @@ if (strcmp($_SESSION['userid'], $me['id']) == 0) {
             </div>
         </div>
         <?php
-        if ($ismin == true){
+        if ($ismine == true) {
             echo '<a href="./profile_modify.php?' . $query . '" class="modify_button">modify</a>';
         } else {
             echo " ";
