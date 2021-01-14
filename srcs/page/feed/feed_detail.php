@@ -8,13 +8,21 @@ $feed = $sql->fetch_array();
 $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $me = $mesql->fetch_array();
 $commentsql = mq("select * from comment where feedId='" . $query . "' order by idx desc limit 0,10");
-$likesql = mq("select * from likefeed where feedId='" . $query . "'");
+$likesql = mq("select idx from likefeed where feedId='" . $query . "'");
+$like = $likesql->fetch_array();
 
 if (strcmp($me['id'], $feed['userid']) == 0) {
     $ismine = true;
 } else {
     $ismine = false;
 }
+
+if (isset($me['idx'])) {
+    $isLoggedIn = true;
+} else {
+    $isLoggedIn = false;
+}
+
 
 ?>
 
@@ -40,6 +48,7 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
             </div>
             <div class="head_col head_button">
                 <?php
+
                 if ($ismine == true) {
                     echo "<form action='./feed_delete.php?" . $feed['idx'] . "' method='POST'>";
                     echo "<input type='submit' value='X' class='delete_button' />";
@@ -55,21 +64,30 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
         </div>
         <div class="like_row">
             <?php
-            if (isset($_SESSION['userid'])) {
-                echo '<form method="post" action="./like_feed.php?' . $query . '&' . $me['idx'] . '">
-                <button type="submit">like button</button>';
+            if ($isLoggedIn) {
+                $amilikesql = mq("select * from likefeed where feedId='" . $query . "'and memberId='" . $me['idx'] . "'");
+                $amilike = $amilikesql->fetch_array();
+                echo '<form method="post" action="./like_feed.php?' . $query . '&' . $me['idx'] . '" class="row_form">
+                <button type="submit" class="like_btn">';
+                if (isset($amilike)) {
+                    echo "<img src='/asset/thumbs_down.png' />";
+                } else {
+                    echo "<img src='/asset/thumbs_up.png' />";
+                }
+                echo '</button>';
                 $i = 0;
                 while ($like = $likesql->fetch_array()) {
                     $i++;
                 }
-                echo $i === 1 ? $i . "like" : $i . "likes";
+                echo "<div>";
+                echo $i === 1 ? $i . " like" : $i . " likes";
+                echo "</div>";
                 echo '</form>';
             } else {
                 echo "";
             }
             ?>
         </div>
-
         <div class="comment_box">
             <?php
             while ($comment = $commentsql->fetch_array()) {
@@ -87,7 +105,7 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
             ?>
         </div>
         <?php
-        if (isset($_SESSION['userid'])) {
+        if (isset($me['id'])) {
             echo "<form class='comment_inputbox' action='./add_Comment.php?" . $feed['idx'] . "' method='POST'> ";
             echo '<input type="text" name="comment" placeholder="Add comment..." class="comment_input" />';
             echo '<input type="submit" value="Send" class="comment_submit" />';

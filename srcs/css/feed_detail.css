@@ -109,6 +109,16 @@
         padding: 8px 12px;
         width: 80px;
     }
+    .row_form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .like_btn {
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
 }
 
 @media screen and (min-width: 769px) {
@@ -221,5 +231,15 @@
     .comment_inputbox .comment_submit {
         padding: 8px 12px;
         width: 80px;
+    }
+    .row_form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .like_btn {
+        border: none;
+        background-color: white;
+        cursor: pointer;
     }
 }
