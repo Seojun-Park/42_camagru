@@ -28,17 +28,20 @@ $userId = $_SESSION['userid'];
                     <button>GALLERY</button>
                 </a>
             </div>
-            <div class="col_block">
-                <?php
+            <?php
+            if (isset($_SESSION['userid'])) {
+                echo '<div class="col_block">';
                 echo '<a href="/page/profile/profile.php?' . $_SESSION['userid'] . '">
-                    <button>PROFILE</button></a>'
-                ?>
-            </div>
-            <div class="col_block">
-                <a href="/member/logout.php">
-                    <button>LOG OUT</button>
-                </a>
-            </div>
+                <button>PROFILE</button></a></div>';
+                echo '<div class="col_block">
+                    <a href="/member/logout.php">
+                        <button>LOG OUT</button>
+                    </a>
+                </div>';
+            } else {
+                echo '<div class="col_block"><a href="/"><button>LOG IN</button></a></div>';
+            }
+            ?>
         </div>
         <div class="header_row">
             <div class="dropdown">
@@ -49,9 +52,13 @@ $userId = $_SESSION['userid'];
                     <form method="post">
                         <a href="/page/feed/gallery.php">GALLERY</a>
                         <?php
-                        echo '<a href="/page/profile/profile.php?' . $_SESSION['userid'] . '">PROFILE</a>'
+                        if (isset($_SESSION['userid'])) {
+                            echo '<a href="/page/profile/profile.php?' . $_SESSION['userid'] . '">PROFILE</a>';
+                            echo '<a href="/member/logout.php">LOGOUT</a>';
+                        } else {
+                            echo '<a href="/">LOG IN</a>';
+                        }
                         ?>
-                        <a href="/member/logout.php">LOGOUT</a>
                     </form>
                 </div>
             </div>

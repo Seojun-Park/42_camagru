@@ -2,24 +2,12 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `db_cama`
 --
 CREATE DATABASE IF NOT EXISTS `db_cama` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `db_cama`;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `feed`
---
 
 CREATE TABLE `feed` (
   `idx` int NOT NULL AUTO_INCREMENT,
@@ -29,9 +17,6 @@ CREATE TABLE `feed` (
   PRIMARY KEY (`idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Table structure for tabl `reply`
---
 
 CREATE TABLE `member` (
     `idx` INT NOT NULL AUTO_INCREMENT,
@@ -55,40 +40,12 @@ CREATE TABLE `comment` (
   PRIMARY KEY(`idx`)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `board`
---
 
-
---
--- reply's dummy data
---
-
---
--- Indexes for table `board`
---
--- ALTER TABLE `board`
---   ADD PRIMARY KEY (`idx`);
-
---
--- AUTO_INCREMENT for dumped tables
---
--- ALTER TABLE `reply`
---   ADD PRIMARY KEY (`idx`);
-
---
--- AUTO_INCREMENT for table `board`
---
-
---
--- AUTO_INCREMENT for table `board`
---
-
--- ALTER TABLE `reply`
---   MODIFY `idx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+CREATE TABLE `likefeed` (
+  `idx` INT NOT NULL AUTO_INCREMENT,
+  `feedId` INT NOT NULL,
+  `memberId` INT NOT NULL,
+  PRIMARY KEY (`idx`)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

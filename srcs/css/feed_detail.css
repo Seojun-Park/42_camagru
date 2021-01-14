@@ -43,6 +43,7 @@
         color: #e74c3c;
         font-size: 20px;
         background-color: white;
+        cursor: pointer;
     }
     .image_box {
         width: 500px;
@@ -50,6 +51,9 @@
         max-height: 40vh;
         display: flex;
         margin-bottom: 15px;
+    }
+    .like_row {
+        padding: 5px;
     }
     #feedimg {
         width: 100%;
@@ -159,6 +163,9 @@
         max-height: 40vh;
         display: flex;
         margin-bottom: 15px;
+    }
+    .like_row {
+        padding: 5px;
     }
     #feedimg {
         width: 100%;

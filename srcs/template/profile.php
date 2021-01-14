@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Camagru Profile</title>
-    <!-- <link rel="stylesheet" href="../css/reset/css" /> -->
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/profile.css" />
 </head>

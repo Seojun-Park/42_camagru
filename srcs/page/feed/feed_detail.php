@@ -8,9 +8,7 @@ $feed = $sql->fetch_array();
 $mesql = mq("select * from member where id='" . $_SESSION['userid'] . "'");
 $me = $mesql->fetch_array();
 $commentsql = mq("select * from comment where feedId='" . $query . "' order by idx desc limit 0,10");
-
-
-
+$likesql = mq("select * from likefeed where feedId='" . $query . "'");
 
 if (strcmp($me['id'], $feed['userid']) == 0) {
     $ismine = true;
@@ -24,7 +22,7 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/reset/css" />
+    <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/feed_detail.css" />
 </head>
@@ -55,6 +53,23 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
         <div class="image_box">
             <?php echo "<img id='feedimg' src='/upload/" . $feed['userid'] . "/" . $feed['imgname'] . "' alt='snap' />"; ?>
         </div>
+        <div class="like_row">
+            <?php
+            if (isset($_SESSION['userid'])) {
+                echo '<form method="post" action="./like_feed.php?' . $query . '&' . $me['idx'] . '">
+                <button type="submit">like button</button>';
+                $i = 0;
+                while ($like = $likesql->fetch_array()) {
+                    $i++;
+                }
+                echo $i === 1 ? $i . "like" : $i . "likes";
+                echo '</form>';
+            } else {
+                echo "";
+            }
+            ?>
+        </div>
+
         <div class="comment_box">
             <?php
             while ($comment = $commentsql->fetch_array()) {
@@ -71,9 +86,15 @@ if (strcmp($me['id'], $feed['userid']) == 0) {
             }
             ?>
         </div>
-        <?php echo "<form class='comment_inputbox' action='./add_Comment.php?" . $feed['idx'] . "' method='POST'> " ?>
-        <input type="text" name="comment" placeholder="Add comment..." class="comment_input" />
-        <input type="submit" value="Send" class="comment_submit" />
+        <?php
+        if (isset($_SESSION['userid'])) {
+            echo "<form class='comment_inputbox' action='./add_Comment.php?" . $feed['idx'] . "' method='POST'> ";
+            echo '<input type="text" name="comment" placeholder="Add comment..." class="comment_input" />';
+            echo '<input type="submit" value="Send" class="comment_submit" />';
+        } else {
+            echo "";
+        }
+        ?>
         </form>
     </div>
 </body>

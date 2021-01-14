@@ -56,6 +56,11 @@
         <div class="image_box">
             <img src="/" alt="img" id="feedimg" />
         </div>
+        <div>
+            <form method="post" action="./like_ok.php?4&1">
+                <button type="submit">like</button>
+            </form>
+        </div>
         <div class="comment_box">
             comment
         </div>
